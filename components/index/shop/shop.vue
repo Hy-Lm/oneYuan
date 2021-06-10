@@ -1,0 +1,105 @@
+<template>
+	<view>
+		<view class="box">
+			<!-- 店铺详情 -->
+			<view class="img">
+				<image src="../../../static/2.jpg" mode=""></image>
+			</view>
+			<view class="details">
+				<view class="api">
+					<text>益园养车北辰区店</text>
+					<image src="../../../static/导航.png" mode=""></image>
+				</view>
+				<view class="time">
+					<text>营业时间：08：00 -12：00</text>
+					<text>导航</text>
+				</view>
+				<view class="time">
+					<text>天津市北辰区北辰公园南100米</text>
+					<text>2.1km</text>
+				</view>
+				<view class="phone">
+					<text>联系电话：19103893630</text>
+					<image src="../../../static/组443.png" mode=""></image>
+				</view>
+			</view>
+		</view>
+		<!-- 导航 -->
+		<tab></tab>
+		<!-- 评论 -->
+		<comment></comment>
+	</view>
+</template>
+
+<script>
+	import tab from '@/components/index/shop/tab/tab.vue'
+	import comment from '@/components/index/shop/comment/comment.vue'
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		},
+		components:{
+			tab,
+			comment
+		}
+	}
+</script>
+
+<style lang="scss">
+.box{
+	padding:0 15px;
+}
+.img{
+	width: 100%;
+	height: 170px;
+	image{
+		width: 100%;
+		height: 100%;
+		border-radius: 10px
+	}
+}
+.details{
+	padding: 0 15px;
+	.api{
+		width: 100%;
+		height: 43px;
+		font-size: 18px;
+		color: #000000;
+		text{
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+		}
+		image{
+			float: right;
+			bottom: -20px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.time{
+		height: 17px;
+		font-size: 12px;
+		color: #000000;
+		text:nth-child(2){
+			float: right;
+		}
+	}
+	.phone{
+		padding-top: 15px;
+		height: 17px;
+		font-size: 12px;
+		color: #000000;
+		image{
+			float: right;
+			width: 11px;
+			height: 14px;
+		}
+	}
+}
+</style>

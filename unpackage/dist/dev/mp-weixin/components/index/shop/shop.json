@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "益园养车北辰区店",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tab": "/components/index/shop/tab/tab",
+    "comment": "/components/index/shop/comment/comment"
+  }
+}
