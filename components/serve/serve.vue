@@ -70,11 +70,8 @@
 		},
 		methods: {
 			open(){
-<<<<<<< HEAD
 				if(this.isSearch) return
-=======
 				console.log('open')
->>>>>>> 71ad223d98811795f2e8f5875eacf722f2018805
 				uni.navigateTo({
 					url:"/components/index/shop/shop"
 				})
