@@ -52,7 +52,7 @@ page {
 .tab_list .current::after {
   content: '';
   position: absolute;
-  left: calc(100% / 2  - 10px);
+  left: calc(100% / 2 - 10px);
   bottom: 0;
   width: 12px;
   height: 2px;
@@ -84,7 +84,7 @@ page {
   float: right;
   width: 7px;
   height: 14px;
-  margin-top: calc( 57px / 2 - 7px);
+  margin-top: calc(57px / 2 - 7px);
 }
 .item .item_box .con {
   float: left;
