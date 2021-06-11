@@ -70,7 +70,6 @@
 		},
 		methods: {
 			open(){
-				console.log('open')
 				if(this.isSearch) return
 				uni.navigateTo({
 					url:"/components/index/shop/shop"
