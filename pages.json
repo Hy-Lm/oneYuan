@@ -56,7 +56,58 @@
 				
 		    }
 		    
-		}
+		},
+		{
+
+            "path" : "components/index/shop/service/service",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "服务详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/index/shop/order/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "预约店铺",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#F1F1F1"
+            }
+            
+        }
+        ,{
+            "path" : "components/index/shop/confirm/confirm",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "确定预约",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF"
+            }
+            
+        }
+        ,{
+            "path" : "components/index/shop/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "预约详情",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#F1F1F1"
+            }
+            
+        }
+        ,{
+            "path" : "components/index/more-service/more-service",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "享受服务",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#0D8600",
+				"navigationBarTextStyle": "white"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
