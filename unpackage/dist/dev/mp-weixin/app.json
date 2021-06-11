@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/fenlei/fenlei",
     "pages/my/my",
-    "components/index/shop/shop"
+    "components/index/shop/shop",
+    "components/index/shop/service/service",
+    "components/index/shop/order/order"
   ],
   "subPackages": [],
   "window": {

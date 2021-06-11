@@ -5,7 +5,7 @@
 			<view class="header">
 				<text>享服务</text>
 				<text>优质线下门店</text>
-				<view>更多
+				<view @click="more()">更多
 					<image src="../../static/arrows.png" mode="aspectFit"></image>
 				</view>
 			</view>
@@ -71,9 +71,14 @@
 		methods: {
 			open(){
 				console.log('open')
-				if(this.isSearch) return
 				uni.navigateTo({
 					url:"/components/index/shop/shop"
+				})
+			},
+			more(){
+				console.log('more')
+				uni.navigateTo({
+					url:"/components/index/more-service/more-service"
 				})
 			}
 		}
