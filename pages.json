@@ -39,6 +39,26 @@
             
         }
         ,{
+            "path" : "components/particulars/particulars",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "components/myMap/myMap",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "地图导航",
+		        "enablePullDownRefresh": false
+				
+		    }
+		    
+		},
+		{
+
             "path" : "components/index/shop/service/service",
             "style" :                                                                                    
             {
