@@ -5,7 +5,7 @@
 		<view class="navbar_content">
 			<!-- 位置、搜索 -->
 			<view class="header">
-				<text class="map">廊坊</text>
+				<text class="map" @click="map">廊坊</text>
 				<image src="../../static/service.png" mode="aspectFit"></image>
 				<view class="input">
 					<image src="../../static/查找.png" mode="aspectFit"></image>
@@ -64,7 +64,12 @@
 			}
 		},
 		methods: {
-
+			map(){
+				console.log(1)
+				uni.navigateTo({//跳转地图页面
+					url:"/components/myMap/myMap"
+				})
+			}
 		}
 	}
 </script>
