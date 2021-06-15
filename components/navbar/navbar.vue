@@ -72,7 +72,7 @@
 			},
 			likecar(){
 				console.log('likecar')
-				uni.navigateTo({//跳转地图页面
+				uni.navigateTo({
 					url:"/components/index/likecar/likecar"
 				})
 			}

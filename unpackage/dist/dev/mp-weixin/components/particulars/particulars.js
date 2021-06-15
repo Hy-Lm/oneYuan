@@ -2,7 +2,7 @@
 
 /***/ 37:
 /*!***************************************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/a/oneYuan/main.js?{"page":"components%2Fparticulars%2Fparticulars"} ***!
+  !*** C:/Users/Lenovo/Desktop/b/oneYuan/main.js?{"page":"components%2Fparticulars%2Fparticulars"} ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -18,7 +18,7 @@ createPage(_particulars.default);
 
 /***/ 38:
 /*!********************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/a/oneYuan/components/particulars/particulars.vue ***!
+  !*** C:/Users/Lenovo/Desktop/b/oneYuan/components/particulars/particulars.vue ***!
   \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -57,7 +57,7 @@ component.options.__file = "components/particulars/particulars.vue"
 
 /***/ 39:
 /*!***************************************************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/a/oneYuan/components/particulars/particulars.vue?vue&type=template&id=25838ffc& ***!
+  !*** C:/Users/Lenovo/Desktop/b/oneYuan/components/particulars/particulars.vue?vue&type=template&id=25838ffc& ***!
   \***************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -79,7 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 40:
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/a/oneYuan/components/particulars/particulars.vue?vue&type=template&id=25838ffc& ***!
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/b/oneYuan/components/particulars/particulars.vue?vue&type=template&id=25838ffc& ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -106,7 +106,7 @@ render._withStripped = true
 
 /***/ 41:
 /*!*********************************************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/a/oneYuan/components/particulars/particulars.vue?vue&type=script&lang=js& ***!
+  !*** C:/Users/Lenovo/Desktop/b/oneYuan/components/particulars/particulars.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 42:
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/a/oneYuan/components/particulars/particulars.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/b/oneYuan/components/particulars/particulars.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {

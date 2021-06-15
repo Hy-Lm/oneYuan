@@ -11,7 +11,7 @@
 		 	</view>
 			<!-- 内容 -->
 			<ul>
-				<li>
+				<li @click="shoplist()">
 					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
 					<p>信义 上海通用-乐风前 挡玻璃更换</p>
 					<p>￥<text>210</text></p>
@@ -55,6 +55,14 @@
 			return {
 				
 			};
+			
+		},
+		methods:{
+			shoplist(){
+				uni.navigateTo({
+					url:"/components/index/shop-details/shop-details"
+				})
+			}
 		}
 	}
 </script>
