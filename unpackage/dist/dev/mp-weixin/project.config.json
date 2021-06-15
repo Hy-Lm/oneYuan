@@ -35,7 +35,7 @@
         "packNpmRelationList": []
     },
     "compileType": "miniprogram",
-    "libVersion": "",
+    "libVersion": "2.16.1",
     "appid": "wx49cf4c1a35a010c7",
     "projectname": "yiyuan",
     "simulatorType": "wechat",

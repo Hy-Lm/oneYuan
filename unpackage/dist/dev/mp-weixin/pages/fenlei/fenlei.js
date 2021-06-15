@@ -17,9 +17,9 @@
 /* 15 */,
 /* 16 */,
 /* 17 */
-/*!*********************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/yiyuan/main.js?{"page":"pages%2Ffenlei%2Ffenlei"} ***!
-  \*********************************************************************************/
+/*!************************************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/a/oneYuan/main.js?{"page":"pages%2Ffenlei%2Ffenlei"} ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32,9 +32,9 @@ createPage(_fenlei.default);
 
 /***/ }),
 /* 18 */
-/*!**************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/yiyuan/pages/fenlei/fenlei.vue ***!
-  \**************************************************************/
+/*!*****************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -70,9 +70,9 @@ component.options.__file = "pages/fenlei/fenlei.vue"
 
 /***/ }),
 /* 19 */
-/*!*********************************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/yiyuan/pages/fenlei/fenlei.vue?vue&type=template&id=02bdc6a6& ***!
-  \*********************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=template&id=02bdc6a6& ***!
+  \************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -91,9 +91,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 20 */
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/yiyuan/pages/fenlei/fenlei.vue?vue&type=template&id=02bdc6a6& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=template&id=02bdc6a6& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -107,10 +107,10 @@ var components
 try {
   components = {
     flNav: function() {
-      return __webpack_require__.e(/*! import() | components/fl-nav/fl-nav */ "components/fl-nav/fl-nav").then(__webpack_require__.bind(null, /*! @/components/fl-nav/fl-nav.vue */ 65))
+      return __webpack_require__.e(/*! import() | components/fl-nav/fl-nav */ "components/fl-nav/fl-nav").then(__webpack_require__.bind(null, /*! @/components/fl-nav/fl-nav.vue */ 127))
     },
     flList: function() {
-      return __webpack_require__.e(/*! import() | components/fl-list/fl-list */ "components/fl-list/fl-list").then(__webpack_require__.bind(null, /*! @/components/fl-list/fl-list.vue */ 72))
+      return __webpack_require__.e(/*! import() | components/fl-list/fl-list */ "components/fl-list/fl-list").then(__webpack_require__.bind(null, /*! @/components/fl-list/fl-list.vue */ 134))
     }
   }
 } catch (e) {
@@ -143,9 +143,9 @@ render._withStripped = true
 
 /***/ }),
 /* 21 */
-/*!***************************************************************************************!*\
-  !*** C:/Users/Lenovo/Desktop/yiyuan/pages/fenlei/fenlei.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -158,9 +158,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 /* 22 */
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/yiyuan/pages/fenlei/fenlei.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

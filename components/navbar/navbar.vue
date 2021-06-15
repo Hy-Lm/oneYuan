@@ -14,7 +14,7 @@
 			</view>
 			<view class="bg"></view>
 			<!-- 添加爱车 -->
-			<view class="addcart">
+			<view class="addcart" @click="likecar">
 				<view class="cart">
 					<view class="left">
 						<image src="../../static/addition.png" mode="aspectFit"></image>
@@ -68,6 +68,12 @@
 				console.log(1)
 				uni.navigateTo({//跳转地图页面
 					url:"/components/myMap/myMap"
+				})
+			},
+			likecar(){
+				console.log('likecar')
+				uni.navigateTo({//跳转地图页面
+					url:"/components/index/likecar/likecar"
 				})
 			}
 		}

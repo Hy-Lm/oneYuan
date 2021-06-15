@@ -41,9 +41,8 @@
 					<text class="state">订满</text>
 				</li>
 			</ul>
-
-			<comment></comment>
 		</view>
+		<comment></comment>
 	</view>
 </template>
 
