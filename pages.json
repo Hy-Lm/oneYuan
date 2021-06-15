@@ -118,6 +118,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/my-set/my-set",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
