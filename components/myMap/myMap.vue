@@ -31,7 +31,7 @@
 					location:"天津市北辰区北辰公园南100米"
 				},
 				SpinnerShow:false,
-				MaynavBoxText:"北城区",
+				MaynavBoxText:"北城区A",
 				MaynavBoxItem:[//模拟天津区域
 					"北城区1",
 					"北城区2",
