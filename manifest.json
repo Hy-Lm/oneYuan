@@ -47,13 +47,7 @@
             "ios" : {},
             /* SDK配置 */
             "sdkConfigs" : {
-                "oauth" : {
-                    "weixin" : {
-                        "appid" : "wx6bc971c4dd6738e9",
-                        "appsecret" : "8ec0f9e1a0942dca4f89f10482069645",
-                        "UniversalLinks" : ""
-                    }
-                },
+                "oauth" : {},
                 "maps" : {
                     "baidu" : {
                         "appkey_ios" : "",

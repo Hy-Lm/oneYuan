@@ -127,6 +127,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/new-address/new-address",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "收货地址",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/newAdd-address/newAdd-address",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新增地址",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/newUpdate-address/newUpdate-address",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑地址",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
