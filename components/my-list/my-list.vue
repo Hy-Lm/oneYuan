@@ -18,7 +18,7 @@
 					<image src="../../static/积分.png" ></image>
 					<text>积分商城</text>
 				</li>
-				<li>
+				<li @click="mySet">
 					<image src="../../static/设置.png" ></image>
 					<text>设置</text>
 				</li>
@@ -55,6 +55,15 @@
 			return {
 				
 			};
+		},
+		methods:{
+			//跳转到我的设置页面
+			mySet(){
+				// console.log('index')
+				uni.navigateTo({
+				    url: '/pages/my-set/my-set'
+				});
+			}
 		}
 	}
 </script>

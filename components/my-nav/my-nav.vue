@@ -4,7 +4,7 @@
 			<view class="header">
 				<view class="inform">
 					<image src="../../static/通知(3).png" mode=""></image>
-					<image src="../../static/设置(2).png" mode=""></image>
+					<image @click="mySet"  src="../../static/设置(2).png" mode=""></image>
 				</view>
 				<view class="message">
 					<image src="../../static/bg.png" mode=""></image>
@@ -58,6 +58,14 @@
 			return {
 				
 			};
+		},
+		methods:{
+			//跳转到我的设置页面
+			mySet(){
+				uni.navigateTo({
+				    url: '/pages/my-set/my-set'
+				});
+			}
 		}
 	}
 </script>

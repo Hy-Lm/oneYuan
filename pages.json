@@ -119,10 +119,10 @@
             
         }
         ,{
-            "path" : "components/index/shop-details/shop-details",
+            "path" : "pages/my-set/my-set",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "设置",
                 "enablePullDownRefresh": false
             }
             
