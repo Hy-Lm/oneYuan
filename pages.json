@@ -97,6 +97,17 @@
             }
             
         }
+		,{
+		    "path" : "components/index/shop-details/shop-details",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "商品详情",
+		        "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#fff",
+				"navigationBarTextStyle": "black"
+		    }
+		    
+		}
         ,{
             "path" : "components/index/more-service/more-service",
             "style" :                                                                                    
