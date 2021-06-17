@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="box">
 			<ul>
-				<li>
+				<li @click="MyRecord">
 					<image src="../../static/维修记录.png" ></image>
 					<text>维修记录</text>
 				</li>
@@ -62,6 +62,12 @@
 				// console.log('index')
 				uni.navigateTo({
 				    url: '/pages/my-set/my-set'
+				});
+			},
+			MyRecord(){
+				// 维修记录
+				uni.navigateTo({
+				    url: '/pages/my-record/my-record'
 				});
 			}
 		}
