@@ -2,17 +2,44 @@
 	<view>
 		<view class="page-body">
 			<view class="Maynav">
-				<view class="MaynavBox" @click="xialai">{{MaynavBoxText}} <view class="xialai"> <image src="../../static/xialai.png"></image></view></view>
+				<view class="MaynavBox" @click="xialai">{{MaynavBoxText}}
+					<view class="xialai">
+						<image src="../../static/xialai.png"></image>
+					</view>
+				</view>
 				<view class="MaynavBox">离我最近</view>
 			</view>
 			<view class="SpinnerBox" v-if="SpinnerShow">
-				<view class="SpinnerBoxText" v-for="(item,index) in MaynavBoxItem" :key="index" @click="SpinnerBoxTextClick(item)">{{item}}</view>
+				<view class="SpinnerBoxText" v-for="(item,index) in MaynavBoxItem" :key="index"
+					@click="SpinnerBoxTextClick(item)">{{item}}</view>
 			</view>
-			<view class="mapDetails">
-				
+			<view class="mapDetails" v-if="DetailsItemShow">
+				<view class="mapDetailsTop">
+					<view class="mapDetailsTopImg">
+						<image :src="DetailsItem.StorePhotos" mode="scaleToFill"></image>
+					</view>
+					<view class="mapDetailsTopText">
+						<view>{{DetailsItem.trade}}</view>
+						<view>营业时间: {{DetailsItem.time}}</view>
+						<view class="box">
+							<view style="margin-left: -18px;">{{DetailsItem.location}}</view>
+							<view>{{DetailsItem.distance}}</view>
+						</view>
+					</view>
+				</view>
+				<view class="mapDetailsBtn" @click="mapDetailsBtns">
+					<view style="width: 14px; height: 14px; margin-right: 4px;">
+						<image src="../../static/导航.png"></image>
+					</view>
+					<view>
+						去这里
+					</view>
+				</view>
 			</view>
-			<view class="page-section page-section-gap">
-				<map  style="width: 100%; height: 100vh;" @markertap="markertap" @callouttap="markertap" @regionchange="regionchange" :latitude="latitude" :longitude="longitude" :markers="covers" enable-zoom show-location enable-traffic >
+			<view class="page-section page-section-gap" v-if="latitude!=0">
+				<map style="width: 100%; height: 100vh;" @markertap="markertap"
+					@callouttap="markertap" @regionchange="regionchange" :latitude="latitude" :longitude="longitude"
+					:markers="covers" enable-zoom show-location enable-traffic>
 				</map>
 			</view>
 		</view>
@@ -24,15 +51,33 @@
 		name: "myMap",
 		data() {
 			return {
-				DetailsItem:{
-					StorePhotos:"../../static/4a24fe8ff305fc17c7e0eee2950db1f.png",
-					trade:"益园养车北辰区店",
-					time:"08：00 -12：00",
-					location:"天津市北辰区北辰公园南100米"
+				// 初始化时，DetailsItem没有数据，在点击地图上气泡后显示
+				DetailsDataItem: [{
+					StorePhotos: "../../static/4a24fe8ff305fc17c7e0eee2950db1f.png",
+					trade: "益园养车北辰区店",
+					time: "08：00 -12：00",
+					location: "天津市北辰区北辰公园南100米",
+					distance: "1.5km",
+					tuer:[{
+						latitude: 39.22199, //标点纬度
+						longitude: 117.13299, //标点经度
+					}]
+				}], //保存所有的数据
+				DetailsItem: {
+					StorePhotos: "../../static/4a24fe8ff305fc17c7e0eee2950db1f.png",
+					trade: "益园养车北辰区店",
+					time: "08：00 -12：00",
+					location: "天津市北辰区北辰公园南100米",
+					distance: "1.5km",
+					tuer:[{
+						latitude: 39.22199, //标点纬度
+						longitude: 117.13299, //标点经度
+					}]
 				},
-				SpinnerShow:false,
-				MaynavBoxText:"北城区A",
-				MaynavBoxItem:[//模拟天津区域
+				DetailsItemShow: true,
+				SpinnerShow: false,
+				MaynavBoxText: "北城区A",
+				MaynavBoxItem: [ //模拟天津区域
 					"北城区1",
 					"北城区2",
 					"北城区3",
@@ -44,122 +89,210 @@
 					"北城区9",
 					"北城区10"
 				],
+				
 				title: 'map',
-				latitude: 39.22131,//当前显示自己的纬度
-				longitude: 117.13217,//当前自己的经度
+				latitude: 0, //标点纬度
+				longitude: 0, //标点经度
 				covers: [{
 					id: 1, // 使用 marker点击事件 需要填写id
-					latitude: 39.22131,//标点纬度
-					longitude: 117.13217,//标点经度
-					width:20,//图标大小
-					callout:{//地图上方显示气泡
-						content:"益园养车新世纪店",//店面的名字
-						color:"#000",//字体颜色
-						fontSize:16,//字体大小
-						bgColor:"#fff",//背景色
-						textAlign:"center",//文字是否居中
-						padding:10,
-						display:"ALWAYS",//气泡是否长时间显示
-						borderRadius:20//圆角
+					latitude: 39.22199, //标点纬度
+					longitude: 117.13299, //标点经度
+					width: 20, //图标大小
+					callout: { //地图上方显示气泡
+						content: "益园养车新世纪店", //店面的名字
+						color: "#000", //字体颜色
+						fontSize: 16, //字体大小
+						bgColor: "#fff", //背景色
+						textAlign: "center", //文字是否居中
+						padding: 10,
+						display: "ALWAYS", //气泡是否长时间显示
+						borderRadius: 20 //圆角
 					},
-					iconPath: '../../static/locations.png'//地图图标
+					iconPath: '../../static/locations.png' //地图图标
 				}]
 			}
 		},
 		methods: {
-			markertap(e){
+			mapDetailsBtns(){
+				console.log("规划路线")
+				uni.getLocation({
+				    type: 'wgs84',
+				    success: function (res) {
+				        console.log('当前位置的经度：' + res.longitude);
+				        console.log('当前位置的纬度：' + res.latitude);
+				    }
+				});
+				
+			
+			},
+			markertap(e) {
 				// 获取当前点击气泡的id 通过id 查找相对应的店铺
 				console.log(e.detail)
+				// 点击过后找到当前店铺，将店铺数据复值给DetailsItem
+				this.DetailsItem = this.DetailsDataItem[0]
+				console.log(this.DetailsItem)
+				this.DetailsItemShow = true
 			},
-			regionchange(e){
+			regionchange(e) {
 				// 移动地图
 				console.log(e)
-				
+
 			},
-			xialai(){
+			xialai() {
 				// 下拉列表点击事件点击过后显示下拉列表
-				this.SpinnerShow=true
+				this.SpinnerShow = true
 			},
-			SpinnerBoxTextClick(val){ 
-			//下拉列表点击事件，点击过后显示当前点击的区域名称，将当前显示的经纬度替换
-			// 显示当前区域内的店铺covers内的内容
-			// 并影藏掉下拉列表
-			console.log(val)
-				this.MaynavBoxText=val
-				this.SpinnerShow=false
+			SpinnerBoxTextClick(val) {
+				//下拉列表点击事件，点击过后显示当前点击的区域名称，将当前显示的经纬度替换
+				// 显示当前区域内的店铺covers内的内容
+				// 并影藏掉下拉列表
+				console.log(val)
+				this.MaynavBoxText = val
+				this.SpinnerShow = false
 			}
+		},
+		beforeCreate() {
+
+		},
+		created() {
+		
+		},
+		mounted() {
+			console.log("初始化我的位置")
+			let that = this
+			uni.getLocation({
+				type: 'gcj02',
+				altitude: true,
+				success: function(res) {
+					console.log(res)
+					that.latitude = res.latitude
+					that.longitude = res.longitude
+				
+				}
+			});
+
+
+
 		}
 
 	}
 </script>
 
 <style>
-	.Maynav{
+	.Maynav {
 		width: 100vw;
 		height: 50px;
 		background: #fff;
 		position: fixed;
-		top:44px;
-		left:0;
+		top: 44px;
+		left: 0;
 		right: 0;
-		z-index:100;
+		z-index: 100;
 		border: 2px solid #eee;
 		border-right: none;
 		border-left: none;
 		display: flex;
-		align-items:center;
+		align-items: center;
 	}
-	.MaynavBox{
+
+	.MaynavBox {
 		display: flex;
-		align-items:center;
-		justify-content:center;
+		align-items: center;
+		justify-content: center;
 		width: 50%;
 		height: 100%;
 		border-left: 1px solid #eee;
 		text-align: center;
 	}
-	.MaynavBox:first-child{
+
+	.MaynavBox:first-child {
 		border: none;
 		margin-left: -1px;
 	}
-	.xialai{
+
+	.xialai {
 		width: 8px;
 		height: 4px;
 		margin-left: 10px;
 	}
-	image{
+
+	image {
 		width: 100%;
 		height: 100%;
 		display: block;
 	}
-	.SpinnerBox{
+
+	.SpinnerBox {
 		width: 50%;
 		height: 300px;
 		background: #fff;
 		position: fixed;
-		left:0;
-		top:98px;
-		z-index:100;
+		left: 0;
+		top: 98px;
+		z-index: 100;
 		overflow: hidden;
-		overflow-y:scroll;
+		overflow-y: scroll;
 	}
-	.SpinnerBoxText{
+
+	.SpinnerBoxText {
 		width: 100%;
 		height: 40px;
 		line-height: 40px;
-		text-align:center;
+		text-align: center;
 		border-bottom: 1px solid #eee;
-		
+
 	}
-	.mapDetails{
+
+	.mapDetails {
 		position: fixed;
 		width: 300px;
 		height: 114px;
 		background: #fff;
 		bottom: 36px;
-		left:50%;
+		left: 50%;
 		margin-left: -150px;
-		z-index:100;
-		border-radius:15px;
+		z-index: 100;
+		border-radius: 15px;
+	}
+
+	.mapDetailsTop {
+		width: calc(100% - 32px);
+		height: 48px;
+		margin: 11px auto 19px;
+		display: flex;
+	}
+
+	.mapDetailsTopImg {
+		width: 48px;
+		height: 48px;
+		margin-right: 14px;
+	}
+
+	.mapDetailsTopText {
+		width: calc(100% - 62px);
+		font-size: 12px;
+		font-family: PingFang SC, PingFang SC-Regular;
+	}
+
+	.box {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.box view {
+		transform: scale(0.8, 0.8);
+	}
+
+	.mapDetailsBtn {
+		width: calc(100% - 32px);
+		height: 24px;
+		background: #f1f1f1;
+		margin: 0 auto;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
 	}
 </style>

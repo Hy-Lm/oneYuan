@@ -1,10 +1,11 @@
 <template>
 	<view class="shop-details-box">
 		<view class="shop-header">
-			<image src="../../../static/shangxin3.png" ></image>
+			<view class="shopImg">
+				<image src="../../../static/shangxin3.png" ></image>
+			</view>
 			<view class="xiangqing">
 				<view class="title">固特威汽车三元催化剂发动机喷油 嘴内部除积碳</view>
-				<view class="collect">收藏</view>
 				<view class="price">￥650</view>
 				<view class="con">
 					<text>线下价格 ￥1356</text>
@@ -20,7 +21,7 @@
 		</view>
 		<view class="footer">
 			<view class="footer_left">
-				<image src="../../../static/service.png" mode=""></image>
+				<image src="../../../static/客服 (1).png" mode=""></image>
 				<text>客服</text>
 			</view>
 			<view class="footer_right">
@@ -50,10 +51,15 @@
 	position: relative;
 }
 .shop-header{
-	image{
+	.shopImg{
 		width: 100%;
-		height: 251px;
+		height: 326px;
+		image{
+			width: 100%;
+			height: 100%;
+		}
 	}
+	
 	.xiangqing{
 		padding: 0 30px;
 		.title{
@@ -113,20 +119,21 @@
 	}
 }
 .footer{
-	position: absolute;
+	position: fixed;
 	box-sizing: border-box;
 	bottom: 0;
 	background-color: #FFFFFF;
-	padding: 25px 30px 30px 30px;
+	padding: 25px 30px 30px;
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
 	.footer_left{
-		// display: inline-block;
-		float: left;
+		display: flex;
+		align-items:center;
 		image{
 			width: 16px;
 			height: 16px;
 			margin-right: 7px;
-			background-color: #515151;
 		}
 		text{
 			height: 22px;
@@ -135,8 +142,6 @@
 		}
 	}
 	.footer_right{
-		// display: inline-block;
-		float: right;
 		text{
 			height: 28px;
 			font-size: 16px;
