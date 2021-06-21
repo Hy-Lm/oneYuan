@@ -6,7 +6,7 @@
 					<image src="../../static/维修记录.png" ></image>
 					<text>维修记录</text>
 				</li>
-				<li>
+				<li @click="MyDiscounts ">
 					<image src="../../static/优惠券.png" ></image>
 					<text>我的优惠券</text>
 				</li>
@@ -14,7 +14,7 @@
 					<image src="../../static/页面-1.png" ></image>
 					<text>联系客户</text>
 				</li>
-				<li>
+				<li @click="myTotal">
 					<image src="../../static/积分.png" ></image>
 					<text>积分商城</text>
 				</li>
@@ -68,6 +68,18 @@
 				// 维修记录
 				uni.navigateTo({
 				    url: '/pages/my-record/my-record'
+				});
+			},
+			MyDiscounts(){
+				// 我的优惠券
+				uni.navigateTo({
+				    url: '/pages/discounts/discounts'
+				});
+			},
+			myTotal(){
+				// 积分商城
+				uni.navigateTo({
+				    url: '/pages/total/total'
 				});
 			}
 		}
