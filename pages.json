@@ -165,6 +165,69 @@
             }
             
         }
+        ,{
+            "path" : "pages/my-record/my-record",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "维修记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/discounts/discounts",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的优惠卷",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/total/total",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "积分商城",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/orders/orders",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "全部订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/assess/assess",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "爱车评估",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/free-assess/free-assess",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "评估报告",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/car-insurance/car-insurance",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "车险信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
