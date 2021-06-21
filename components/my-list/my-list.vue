@@ -35,11 +35,11 @@
 					<image src="../../static/应急救援.png" ></image>
 					<text>道德救援</text>
 				</li>
-				<li>
+				<li @click="myAssess">
 					<image src="../../static/爱车估价.png" ></image>
 					<text>爱车评估</text>
 				</li>
-				<li>
+				<li @click="myInsurance">
 					<image src="../../static/车险.png" ></image>
 					<text>车险</text>
 				</li>
@@ -80,6 +80,18 @@
 				// 积分商城
 				uni.navigateTo({
 				    url: '/pages/total/total'
+				});
+			},
+			myAssess(){
+				// 爱车评估
+				uni.navigateTo({
+				    url: '/pages/assess/assess'
+				});
+			},
+			myInsurance(){
+				// 车险
+				uni.navigateTo({
+				    url: '/pages/car-insurance/car-insurance'
 				});
 			}
 		}

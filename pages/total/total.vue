@@ -10,7 +10,7 @@
 			<view class="total_items-t">
 				<text>{{item.num}}</text>积分
 			</view>
-			<view class="total_items-btn">
+			<view class="total_items-btn" @click="tatal(item)">
 				立即兑换
 			</view>
 		</div>
@@ -23,27 +23,27 @@
 			return {
 				total_items: [{
 						img: '../../static/2.jpg',
-						title: '无门槛同城益园养车洗车券1',
+						title: '无门槛同城益园养车洗车券',
 						num: '10'
 					},
 					{
 						img: '../../static/2.jpg',
-						title: '正版功夫熊猫汽车饰品创意 玩具2',
+						title: '正版功夫熊猫汽车饰品创意',
 						num: '20'
 					},
 					{
 						img: '../../static/2.jpg',
-						title: '无门槛同城益园养车洗车券3',
+						title: '无门槛同城益园养车洗车券',
 						num: '30'
 					},
 					{
 						img: '../../static/2.jpg',
-						title: '正版功夫熊猫汽车饰品创意 玩具4',
+						title: '正版功夫熊猫汽车饰品创意',
 						num: '40'
 					},
 					{
 						img: '../../static/2.jpg',
-						title: '正版功夫熊猫汽车饰品创意 玩具5',
+						title: '正版功夫熊猫汽车饰品创意',
 						num: '50'
 					},
 					{
@@ -55,7 +55,20 @@
 			}
 		},
 		methods: {
-
+			tatal(item){
+				uni.showModal({
+					title:"是否兑换此商品",
+					content:"需要消耗"+item.num+'积分',
+					success(res){
+						if(res.confirm){
+							console.log(item)
+						}else if(res.cancel){
+							console.log("用户已取消")
+						}
+						
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -74,17 +87,19 @@
 		padding-bottom: 0;
 		display: flex;
 		flex-wrap: wrap;
-
+		justify-content: center;
+		align-items: center;
 		.total_items {
-			padding: 0 4%;
+			margin-right: 17px;
+			// padding: 0 4%;
 			box-sizing: border-box;
-			width: 50%;
+			// width: 50%;
 			height: 250px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
 			margin-bottom: 38px;
-
+			align-items: left;
 			&:nth-child(even) {
 				margin-right: 0;
 			}
@@ -111,6 +126,7 @@
 			}
 
 			.total_items-title {
+				width: 144px;
 				opacity: 1;
 				font-size: 12px;
 				font-family: PingFang SC, PingFang SC-Regular;
