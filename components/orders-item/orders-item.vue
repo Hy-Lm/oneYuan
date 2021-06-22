@@ -31,7 +31,7 @@
 			<view>实付款￥<text>{{item.zong_mony-item.sale}}</text></view>
 		</view>
 		<view>
-			<view>{{item.btn1}}</view>
+			<view @click="payment(item.btn1)">{{item.btn1}}</view>
 			<view @click="payment(item.btn2)" v-if="item.active">{{item.btn2}}</view>
 		</view>
 	</view>
@@ -58,6 +58,11 @@
 				if(value=='付款'){
 					uni.navigateTo({
 						url:"/pages/payment/payment"
+					})
+				}
+				if(value=='修改地址'){
+					uni.navigateTo({
+						url:"/pages/newUpdate-address/newUpdate-address"
 					})
 				}
 			}
