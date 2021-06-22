@@ -228,6 +228,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/payment/payment",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "付款",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

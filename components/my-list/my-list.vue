@@ -27,7 +27,7 @@
 		
 		<view class="box">
 			<ul>
-				<li>
+				<li @click="myOrders">
 					<image src="../../static/订单.png"></image>
 					<text>我的订单</text>
 				</li>
@@ -92,6 +92,12 @@
 				// 车险
 				uni.navigateTo({
 				    url: '/pages/car-insurance/car-insurance'
+				});
+			},
+			myOrders(){
+				// 我的订单
+				uni.navigateTo({
+				    url: '/pages/orders/orders'
 				});
 			}
 		}
