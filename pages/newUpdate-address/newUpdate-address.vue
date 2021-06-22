@@ -43,6 +43,9 @@
 			}
 		},
 		onLoad(option) {//接收上个页面传递过来的参数
+		if (!option.item) {
+		        return
+		      }
 			this.updateAdress = JSON.parse(option.item);
 		}
 	}
