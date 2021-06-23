@@ -79,9 +79,12 @@
 		justify-content: space-around;
 		align-items: flex-end;
 		padding: 6px 12px;
-		border-bottom: 1px solid #C0C0C0;
+		border-bottom: 1px solid #EDEDED;
 		margin-bottom: 15px;
 		box-sizing: border-box;
+		&:last-child{
+			border: none;
+		}
 		&>view:nth-child(4){
 			display: flex;
 			&>view{
