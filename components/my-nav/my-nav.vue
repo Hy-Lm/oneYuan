@@ -15,7 +15,7 @@
 			<view class="bg"></view>
 			<view class="list">
 				<ul>
-					<li>
+					<li @click="myIntegral">
 						<p>我的积分</p>
 						<text>98</text>
 					</li>
@@ -65,6 +65,13 @@
 				uni.navigateTo({
 				    url: '/pages/my-set/my-set'
 				});
+			},
+			myIntegral(){//跳转积分详情
+				console.log(1)
+				uni.navigateTo({
+					url:"/pages/myIntegral/myIntegral"
+				})
+				
 			}
 		}
 	}

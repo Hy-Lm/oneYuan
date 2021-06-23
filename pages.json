@@ -238,6 +238,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/subsidiary/subsidiary",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "积分明细",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myIntegral/myIntegral",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的积分",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
