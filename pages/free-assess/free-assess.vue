@@ -74,10 +74,20 @@
 			background: #ffffff;
 			border-radius: 5px;
 			box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.16);
-			padding: 24px 13px 32px 30px;
+			padding: 24px 13px 0 30px;
 			box-sizing: border-box;
+			.assess-list{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			
 				.assess-list-item:last-child{
-					justify-content: center;
+					// justify-content: center;
+					padding-top: 10px;
+					box-sizing: border-box;
+					align-items: flex-start;
 					opacity: 1;
 					font-size: 12px;
 					font-family: PingFang SC, PingFang SC-Regular;
@@ -86,9 +96,10 @@
 					border: none;
 				}
 			.assess-list-item {
-				
-				padding-bottom: 3px;
-				margin-bottom: 24px;
+				flex: 1;
+				align-items: center;
+				// padding-bottom: 3px;
+				// margin-bottom: 24px;
 				display: flex;
 				opacity: 1;
 				font-size: 14px;
@@ -97,7 +108,6 @@
 				text-align: left;
 				color: #000000;
 				border-bottom: 1px solid #EDEDED;
-
 				&>label {
 					width: 70px;
 					margin-right: 40px;
@@ -126,9 +136,6 @@
 					flex: 1;
 					font-size: 14px;
 				}
-			}
-			.assess-list-item:nth-child(4){
-				margin-bottom:15px ;
 			}
 		}
 	}

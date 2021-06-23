@@ -152,7 +152,6 @@
 		flex: 1;
 		opacity: 1;
 		background: #f9f7f7;
-		// position: relative;
 	}
 	.mySet {
 		padding: 11px;
@@ -164,6 +163,7 @@
 			.mySet-info-con {
 				width: 100%;
 				padding: 20px 25px;
+				padding-bottom: 5px;
 				box-sizing: border-box;
 				.mySet-info-con-list {
 					width: 100%;
