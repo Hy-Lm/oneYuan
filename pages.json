@@ -256,6 +256,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/MyMake/MyMake",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的预约",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
