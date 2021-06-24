@@ -20,7 +20,7 @@
 						<text>98</text>
 					</li>
 					<li>
-						<p>我的预约</p>
+						<p @click="MyMake">我的预约</p>
 						<text>2</text>
 					</li>
 					<li>
@@ -72,7 +72,13 @@
 					url:"/pages/myIntegral/myIntegral"
 				})
 				
+			},
+			MyMake(){
+				uni.navigateTo({
+					url:"/pages/MyMake/MyMake"
+				})
 			}
+			
 		}
 	}
 </script>
