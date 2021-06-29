@@ -69,7 +69,7 @@
 
 <style lang="scss">
 .box{
-	padding: 0 20px;
+	padding: 0 15px;
 }
 .parts_con{
 	width: 100%;
@@ -79,7 +79,7 @@
 	border-radius: 10px 10px 0px 0px;
 	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.16); 
 	.title{
-		padding: 16px 11px;
+		padding: 16px;
 		text:nth-child(1){
 			height: 25px;
 			line-height: 25px;
@@ -108,11 +108,12 @@
 		padding: 0;
 		li{
 			float: left;
-			padding: 0px 5px 0 10px;
+			padding: 0px 15px 0 15px;
 			width: 50%;
+			margin-bottom: 5px;
 			box-sizing: border-box;
 			image{
-				width: 146px;
+				width: 147px;
 				height: 164px;
 			}
 			p:nth-child(2){

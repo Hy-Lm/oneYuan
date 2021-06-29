@@ -263,7 +263,7 @@
 				padding-bottom:3px;
 				// margin-right: 21px;
 				margin-bottom: 18px;
-				width: 147px;
+				width: 162px;
 				height: 217px;
 				display: flex;
 				flex-direction: column;
@@ -272,7 +272,7 @@
 				&>view:nth-child(3) {
 					display: flex;
 					align-items: center;
-
+					padding:0 14px;
 					&>view:nth-child(2) {
 						height: 14px;
 						opacity: 1;
@@ -291,7 +291,6 @@
 				}
 
 				&>view:nth-child(2) {
-					padding: 3px;
 					box-sizing: border-box;
 					height: 40px;
 					opacity: 1;
@@ -299,6 +298,7 @@
 					color: #000000;
 					line-height: 20px;
 					margin: 5px 0;
+					padding: 0 14px;
 				}
 
 				&>view:nth-child(1) {
