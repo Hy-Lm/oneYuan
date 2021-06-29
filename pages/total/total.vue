@@ -82,18 +82,16 @@
 
 	.total {
 		background-color: #FFFFFF;
-		padding: 0 30px;
+		padding: 0 15px;
+		margin-top: 14px;
 		padding-top: 18px;
 		padding-bottom: 0;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		.total_items {
-			margin-right: 17px;
-			// padding: 0 4%;
 			box-sizing: border-box;
-			// width: 50%;
 			height: 250px;
 			display: flex;
 			flex-direction: column;

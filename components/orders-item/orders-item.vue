@@ -78,7 +78,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: flex-end;
-		padding: 6px 12px;
+		padding: 6px 15px;
 		border-bottom: 1px solid #EDEDED;
 		margin-bottom: 15px;
 		box-sizing: border-box;

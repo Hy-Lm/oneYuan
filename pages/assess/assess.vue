@@ -96,7 +96,7 @@
 			top: 40px;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 315px;
+			width: 345px;
 			height: 218px;
 			opacity: 1;
 			background: #ffffff;

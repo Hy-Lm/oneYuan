@@ -56,10 +56,11 @@ page {
 		border-radius: 20px;
 	}
 	.newAdd-info{
-		padding: 23px 11px 0 30px;
+		padding: 19px 15px 0 15px;
 		view{
 			display: flex;
 			margin-bottom: 14px;
+			border-bottom: 1px solid #E8E6E6;
 			label{
 				width: 50px;
 				margin-right:10px ;
@@ -69,7 +70,7 @@ page {
 				padding-bottom: 10px;
 				font-size: 14px;
 				flex: 1;
-				border-bottom: 1px solid #E8E6E6;
+				
 			}
 		}
 	}

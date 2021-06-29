@@ -68,12 +68,12 @@
 			top: 40px;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 315px;
+			width: 345px;
 			height: 233px;
 			opacity: 1;
 			background: #ffffff;
 			border-radius: 5px;
-			box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.16);
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
 			padding: 24px 13px 0 30px;
 			box-sizing: border-box;
 			.assess-list{

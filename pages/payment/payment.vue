@@ -141,14 +141,20 @@
 	}
 
 	.payment-item {
-		padding: 23px;
-		box-sizing: border-box;
+		margin: 17px;
+		margin-top: 9px;
 		height: 270px;
 		display: flex;
+		justify-content: center;
 		flex-direction: column;
 		align-items: flex-end;
-		width: 100%;
-
+		// width: 100%;
+		opacity: 0.66;
+		background: #ffffff;
+		border-radius: 4px;
+		box-sizing: border-box;
+		padding: 0 10px;
+		padding-top:10px;
 		&>view:nth-child(5) {
 			margin-top: 10px;
 			display: flex;
@@ -288,7 +294,7 @@
 	}
 
 	.payment-top {
-		padding: 44px 10px 14px 10px;
+		padding: 44px 15px 14px 15px;
 		box-sizing: border-box;
 		width: 100%;
 		height: 202px;

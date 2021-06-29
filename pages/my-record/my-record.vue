@@ -61,7 +61,7 @@
 
 <style lang="scss">
 	.myRecord{
-		padding: 16px 30px;
+		padding: 9px 15px;
 	}
 	.myRecord-top{
 		display: flex;
@@ -82,7 +82,7 @@
 			opacity: 1;
 			background: #f1f1f1;
 			border-radius: 10px;
-			padding: 5px 11px;
+			padding: 5px 25px;
 			box-sizing: border-box;
 			width: 100%;
 			height: 124px;

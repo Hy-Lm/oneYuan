@@ -171,7 +171,6 @@
 		opacity: 1;
 		background: #f9f7f7;
 	}
-
 	.btn {
 		text-align: center;
 		position: fixed;
@@ -188,7 +187,6 @@
 		color: #ffffff;
 		line-height: 37px;
 	}
-
 	.insurance {
 		margin-top: 7px;
 		display: flex;
@@ -197,21 +195,16 @@
 		opacity: 1;
 		background: #ffffff;
 		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
-		padding: 30px;
-		padding-top: 67px;
+		padding: 15px;
+		padding-top: 45px;
 		padding-bottom: 0;
 		box-sizing: border-box;
-
-		.assess-list-item:last-child {
-			margin-bottom: 0;
-			border: none;
-		}
-
 		.assess-list-item {
 			box-sizing: border-box;
 			padding-bottom: 3px;
-			margin-bottom: 24px;
+			height: 48px;
 			display: flex;
+			align-items: center;
 			opacity: 1;
 			font-size: 14px;
 			font-family: PingFang SC, PingFang SC-Regular;
@@ -219,7 +212,12 @@
 			text-align: left;
 			color: #000000;
 			border-bottom: 1px solid #EDEDED;
-
+			
+		.assess-list-item:last-child {
+			margin-bottom: 0;
+			border-bottom: 3px solid #707070;
+		}
+		
 			&>label {
 				width: 84px;
 				margin-right: 40px;
@@ -240,6 +238,7 @@
 			}
 
 			input {
+				height: 17px;
 				flex: 1;
 				font-size: 14px;
 			}

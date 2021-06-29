@@ -170,8 +170,8 @@
 					display: flex;
 					justify-content: space-between;
 					height: 37px;
-					// line-height: 37px;
-					padding-top: 13px;
+					line-height: 37px;
+					// padding-top: 13px;
 					padding-bottom: 4px;
 					box-sizing: border-box;
 					border-bottom: 1px solid #DCDCDC;

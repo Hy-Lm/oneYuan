@@ -93,7 +93,8 @@
 		flex: 1;
 		opacity: 1;
 		background: #f9f7f7;
-		padding: 19px 22px;
+		padding: 22px 15px;
+		padding-bottom: 0;
 		// position: relative;
 	}
 
@@ -122,7 +123,7 @@
 	}
 
 	.address {
-		padding: 0 21px;
+		padding: 0 28px;
 		padding-bottom: 14px;
 		background: #FFFFFF;
 
@@ -130,7 +131,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 14px 0;
+			padding: 15px 0;
 			border-bottom: 1px solid #EDEDED;
 
 			.address-items-item-l {

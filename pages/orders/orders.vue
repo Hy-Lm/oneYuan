@@ -253,7 +253,7 @@
 		.orders-good-items {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			justify-content: space-between;
 
 			.orders-good-item {
 				&:nth-child(even) {
@@ -261,7 +261,7 @@
 				}
 
 				padding-bottom:3px;
-				margin-right: 21px;
+				// margin-right: 21px;
 				margin-bottom: 18px;
 				width: 147px;
 				height: 217px;
@@ -298,6 +298,7 @@
 					font-size: 14px;
 					color: #000000;
 					line-height: 20px;
+					margin: 5px 0;
 				}
 
 				&>view:nth-child(1) {
@@ -325,7 +326,7 @@
 	.orders {
 		border-top: 1px solid #E8E6E6;
 		width: 100%;
-		padding: 7px 18px;
+		padding: 7px 15px;
 		padding-bottom: 0;
 		box-sizing: border-box;
 	}

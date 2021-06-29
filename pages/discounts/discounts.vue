@@ -209,7 +209,8 @@
 		}
 	}
 	.discounts{
-		padding: 22px;
+		padding: 15px;
+		padding-top: 22px;
 		padding-bottom: 0;
 		box-sizing: border-box;
 	}
