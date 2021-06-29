@@ -94,12 +94,12 @@ page {
 	background-color:#F9F7F7 ;
 }
 .serve_content{
-	padding: 0 20px;
+	padding: 0 15px;
 	box-sizing: border-box;
 	width: 100%;
 	.serve_con{
 		height: 285px;
-		padding: 13px 10px 19px 10px;
+		padding: 13px 16px;
 		background: #ffffff;
 		border-radius: 10px 10px 0px 0px;
 		box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.16); 

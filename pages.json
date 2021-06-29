@@ -265,6 +265,15 @@
             }
             
         }
+        ,{
+            "path" : "components/index/my-likecar/my-likecar",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的爱车",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

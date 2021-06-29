@@ -12,7 +12,9 @@
 			<view>
 				<text>车牌号</text>
 				<select name="" id="">
-					<option value="">津</option>
+					<option value="津">津</option>
+					<option value="京">京</option>
+					<option value="粤">粤</option>
 				</select>
 				<input type="text" value="" placeholder="请输入车牌号"/>
 			</view>
@@ -26,7 +28,7 @@
 				<input type="text" value="" placeholder="请输入上路时间"/>
 			</view>
 		</view>
-		<view class="footer" >
+		<view class="footer" @click="likecar">
 			完成
 		</view>
 	</view>
@@ -40,7 +42,14 @@
 			}
 		},
 		methods: {
-			
+			likecar(){
+				// 点击完成后 跳转到我的爱车
+				// 跳转到添加爱车页面
+				uni.navigateTo({
+					// 跳转到我的爱车
+					url:"../my-likecar/my-likecar"
+				})
+			}
 		}
 	}
 </script>
@@ -48,22 +57,33 @@
 <style lang="scss">
 page{
 	background-color: #F1F1F1;
+	// overflow: hidden;
 }
 .likecar{
-	padding: 45px 30px 0 30px;
+	
 	width: 100%;
 	height: 200px;
-	box-sizing: border-box;
 	.likecar_box{
-		width: 100%;
+		overflow: hidden;
+		box-sizing: border-box;
+		margin: 45px 15px 0 15px;
+		// width: 100%;
 		background-color: #FFFFFF;
-		padding:18px 0 18px 15px;
+		padding:19px 26px;
 		border-radius: 10px;
 		view{
+			&:nth-child(3){
+				text{
+					width: 100px;
+				}
+				select{
+					border: none;
+				}
+			}
 			padding: 7px 0;
 			text{
 				display: inline-block;
-				width: 100px;
+				width: 120px;
 				height: 20px;
 				line-height: 20px;
 				font-size: 14px;
@@ -90,14 +110,19 @@ page{
 		}
 	}
 	.footer{
-		margin-top: 80px;
-		height: 34px;
-		line-height: 34px;
-		color:#FFFFFF;
-		opacity: 1;
-		background: #F86259;
-		border-radius: 17px;
 		text-align: center;
+		position: fixed;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 315px;
+		height: 30px;
+		opacity: 1;
+		background: #f86259;
+		border-radius: 15px;
+		font-size: 16px;
+		color: #ffffff;
+		line-height: 29px;
 	}
 }
 </style>
