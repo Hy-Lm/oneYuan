@@ -14,7 +14,7 @@
 				<input type="text" id="address" value="" placeholder="请输入收货地址" />
 			</view>
 		</view>
-		<view class="newAdd-btn">
+		<view class="newAdd-btn" @click="newAddBtn">
 			保存并使用
 		</view>
 	</view>
@@ -28,7 +28,11 @@
 			}
 		},
 		methods: {
-			
+			newAddBtn(){
+				uni.redirectTo({
+					url:"/pages/new-address/new-address"
+				})
+			}
 		}
 	}
 </script>

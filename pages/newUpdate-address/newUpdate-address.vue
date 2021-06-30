@@ -36,10 +36,16 @@
 			// 删除地址
 			delAddress(){
 				console.log('删除地址')
+				uni.redirectTo({
+					url:"/pages/new-address/new-address"
+				})
 			},
 			// 修改地址
 			updatedz(){
 				console.log('保存地址')
+				uni.redirectTo({
+					url:"/pages/new-address/new-address"
+				})
 			}
 		},
 		onLoad(option) {//接收上个页面传递过来的参数
