@@ -45,7 +45,7 @@
 			likecar(){
 				// 点击完成后 跳转到我的爱车
 				// 跳转到添加爱车页面
-				uni.navigateTo({
+				uni.redirectTo({
 					// 跳转到我的爱车
 					url:"../my-likecar/my-likecar"
 				})

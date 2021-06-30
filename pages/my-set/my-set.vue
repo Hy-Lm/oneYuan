@@ -100,7 +100,7 @@
 				uni.navigateTo({
 					url:"/pages/new-address/new-address"
 				})
-			}
+			},
 		}
 	}
 </script>

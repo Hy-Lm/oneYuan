@@ -21,7 +21,7 @@
 						</view>
 						<view>益园养车 指定平台 指定渠道</view>
 					</view>
-					<view :class="item.active?'d-b-i-r':'d-b-i-r-active'">
+					<view @click="discount(index)" :class="item.active?'d-b-i-r':'d-b-i-r-active'">
 						<view >{{item.active?"去使用":"已过期"}}</view>
 					</view>
 				</view>
@@ -80,16 +80,25 @@
 			this.discounts()
 		},
 		methods: {
+			discount(index){
+				// console.log(this.discounts_bottoms[index].active)
+				if(this.discounts_bottoms[index].active==false){
+					console.log('已过期')
+				}else{
+					console.log('去使用',index)
+				}
+				
+			},
 			discountsTop(index){
 				this.idex=index
 				// 点击切换
 				if(index==0){
 					this.discounts_bottoms=this.discounts_bottom.filter((item,index)=>{
-						return item.active==true
+						return item.active===true
 					})	
 				}else{
 					this.discounts_bottoms=this.discounts_bottom.filter((item,index)=>{
-						return item.active==false
+						return item.active===false
 					})	
 				}
 				

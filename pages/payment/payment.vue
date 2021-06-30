@@ -72,7 +72,7 @@
 			<view>
 				￥<text>196.00</text>
 			</view>
-			<view>付款</view>
+			<view @click="paymentMony">付款</view>
 		</view>
 	</view>
 </template>
@@ -90,6 +90,9 @@
 				uni.navigateTo({
 					url:'/pages/newUpdate-address/newUpdate-address'
 				})
+			},
+			paymentMony(){
+				console.log("暂不付款")
 			},
 			back(){
 				// 返回上一级
