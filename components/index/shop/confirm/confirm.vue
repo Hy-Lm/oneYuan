@@ -14,9 +14,10 @@
 			<li>
 				<text>订单总价：</text>
 				<text>￥168</text>
+				<view class="xian"></view>
 			</li>
 			<li>
-				<text>订单总价：</text>
+				<text>手机号码：</text>
 				<text>191****3630</text>
 			</li>
 			<li>
@@ -49,7 +50,10 @@
 
 <style lang="scss">
 	page {
+		height: 100%;
 		background: #f1f1f1;
+		position: relative;
+		box-sizing: border-box;
 	}
 
 	.confirm_box {
@@ -57,20 +61,21 @@
 		ul {
 			padding: 0;
 			list-style: none;
-
 			li {
-				padding: 0 20px;
+				padding: 0 0 0 15px ;
 				background-color: #FFFFFF;
+				font-size: 14px;
 				line-height: 35px;
 				.xian {
 					width: 100%;
 					height: 1px;
 					background-color: #707070 ;
-					opacity: 0.58;
+					opacity: 0.3;
 				}
 
 				text:nth-child(2) {
 					float: right;
+					margin-right:15px;
 				}
 				.quxiao{
 					font-size: 14px;
@@ -83,13 +88,25 @@
 				}
 			}
 			li:nth-child(4) {
-				margin: 6px 0;
+				margin-bottom: 12px;
+			}
+			li:nth-child(5) {
+				height: 60px;
+				box-sizing: border-box;
+				padding: 8px 15px;
+				view{
+					line-height: 22px;
+				}
 			}
 		}
 	}
 	.footer{
+		// 
+		// margin-top: 30px;
+		position: absolute;
+		bottom: 0;
+		width: calc(100% - 64px);
 		margin: 0 32px;
-		margin-top: 30px;
 		height: 34px;
 		line-height: 34px;
 		color:#FFFFFF;

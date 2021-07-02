@@ -26,6 +26,26 @@
 /* 文章场景相关 */
 .shop-details-box {
   position: relative;
+  box-sizing: border-box;
+}
+.goback {
+  position: fixed;
+  left: 25px;
+  top: 50px;
+  z-index: 9999;
+}
+.goback image {
+  width: 9px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.goback text {
+  width: 32px;
+  height: 22px;
+  font-size: 16px;
+  color: #000000;
+  vertical-align: middle;
 }
 .shop-header .shopImg {
   width: 100%;
@@ -36,7 +56,7 @@
   height: 100%;
 }
 .shop-header .xiangqing {
-  padding: 0 30px;
+  padding: 0 15px;
 }
 .shop-header .xiangqing .title {
   width: 80%;
@@ -44,6 +64,9 @@
   font-size: 16px;
   color: #000000;
   padding: 10px 0 5px 0;
+}
+.shop-header .xiangqing .title text {
+  display: block;
 }
 .shop-header .xiangqing .collect {
   width: 20%;
@@ -53,11 +76,14 @@
   color: #7d7d7d;
 }
 .shop-header .xiangqing .price {
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   font-size: 16px;
   font-weight: bold;
   color: #cd2727;
+}
+.shop-header .xiangqing .price text {
+  font-size: 22px;
 }
 .shop-header .xiangqing .con {
   height: 20px;
@@ -66,12 +92,11 @@
 }
 .shop-header .xiangqing .con text:nth-child(2) {
   float: right;
-  padding-right: 20px;
 }
 .shop-header .delivery {
   height: 42px;
   margin: 10px 0 0 0;
-  padding-left: 30px;
+  padding-left: 15px;
   width: 100%;
   line-height: 42px;
   background: #ffffff;
@@ -83,8 +108,9 @@
   background: #f1f1f1;
 }
 .shop-xq .spxq {
-  padding: 20px 0 5px 30px;
-  height: 20px;
+  padding: 5px 0 5px 15px;
+  height: 30px;
+  line-height: 30px;
   font-size: 14px;
   color: #000000;
 }
@@ -97,7 +123,7 @@
   box-sizing: border-box;
   bottom: 0;
   background-color: #FFFFFF;
-  padding: 25px 30px 30px;
+  padding: 25px 15px 30px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -138,5 +164,124 @@
   border-radius: 0px 14px 14px 0px;
   background: #cd2727;
   color: #ffffff;
+}
+.pop-up {
+  display: none;
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  width: 100%;
+  height: 500px;
+  padding: 18px 15px 0 15px;
+  background: #f3f3f3;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.16);
+}
+.pop-up .chahao {
+  float: right;
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.pop-up .xiangqing image {
+  width: 95px;
+  height: 95px;
+  display: inline-block;
+  margin-right: 25px;
+}
+.pop-up .xiangqing .right {
+  display: inline-block;
+  text-align: center;
+}
+.pop-up .xiangqing .right view:nth-child(1) {
+  height: 28px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #CD2727;
+}
+.pop-up .xiangqing .right view:nth-child(1) text {
+  font-size: 20px;
+}
+.pop-up .xiangqing .right view:nth-child(2) {
+  height: 20px;
+  font-size: 14px;
+  color: #000000;
+}
+.pop-up .xiangqing .right view:nth-child(2) text:nth-child(1) {
+  color: #7D7D7D;
+  margin-right: 10px;
+}
+.pop-up .xiangqing .right view:nth-child(2) text:last-child {
+  margin-left: 10px;
+}
+.pop-up .shoptype {
+  padding: 35px 0;
+}
+.pop-up .shoptype view:nth-child(1) {
+  height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+.pop-up .shoptype view:nth-child(2) {
+  margin-top: 15px;
+}
+.pop-up .shoptype view:nth-child(2) text {
+  display: inline-block;
+  width: 33.33%;
+  text-align: center;
+  font-weight: 600;
+  height: 20px;
+  font-size: 14px;
+  color: #000000;
+}
+.pop-up .count {
+  box-sizing: border-box;
+}
+.pop-up .count text {
+  width: 28px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+.pop-up .count view {
+  float: right;
+  margin-right: 35px;
+  display: inline-block;
+}
+.pop-up .count view text {
+  display: inline-block;
+  text-align: center;
+  width: 15px;
+  height: 27px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #707070;
+  padding: 0 5px;
+  margin-left: 5px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+.pop-up .count view text:nth-child(odd) {
+  font-size: 20px;
+}
+.pop-up .confirm {
+  position: absolute;
+  bottom: 0;
+  margin: 0 30px;
+  width: calc(100% - 90px);
+  height: 37px;
+  background: #ea4427;
+  border-radius: 19px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 37px;
+  text-align: center;
 }
 

@@ -158,6 +158,8 @@ page {
 			height: 22px;
 			opacity: 1;
 			font-size: 16px;
+			font-weight: bold;
+			opacity: 0.8;
 			text-align: left;
 			color: #000000;
 		}

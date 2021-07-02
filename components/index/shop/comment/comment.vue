@@ -27,6 +27,7 @@
 					</view>
 				</view>
 			</view>
+			<hr>
 			<!-- 评论 -->
 			<view class="pinglun">
 				<view class="toux">
@@ -104,9 +105,16 @@
 					padding: 0 3px;
 				}
 			}
+			
 		}
 	}
-	
+	hr{
+		margin-top: 10px;
+		height: 1px;
+		opacity: 0.3;
+		background-color:#707070;
+		border: none;
+	}
 	// 评论
 	.pinglun{
 		.toux{

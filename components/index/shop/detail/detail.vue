@@ -94,7 +94,7 @@
 
 	.type {
 		width: 100%;
-		padding: 13px 30px;
+		padding: 10px 15px;
 		box-sizing: border-box;
 		overflow: hidden;
 		background-color: #FFFFFF;
@@ -105,7 +105,6 @@
 			width: 71px;
 			height: 71px;
 			margin-right: 10px;
-
 			image {
 				width: 100%;
 				height: 100%;
@@ -119,9 +118,10 @@
 			height: 71px;
 
 			view:nth-child(1) {
-				height: 22px;
+				height: 24px;
+				line-height: 22px;
 				opacity: 1;
-				font-size: 16px;
+				font-size: 18px;
 				text-align: left;
 				color: #000000;
 			}
@@ -130,7 +130,7 @@
 				padding: 5px 0 4px 0;
 				height: 17px;
 				opacity: 1;
-				font-size: 12px;
+				font-size: 14px;
 				text-align: left;
 				color: #000000;
 
@@ -142,7 +142,7 @@
 			view:nth-child(3) {
 				height: 17px;
 				opacity: 1;
-				font-size: 12px;
+				font-size: 14px;
 				text-align: left;
 				color: #000000;
 
@@ -154,7 +154,7 @@
 	}
 
 	.detail_xq {
-		padding: 0 30px;
+		padding: 0 15px;
 		background-color: #FFFFFF;
 		.detail_xq_h{
 			padding: 15px 0;
@@ -175,7 +175,7 @@
 				float:right;
 				height: 23px;
 				line-height: 23px;
-				font-size: 12px;
+				font-size: 14px;
 				color: #000000;
 			}
 		}
@@ -198,6 +198,7 @@
 	.footer{
 		margin: 0 32px;
 		margin-top: 30px;
+		font-size: 18px;
 		height: 34px;
 		line-height: 34px;
 		color:#FFFFFF;

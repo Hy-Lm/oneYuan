@@ -105,16 +105,16 @@ var components
 try {
   components = {
     navbar: function() {
-      return __webpack_require__.e(/*! import() | components/navbar/navbar */ "components/navbar/navbar").then(__webpack_require__.bind(null, /*! @/components/navbar/navbar.vue */ 231))
+      return __webpack_require__.e(/*! import() | components/navbar/navbar */ "components/navbar/navbar").then(__webpack_require__.bind(null, /*! @/components/navbar/navbar.vue */ 241))
     },
     serve: function() {
-      return __webpack_require__.e(/*! import() | components/serve/serve */ "components/serve/serve").then(__webpack_require__.bind(null, /*! @/components/serve/serve.vue */ 238))
+      return __webpack_require__.e(/*! import() | components/serve/serve */ "components/serve/serve").then(__webpack_require__.bind(null, /*! @/components/serve/serve.vue */ 248))
     },
     classify: function() {
-      return __webpack_require__.e(/*! import() | components/classify/classify */ "components/classify/classify").then(__webpack_require__.bind(null, /*! @/components/classify/classify.vue */ 245))
+      return __webpack_require__.e(/*! import() | components/classify/classify */ "components/classify/classify").then(__webpack_require__.bind(null, /*! @/components/classify/classify.vue */ 255))
     },
     parts: function() {
-      return __webpack_require__.e(/*! import() | components/parts/parts */ "components/parts/parts").then(__webpack_require__.bind(null, /*! @/components/parts/parts.vue */ 252))
+      return __webpack_require__.e(/*! import() | components/parts/parts */ "components/parts/parts").then(__webpack_require__.bind(null, /*! @/components/parts/parts.vue */ 262))
     }
   }
 } catch (e) {

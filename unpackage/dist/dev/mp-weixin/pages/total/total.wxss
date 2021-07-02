@@ -33,7 +33,8 @@ page {
 }
 .total {
   background-color: #FFFFFF;
-  padding: 0 30px;
+  padding: 0 15px;
+  margin-top: 14px;
   padding-top: 18px;
   padding-bottom: 0;
   display: -webkit-box;
@@ -41,15 +42,14 @@ page {
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
 }
 .total .total_items {
-  margin-right: 17px;
   box-sizing: border-box;
   height: 250px;
   display: -webkit-box;

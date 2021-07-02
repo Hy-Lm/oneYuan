@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 .content {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .content .box {
   width: 100%;
@@ -35,7 +35,7 @@
   margin-bottom: 20px;
 }
 .content .box ._ul {
-  padding: 0 15px;
+  padding: 0 20px;
   list-style: none;
 }
 .content .box ._ul ._li {
@@ -51,5 +51,28 @@
   vertical-align: middle;
   font-size: 16px;
   color: #000000;
+}
+.content .box ._ul ._li view {
+  float: right;
+  right: 0;
+}
+.content .box ._ul ._li view text {
+  height: 17px;
+  font-size: 12px;
+  color: #707070;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.content .box ._ul ._li view image {
+  width: 6px;
+  height: 11px;
+  margin: 0;
+  vertical-align: middle;
+}
+.content .box ._ul ._li .arrows {
+  float: right;
+  width: 6px;
+  height: 11px;
+  margin: 0;
 }
 

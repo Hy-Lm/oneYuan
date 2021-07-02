@@ -4,17 +4,14 @@
 		<view class="parts_con">
 			<!-- 标题 -->
 		 	<view class="title">
-		 		<text>配件上新</text>
-				<view>更多
-					<image src="../../static/arrows.png" mode="aspectFit"></image>
-				</view>
+				<text>发现好货</text>
 		 	</view>
 			<!-- 内容 -->
 			<ul>
 				<li @click="shoplist()">
 					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
 					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text></p>
+					<p>￥<text>210</text> <text>￥299</text></p>
 					<p>益园养车北辰区店 
 						<text>进店 ></text>
 					</p>
@@ -22,7 +19,7 @@
 				<li>
 					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
 					<p>奥迪-A6L-5L-后视镜</p>
-					<p>￥<text>210</text></p>
+					<p>￥<text>210</text> <text>￥299</text></p>
 					<p>益园养车北辰区店 
 						<text>进店 ></text>
 					</p>
@@ -30,7 +27,7 @@
 				<li>
 					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
 					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text></p>
+					<p>￥<text>210</text> <text>￥299</text></p>
 					<p>益园养车北辰区店 
 						<text>进店 ></text>
 					</p>
@@ -38,7 +35,7 @@
 				<li>
 					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
 					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text></p>
+					<p>￥<text>210</text> <text>￥299</text></p>
 					<p>益园养车北辰区店 
 						<text>进店 ></text>
 					</p>
@@ -76,30 +73,35 @@
 	height: 587px;
 	opacity: 1;
 	background: #f9f7f7;
-	border-radius: 10px 10px 0px 0px;
-	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.16); 
 	.title{
 		padding: 16px;
-		text:nth-child(1){
+		text{
+			display: block;
+			text-align: center;
 			height: 25px;
-			line-height: 25px;
+			opacity: 1;
 			font-size: 18px;
-			color: #000000;
+			color: #f0923c;
 			font-weight: bold;
-		}
-		view:nth-child(2){
-			float:right;
-			margin-top:4px;
-			height: 17px;
-			font-size: 12px;
-			color: #000000;
-			vertical-align: middle;
-			image{
-				width: 5px;
-				height: 10px;
-				vertical-align: middle;
-				margin-top: -2px;
-				margin-left: 5px;
+			line-height: 25px;
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				left: calc(100% / 2 - 120px);
+				top:12px;
+				width: 65px;
+				height: 1px;
+				background-color: #f0923c;
+			}
+			&::before{
+				content: '';
+				position: absolute;
+				right: calc(100% / 2 - 120px);
+				top:12px;
+				width: 65px;
+				height: 1px;
+				background-color: #f0923c;
 			}
 		}
 	}
@@ -108,13 +110,17 @@
 		padding: 0;
 		li{
 			float: left;
-			padding: 0px 15px 0 15px;
+			
 			width: 50%;
 			margin-bottom: 5px;
 			box-sizing: border-box;
 			image{
-				width: 147px;
-				height: 164px;
+				// width: 168px;
+				width: 100%;
+				height: 194px;
+			}
+			p{
+				padding:0 10px;
 			}
 			p:nth-child(2){
 				height: 40px;
@@ -127,7 +133,18 @@
 				font-size: 14px;
 				color: #ff0e00;
 				line-height: 19px;
-				font-weight: bold;
+				text:nth-child(1){
+					font-size: 18px;
+					font-weight: bold;
+				}
+				text:nth-child(2){
+					height: 20px;
+					font-size: 12px;
+					color: #666666;
+					line-height: 20px;
+					margin-left: 10px;
+					text-decoration: line-through;
+				}
 			}
 			p:nth-child(4){
 				height: 17px;

@@ -45,14 +45,20 @@
 <style lang="scss">
 .classify{
 	overflow: hidden;
+	margin: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.16); 
     ul{
-        padding: 30px 0;
+        padding: 15px 0;
 		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
         li{
+			// flex: 1;
             text-align: center;
-            float: left;
-            width: 33%;
             margin-bottom: 20px;
+			width: 33.33%;
             image{
                 width: 40px;
 				height:40px;

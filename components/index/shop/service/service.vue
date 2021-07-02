@@ -37,7 +37,7 @@
 					<text>清单</text>
 				</view>
 				<view>
-					￥168.00
+					￥<text>168</text>.00
 				</view>
 				<view @click="order">
 					立即预约
@@ -190,14 +190,15 @@
 		view:nth-child(3){
 			position: absolute;
 			right:0;
-			top:10px;
+			top:0px;
 			width: 90px;
+			font-size: 18px;
 			height: 25px;
 			line-height: 25px;
-			font-size: 18px;
-			opacity: 1;
+			color: #FFFFFF;
 			background: #f0923c;
-			border-radius: 13px;
+			border-radius: 25px;
+			padding: 10px 20px;
 		}
 		view:nth-child(2){
 			width: 100%;
@@ -207,6 +208,9 @@
 			text-align: center;
 			font-size: 16px;
 			color: #cd2727;
+			text{
+				font-size: 22px;
+			}
 		}
 	}
 }

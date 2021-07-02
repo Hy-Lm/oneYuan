@@ -212,16 +212,19 @@ page{
 			padding:2px 30px;
 			height: 29px;
 			line-height: 29px;
+			opacity: 0.39;
 			background: #fff0c9;
 			image{
 				width: 18px;
 				height: 17px;
+				opacity: 1;
 				vertical-align: middle;
 			}
 			text{
 				margin-left: 18px;
 				font-size: 10px;
-				color: #7d7d7d;
+				// color: #7d7d7d;
+				opacity: 1;
 				vertical-align: middle;
 				line-height: 19px;
 			}

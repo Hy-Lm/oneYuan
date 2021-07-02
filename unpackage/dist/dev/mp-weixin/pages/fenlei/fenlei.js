@@ -28,16 +28,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fenlei_vue_vue_type_template_id_02bdc6a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fenlei.vue?vue&type=template&id=02bdc6a6& */ 23);
 /* harmony import */ var _fenlei_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fenlei.vue?vue&type=script&lang=js& */ 25);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _fenlei_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _fenlei_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 14);
+/* harmony import */ var _fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fenlei.vue?vue&type=style&index=0&lang=scss& */ 27);
+/* harmony import */ var _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 14);
 
 var renderjs
 
 
 
 
+
 /* normalize component */
 
-var component = Object(_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _fenlei_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _fenlei_vue_vue_type_template_id_02bdc6a6___WEBPACK_IMPORTED_MODULE_0__["render"],
   _fenlei_vue_vue_type_template_id_02bdc6a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -93,11 +95,8 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    flNav: function() {
-      return __webpack_require__.e(/*! import() | components/fl-nav/fl-nav */ "components/fl-nav/fl-nav").then(__webpack_require__.bind(null, /*! @/components/fl-nav/fl-nav.vue */ 259))
-    },
-    flList: function() {
-      return __webpack_require__.e(/*! import() | components/fl-list/fl-list */ "components/fl-list/fl-list").then(__webpack_require__.bind(null, /*! @/components/fl-list/fl-list.vue */ 266))
+    carList: function() {
+      return __webpack_require__.e(/*! import() | components/car-list/car-list */ "components/car-list/car-list").then(__webpack_require__.bind(null, /*! @/components/car-list/car-list.vue */ 269))
     }
   }
 } catch (e) {
@@ -121,6 +120,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.__map(_vm.fl_list_nav, function(item, index) {
+    var $orig = _vm.__get_orig(item)
+
+    var s0 = _vm.__get_style([
+      index === _vm.ind ? _vm.styleobj1 : _vm.styleobj2
+    ])
+
+    return {
+      $orig: $orig,
+      s0: s0
+    }
+  })
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -161,14 +181,335 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      indicatorDots: false,
+      interval: 2000,
+      duration: 500,
+      styleobj1: {
+        'color': '#396A3A',
+        'background-color': '#FFFFFF' },
+
+      styleobj2: {
+        'color': '#000000',
+        'border-bottom': ' #f1f1f1' },
+
+      ind: 0, // 定义点击后选项卡对应的index
+      // 导航栏
+      fl_list_nav: ['汽车美容', '汽车保养', '轮胎更换', '钣金喷漆', '汽车维修', '品牌音响', '清洗养护', '精品内饰', '常用配件', '车载电器'],
+      fl_list_items: [{
+        title1: '汽车美容',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+
+
+      {
+        title1: '汽车保养',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '轮胎更换',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '钣金喷漆',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '汽车维修',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '品牌音响',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '清洗养护',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '精品内饰',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '常用配件',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] },
+
+
+
+      {
+        title1: '车载电器',
+        title1_item: [{
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' },
+
+        {
+          img: '../../static/meirong1.png',
+          name: '靓丽洗车' }] }] };
+
+
+
+
 
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    flList: function flList(index) {
+      this.ind = index;
+    },
+    change: function change(current) {
+      // console.log('当前swiper的值为',current)
+      this.ind = current;
+    } } };exports.default = _default;
+
+/***/ }),
+
+/***/ 27:
+/*!***************************************************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=style&index=0&lang=scss& ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./fenlei.vue?vue&type=style&index=0&lang=scss& */ 28);
+/* harmony import */ var _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_E_HBuilderX_3_1_4_20210305_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_fenlei_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ 28:
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/Lenovo/Desktop/a/oneYuan/pages/fenlei/fenlei.vue?vue&type=style&index=0&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+    if(false) { var cssReload; }
+  
 
 /***/ })
 

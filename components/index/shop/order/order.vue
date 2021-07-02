@@ -33,12 +33,12 @@
 				<li class="book_time active" @click="confirm()">
 					<text class="time">13.00-14.30</text>
 					<text class="price">￥169</text>
-					<text class="state">订满</text>
+					<text class="state">预订</text>
 				</li>
 				<li class="book_time active" @click="confirm()">
 					<text class="time">14.30-16.00</text>
 					<text class="price">￥169</text>
-					<text class="state">订满</text>
+					<text class="state">预订</text>
 				</li>
 			</ul>
 		</view>
@@ -74,7 +74,7 @@
 	background-color: red;
 }
 .order{
-	padding: 0 30px;
+	padding: 0 15px;
 	 overflow: hidden;
 	.type{
 		width: 100%;
@@ -161,6 +161,7 @@
 				text-align: center;
 				width: 43px;
 				height: 26px;
+				padding: 2px 10px;
 				line-height: 26px;
 				color: #FFFFFF;
 				background: #7d7d7d;

@@ -37,7 +37,7 @@
   border-radius: 10px;
 }
 .details {
-  padding: 0 15px;
+  padding: 14px 0;
 }
 .details .api {
   width: 100%;
@@ -74,5 +74,12 @@
   float: right;
   width: 11px;
   height: 14px;
+}
+.details ._hr {
+  margin-top: 15px;
+  height: 1px;
+  border: none;
+  background-color: #707070;
+  opacity: 0.5;
 }
 

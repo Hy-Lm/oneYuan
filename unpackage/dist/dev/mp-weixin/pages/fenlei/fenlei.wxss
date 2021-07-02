@@ -25,17 +25,34 @@
 /* 透明度 */
 /* 文章场景相关 */
 page {
-  margin: 0;
-  padding: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.fenlei {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .box {
-  padding: 12px 30px;
+  padding: 12px 15px;
   height: 280px;
+  box-sizing: border-box;
 }
 .box .fl_conter {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 .box .fl_conter .left {
   -webkit-box-flex: 4;
@@ -45,18 +62,18 @@ page {
 }
 .box .fl_conter .left input {
   width: auto;
-  height: 25px;
+  height: 34px;
   opacity: 1;
   background: #f1f1f1;
-  border-radius: 13px;
+  border-radius: 16px;
   padding-left: 43px;
 }
 .box .fl_conter .left image {
   position: absolute;
   left: 19px;
-  top: 8px;
-  width: 10px;
-  height: 10px;
+  top: 12px;
+  width: 11px;
+  height: 11px;
 }
 .box .fl_conter .right {
   -webkit-box-flex: 1;
@@ -72,7 +89,7 @@ page {
   vertical-align: middle;
 }
 .box .bg {
-  margin: 25px 0 5px 0;
+  margin: 16px 0 5px 0;
   width: 100%;
   height: 100px;
   opacity: 1;
@@ -103,6 +120,7 @@ page {
   width: 15px;
   height: 15px;
   margin: 0 10px;
+  vertical-align: middle;
 }
 .box .special ._ul {
   list-style: none;
@@ -116,5 +134,62 @@ page {
 .box .special ._ul ._li image {
   width: 65px;
   height: 65px;
+}
+.box2 {
+  margin-top: 8px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.box2 .left {
+  width: 100px;
+  height: 100%;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}
+.box2 .left ._ul {
+  list-style: none;
+  padding: 0;
+}
+.box2 .left ._ul ._li {
+  padding-left: 30px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 35px;
+  font-size: 12px;
+  text-align: left;
+  line-height: 35px;
+  position: relative;
+}
+.box2 .left ._ul ._li .s1 {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  width: 2px;
+  height: 14px;
+  background-color: #396A3A;
+}
+.box2 .right {
+  width: 100%;
+  padding: 0 31px;
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 350px;
+  overflow-y: auto;
+}
+.box2 .right .list {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 

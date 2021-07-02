@@ -98,6 +98,7 @@ page {
 .item .item_box .con view text:nth-child(1) {
   color: #cd2727;
   font-weight: bold;
+  margin-right: 18px;
 }
 .item .item_box .con view:nth-child(1) {
   margin-bottom: 20px;
