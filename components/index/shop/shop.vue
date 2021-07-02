@@ -18,11 +18,13 @@
 					<text>天津市北辰区北辰公园南100米</text>
 					<text>2.1km</text>
 				</view>
+				<hr>
 				<view class="phone">
 					<text>联系电话：19103893630</text>
 					<image src="../../../static/组443.png" mode=""></image>
 				</view>
 			</view>
+			
 		</view>
 		<!-- 导航 -->
 		<tab></tab>
@@ -64,7 +66,7 @@
 	}
 }
 .details{
-	padding: 0 15px;
+	padding:14px 0;
 	.api{
 		width: 100%;
 		height: 43px;
@@ -100,6 +102,13 @@
 			width: 11px;
 			height: 14px;
 		}
+	}
+	hr{
+		margin-top: 15px;
+		height: 1px;
+		border: none;
+		background-color: #707070;
+		opacity: 0.5;
 	}
 }
 </style>

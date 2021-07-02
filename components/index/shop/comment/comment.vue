@@ -75,7 +75,7 @@
 	height: 376px;
 	background: #ffffff;
 	border-radius: 10px 10px 0px 0px;
-	box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.23); 
+	box-shadow: 2px 1px 6px 0px rgba(0,0,0,0.23); 
 	.comment_header{
 		padding: 20px 15px;
 		image{

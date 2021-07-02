@@ -75,7 +75,7 @@
 }
 .service{
 	width: 100%;
-	padding: 0 25px;
+	padding: 0 15px;
 	box-sizing: border-box;
 	.shopname{
 		height: 20px;
@@ -145,7 +145,7 @@
 			position: absolute;
 			left: calc(100%/2 - 80px );
 			top: 20px;
-			opacity: 1;
+			opacity: 0.5;
 			background-color: #000000;
 		}
 		&::before{
@@ -155,7 +155,7 @@
 			position: absolute;
 			right: calc(100%/2 - 80px );
 			top: 20px;
-			opacity: 1;
+			opacity: 0.5;
 			background-color: #000000;
 		}
 	}
@@ -194,6 +194,7 @@
 			width: 90px;
 			height: 25px;
 			line-height: 25px;
+			font-size: 18px;
 			opacity: 1;
 			background: #f0923c;
 			border-radius: 13px;
@@ -204,7 +205,7 @@
 			padding: 0 90px  0 25px;
 			line-height: 44px;
 			text-align: center;
-			font-size: 14px;
+			font-size: 16px;
 			color: #cd2727;
 		}
 	}

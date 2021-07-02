@@ -95,12 +95,12 @@ page{
 	.my_nav {
 		width: 100%;
 		height: 135px;
-		background-color: #0D8600;
+		background-color: #396A3A;
 		box-sizing: border-box;
 
 		// 头部
 		.header {
-			padding: 0 30px;
+			padding: 0 15px;
 			width: 100%;
 			height: 60px;
 			font-size: 14px;
@@ -178,7 +178,7 @@ page{
 		}
 		// 我的车辆
 		.mycar{
-			padding: 20px;
+			padding: 15px;
 			.my_box{
 				height: 94px;
 				padding:28px 40px 25px 15px;
@@ -197,8 +197,8 @@ page{
 				.car{
 					float: left;
 					font-size: 12px;
-					padding-top: 5px;
 					.type{
+						line-height: 22px;
 						image{
 							width: 19px;
 							height: 19px;
@@ -208,6 +208,9 @@ page{
 						text{
 							vertical-align: middle;
 						}
+					}
+					text{
+						line-height: 22px;
 					}
 				}
 				.img{

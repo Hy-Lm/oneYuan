@@ -1,0 +1,127 @@
+
+.Maynav {
+	width: 100vw;
+	height: 50px;
+	background: #fff;
+	position: fixed;
+	top: 44px;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border: 2px solid #eee;
+	border-right: none;
+	border-left: none;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.MaynavBox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	width: 50%;
+	height: 100%;
+	border-left: 1px solid #eee;
+	text-align: center;
+}
+.MaynavBox:first-child {
+	border: none;
+	margin-left: -1px;
+}
+.xialai {
+	width: 8px;
+	height: 4px;
+	margin-left: 10px;
+}
+image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.SpinnerBox {
+	width: 50%;
+	height: 300px;
+	background: #fff;
+	position: fixed;
+	left: 0;
+	top: 98px;
+	z-index: 100;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+.SpinnerBoxText {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+}
+.mapDetails {
+	position: fixed;
+	width: 300px;
+	height: 114px;
+	background: #fff;
+	bottom: 36px;
+	left: 50%;
+	margin-left: -150px;
+	z-index: 100;
+	border-radius: 15px;
+}
+.mapDetailsTop {
+	width: calc(100% - 32px);
+	height: 48px;
+	margin: 11px auto 19px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.mapDetailsTopImg {
+	width: 48px;
+	height: 48px;
+	margin-right: 14px;
+}
+.mapDetailsTopText {
+	width: calc(100% - 62px);
+	font-size: 12px;
+	font-family: PingFang SC, PingFang SC-Regular;
+}
+.box {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.box view {
+	-webkit-transform: scale(0.8, 0.8);
+	        transform: scale(0.8, 0.8);
+}
+.mapDetailsBtn {
+	width: calc(100% - 32px);
+	height: 24px;
+	background: #f1f1f1;
+	margin: 0 auto;
+	border-radius: 12px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 14px;
+}
+

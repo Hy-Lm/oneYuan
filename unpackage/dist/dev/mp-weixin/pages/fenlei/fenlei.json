@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "分类",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "fl-nav": "/components/fl-nav/fl-nav",
+    "fl-list": "/components/fl-list/fl-list"
+  }
+}

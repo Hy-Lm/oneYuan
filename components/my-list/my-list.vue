@@ -5,22 +5,33 @@
 				<li @click="MyRecord">
 					<image src="../../static/维修记录.png" ></image>
 					<text>维修记录</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 				<li @click="MyDiscounts ">
 					<image src="../../static/优惠券.png" ></image>
 					<text>我的优惠券</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 				<li>
 					<image src="../../static/页面-1.png" ></image>
-					<text>联系客户</text>
+					<text>联系客服</text>
+					<view>
+						<text>人工客服：8:00-20:00</text>
+						<image src="../../static/arrows.png" mode=""></image>
+					</view>
 				</li>
 				<li @click="myTotal">
 					<image src="../../static/积分.png" ></image>
 					<text>积分商城</text>
+					<view>
+						<text>积分兑好礼</text>
+						<image src="../../static/arrows.png" mode=""></image>
+					</view>
 				</li>
 				<li @click="mySet">
 					<image src="../../static/设置.png" ></image>
 					<text>设置</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 			</ul>
 		</view>
@@ -30,18 +41,22 @@
 				<li @click="myOrders">
 					<image src="../../static/订单.png"></image>
 					<text>我的订单</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 				<li>
 					<image src="../../static/应急救援.png" ></image>
 					<text>道德救援</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 				<li @click="myAssess">
 					<image src="../../static/爱车估价.png" ></image>
 					<text>爱车评估</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 				<li @click="myInsurance">
 					<image src="../../static/车险.png" ></image>
 					<text>车险</text>
+					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
 			</ul>
 		</view>
@@ -106,7 +121,7 @@
 
 <style lang="scss">
 .content{
-	padding: 0 20px;
+	padding: 0 15px;
 	.box{
 		width: 100%;
 		overflow: hidden;
@@ -114,7 +129,7 @@
 		background-color: #FFFFFF;
 		margin-bottom: 20px;
 		ul{
-			padding: 0 15px;
+			padding: 0 20px;
 			list-style: none;
 			li{
 				padding: 10px 0;
@@ -128,6 +143,30 @@
 					vertical-align: middle;
 					font-size: 16px;
 					color: #000000;
+				}
+				view{
+					float: right;
+					right:0;
+					
+					text{
+						height: 17px;
+						font-size: 12px;
+						color: #707070;
+						vertical-align: middle;
+						margin-right: 10px;
+					}
+					image{
+						width: 6px;
+						height: 11px;
+						margin: 0;
+						vertical-align: middle;
+					}
+				}
+				.arrows{
+					float: right;
+					width: 6px;
+					height: 11px;
+					margin: 0;
 				}
 			}
 		}
