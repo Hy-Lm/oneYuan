@@ -33,7 +33,7 @@
 			</view>
 			<view class="footer_right">
 				<text @click="popup()">加入购物车</text>
-				<text>立即购买</text>
+				<text @click="confirm_order()">立即购买</text>
 			</view>
 		</view>
 		<view class="pop-up" ref="popup">
@@ -85,6 +85,11 @@
 			goback(){
 				uni.navigateBack({
 					url:"/pages/index/index"
+				})
+			},
+			confirm_order(){
+				uni.navigateTo({
+					url:"/components/index/confirm-order/confirm-order"
 				})
 			},
 			popup(){

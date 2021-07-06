@@ -277,6 +277,16 @@
             }
             
         }
+        ,{
+            "path" : "components/index/confirm-order/confirm-order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "确定订单",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ACCB69"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
