@@ -19,11 +19,11 @@
 						<p>我的积分</p>
 						<text>98</text>
 					</li>
-					<li>
-						<p @click="MyMake">我的预约</p>
+					<li @click="MyMake">
+						<p>我的预约</p>
 						<text>2</text>
 					</li>
-					<li>
+					<li @click="MyDiscounts">
 						<p>优惠券</p>
 						<text>2</text>
 					</li>
@@ -73,9 +73,16 @@
 				})
 				
 			},
+			// 预约记录
 			MyMake(){
 				uni.navigateTo({
 					url:"/pages/MyMake/MyMake"
+				})
+			},
+			// 我的优惠卷
+			MyDiscounts(){
+				uni.navigateTo({
+					url:"/pages/discounts/discounts"
 				})
 			}
 			

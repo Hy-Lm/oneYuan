@@ -287,6 +287,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/rescue/rescue",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "道路救援",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
