@@ -2,6 +2,7 @@
 	<view class="insurance">
 		<!-- 车险-->
 		<view class="assess-list">
+			
 			<view class="assess-list-item">
 				<label for="name">车牌号</label>
 				<view>
@@ -37,8 +38,9 @@
 		<view class="btn" v-if="!mask" @click="insuranceBtn">
 			立即提交
 		</view>
+		
 		<!-- 阴影 -->
-		<view class="mask" v-if="mask">
+		<view class="mask" @click="msks" v-if="mask">
 
 		</view>
 		<!-- 提交成功 -->
@@ -77,6 +79,10 @@
 			},
 			cuo(){
 				// 隐藏遮罩层
+				this.mask=false
+			},
+			// 点击空白隐藏
+			msks(){
 				this.mask=false
 			}
 		}

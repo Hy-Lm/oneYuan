@@ -19,8 +19,8 @@
 					<text>2.1km</text>
 				</view>
 				<hr>
-				<view class="phone">
-					<text>联系电话：19103893630</text>
+				<view class="phone" @click="tel">
+					<text>联系电话：15735629946</text>
 					<image src="../../../static/组443.png" mode=""></image>
 				</view>
 			</view>
@@ -30,6 +30,8 @@
 		<tab></tab>
 		<!-- 评论 -->
 		<comment></comment>
+		<!-- 电话 -->
+		<tel :num="num" @changeTel="changeTel($event)" :mask="mask"></tel>
 	</view>
 </template>
 
@@ -39,11 +41,19 @@
 	export default {
 		data() {
 			return {
-				
+				mask:false,
+				num:'15735629946'
 			}
 		},
 		methods: {
-			
+			tel(){
+				this.mask=true
+			},
+			// 子组件tel的传值
+			changeTel(e){
+				// console.log(e)
+				this.mask=e
+			}
 		},
 		components:{
 			tab,

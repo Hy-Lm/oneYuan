@@ -43,7 +43,7 @@
 					<text>我的订单</text>
 					<image class="arrows" src="../../static/arrows.png" mode=""></image>
 				</li>
-				<li>
+				<li @click="MyRescue">
 					<image src="../../static/应急救援.png" ></image>
 					<text>道德救援</text>
 					<image class="arrows" src="../../static/arrows.png" mode=""></image>
@@ -113,6 +113,12 @@
 				// 我的订单
 				uni.navigateTo({
 				    url: '/pages/orders/orders'
+				});
+			},
+			MyRescue(){
+				// 道路救援
+				uni.navigateTo({
+				    url: '/pages/rescue/rescue'
 				});
 			}
 		}

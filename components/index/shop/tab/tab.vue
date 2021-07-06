@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="tab">
-			<!-- <view class="tab_list" @click="fun">
+		<!-- 	<view class="tab_list" @click="fun">
 				<ul>
 					<li class="current">洗车</li>
 					<li>轮胎</li>
