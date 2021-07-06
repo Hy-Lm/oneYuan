@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="tab">
-			<!-- <view class="tab_list" @click="fun">
+			<view class="tab_list" @click="fun">
 				<ul>
 					<li class="current">洗车</li>
 					<li>轮胎</li>
@@ -9,7 +9,7 @@
 					<li>维修</li>
 					<li>钣金喷漆</li>
 				</ul>
-			</view> -->
+			</view>
 			<view class="tab_con">
 				<view class="item" style="display: block;">
 					<view class="item_box" @click="service()">

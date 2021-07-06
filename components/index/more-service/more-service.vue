@@ -134,7 +134,7 @@
 
 		// 搜索
 		.header {
-			padding: 20px 30px;
+			padding: 20px 15px;
 			width: 100%;
 			height: 60px;
 			font-size: 14px;
@@ -183,7 +183,7 @@
 
 		// 复选框
 		.sel {
-			padding-left: 30px;
+			padding-left: 15px;
 			margin-top: -50px;
 
 			image {
@@ -204,7 +204,7 @@
 		.banner {
 			width: 100%;
 			height: 162px;
-			padding: 20px;
+			padding: 20px 15px;
 			box-sizing: border-box;
 
 			image {
@@ -215,7 +215,7 @@
 
 		// 全部
 		.order {
-			padding: 0 30px 10px 30px;
+			padding: 0 15px 10px 15px;
 			box-sizing: border-box;
 
 			.order_header {
