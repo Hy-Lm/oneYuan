@@ -37,7 +37,7 @@
 				nowDay: 0,
 				selectTime: 0, //默认是第几个
 				selectDay: 0,
-				scrollTop:500
+				scrollTop:1000
 			};
 		},
 		mounted() {

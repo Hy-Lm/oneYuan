@@ -263,7 +263,7 @@
 				padding-bottom:3px;
 				// margin-right: 21px;
 				margin-bottom: 18px;
-				width: 162px;
+				width: 48%;
 				height: 217px;
 				display: flex;
 				flex-direction: column;

@@ -91,6 +91,7 @@
 		justify-content: space-between;
 		align-items: center;
 		.total_items {
+			width: 48%;
 			box-sizing: border-box;
 			height: 250px;
 			display: flex;
@@ -104,12 +105,13 @@
 
 			.total_items-btn {
 				text-align: center;
-				width: 147px;
-				height: 17px;
-				line-height: 17px;
+				// width: 147px;
+				width: 100%;
+				height: 22px;
+				line-height: 22px;
 				opacity: 1;
 				background: #f0923c;
-				border-radius: 9px;
+				border-radius: 14px;
 				font-size: 12px;
 				color: #ffffff;
 			}
@@ -124,7 +126,7 @@
 			}
 
 			.total_items-title {
-				width: 144px;
+				// width: 144px;
 				opacity: 1;
 				font-size: 12px;
 				font-family: PingFang SC, PingFang SC-Regular;
@@ -136,7 +138,8 @@
 			}
 
 			.total_items-img {
-				width: 147px;
+				// width: 147px;
+				width: 100%;
 				height: 168px;
 
 				image {
