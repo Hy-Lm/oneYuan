@@ -27,7 +27,7 @@
 						<p>优惠券</p>
 						<text>2</text>
 					</li>
-					<li>
+					<li @click="Myshopping">
 						<p>购物车</p>
 						<text>2</text>
 					</li>
@@ -84,8 +84,12 @@
 				uni.navigateTo({
 					url:"/pages/discounts/discounts"
 				})
+			},
+			Myshopping(){
+				 uni.navigateTo({
+				 	url:"/pages/shopping/shopping"
+				 })
 			}
-			
 		}
 	}
 </script>
