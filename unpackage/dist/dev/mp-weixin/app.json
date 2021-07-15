@@ -1,73 +1,73 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/fenlei/fenlei",
-        "pages/my/my",
-        "components/index/shop/shop",
-        "components/particulars/particulars",
-        "components/myMap/myMap",
-        "components/index/shop/service/service",
-        "components/index/shop/order/order",
-        "components/index/shop/confirm/confirm",
-        "components/index/shop/detail/detail",
-        "components/index/shop-details/shop-details",
-        "components/index/more-service/more-service",
-        "components/index/likecar/likecar",
-        "pages/my-set/my-set",
-        "pages/new-address/new-address",
-        "pages/newAdd-address/newAdd-address",
-        "pages/newUpdate-address/newUpdate-address",
-        "pages/my-record/my-record",
-        "pages/discounts/discounts",
-        "pages/total/total",
-        "pages/orders/orders",
-        "pages/assess/assess",
-        "pages/free-assess/free-assess",
-        "pages/car-insurance/car-insurance",
-        "pages/payment/payment",
-        "pages/subsidiary/subsidiary",
-        "pages/myIntegral/myIntegral",
-        "pages/MyMake/MyMake",
-        "components/index/my-likecar/my-likecar",
-        "components/index/confirm-order/confirm-order",
-        "pages/rescue/rescue"
-    ],
-    "subPackages": [],
-    "window": {
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "uni-app",
-        "navigationBarBackgroundColor": "#FFFFFF",
-        "backgroundColor": "#F8F8F8"
-    },
-    "tabBar": {
-        "color": "#666",
-        "selectedColor": "#000000",
-        "backgroundColor": "#fff",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "iconPath": "static/shouye01.png",
-                "selectedIconPath": "static/shouye.png",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/fenlei/fenlei",
-                "iconPath": "static/fenlei01.png",
-                "selectedIconPath": "static/fenlei.png",
-                "text": "分类"
-            },
-            {
-                "pagePath": "pages/my/my",
-                "iconPath": "static/my01.png",
-                "selectedIconPath": "static/my.png",
-                "text": "我的"
-            }
-        ]
-    },
-    "permission": {},
-    "uniStatistics": {
-        "enable": true
-    },
-    "usingComponents": {},
-    "sitemapLocation": "sitemap11.json"
+  "pages": [
+    "pages/index/index",
+    "pages/fenlei/fenlei",
+    "pages/my/my",
+    "components/index/shop/shop",
+    "components/particulars/particulars",
+    "components/myMap/myMap",
+    "components/index/shop/service/service",
+    "components/index/shop/order/order",
+    "components/index/shop/confirm/confirm",
+    "components/index/shop/detail/detail",
+    "components/index/shop-details/shop-details",
+    "components/index/more-service/more-service",
+    "components/index/likecar/likecar",
+    "pages/my-set/my-set",
+    "pages/new-address/new-address",
+    "pages/newAdd-address/newAdd-address",
+    "pages/newUpdate-address/newUpdate-address",
+    "pages/my-record/my-record",
+    "pages/discounts/discounts",
+    "pages/total/total",
+    "pages/orders/orders",
+    "pages/assess/assess",
+    "pages/free-assess/free-assess",
+    "pages/car-insurance/car-insurance",
+    "pages/payment/payment",
+    "pages/subsidiary/subsidiary",
+    "pages/myIntegral/myIntegral",
+    "pages/MyMake/MyMake",
+    "components/index/my-likecar/my-likecar",
+    "components/index/confirm-order/confirm-order",
+    "pages/rescue/rescue",
+    "pages/shopping/shopping"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#000000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/shouye01.png",
+        "selectedIconPath": "static/shouye.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/fenlei/fenlei",
+        "iconPath": "static/fenlei01.png",
+        "selectedIconPath": "static/fenlei.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/my01.png",
+        "selectedIconPath": "static/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {},
+  "uniStatistics": {
+    "enable": true
+  },
+  "usingComponents": {}
 }

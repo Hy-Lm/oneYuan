@@ -200,6 +200,11 @@ var _default =
       uni.navigateTo({
         url: "/pages/discounts/discounts" });
 
+    },
+    Myshopping: function Myshopping() {
+      uni.navigateTo({
+        url: "/pages/shopping/shopping" });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
