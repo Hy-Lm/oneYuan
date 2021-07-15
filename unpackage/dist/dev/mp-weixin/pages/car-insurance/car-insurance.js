@@ -193,6 +193,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -209,6 +211,10 @@ var _default =
     },
     cuo: function cuo() {
       // 隐藏遮罩层
+      this.mask = false;
+    },
+    // 点击空白隐藏
+    msks: function msks() {
       this.mask = false;
     } } };exports.default = _default;
 

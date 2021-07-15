@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "道路救援",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "rescue-time": "/components/rescue-time/rescue-time"
+  }
+}

@@ -28,7 +28,9 @@
         "pages/subsidiary/subsidiary",
         "pages/myIntegral/myIntegral",
         "pages/MyMake/MyMake",
-        "components/index/my-likecar/my-likecar"
+        "components/index/my-likecar/my-likecar",
+        "components/index/confirm-order/confirm-order",
+        "pages/rescue/rescue"
     ],
     "subPackages": [],
     "window": {
@@ -67,5 +69,5 @@
         "enable": true
     },
     "usingComponents": {},
-    "sitemapLocation": "sitemap97.json"
+    "sitemapLocation": "sitemap11.json"
 }

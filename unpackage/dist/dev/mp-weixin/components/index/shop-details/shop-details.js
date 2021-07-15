@@ -219,6 +219,11 @@ var _default =
         url: "/pages/index/index" });
 
     },
+    confirm_order: function confirm_order() {
+      uni.navigateTo({
+        url: "/components/index/confirm-order/confirm-order" });
+
+    },
     popup: function popup() {
       this.$refs.footer.$el.style.display = 'none';
       this.$refs.popup.$el.style.display = 'block';

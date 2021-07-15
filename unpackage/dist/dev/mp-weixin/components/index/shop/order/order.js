@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/index/shop/comment/comment */ "components/index/shop/comment/comment").then((function () {return resolve(__webpack_require__(/*! @/components/index/shop/comment/comment.vue */ 297));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/index/shop/comment/comment */ "components/index/shop/comment/comment").then((function () {return resolve(__webpack_require__(/*! @/components/index/shop/comment/comment.vue */ 320));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

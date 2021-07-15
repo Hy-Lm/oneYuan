@@ -70,7 +70,7 @@
 .orders-good .orders-good-items .orders-good-item {
   padding-bottom: 3px;
   margin-bottom: 18px;
-  width: 162px;
+  width: 48%;
   height: 217px;
   display: -webkit-box;
   display: -webkit-flex;

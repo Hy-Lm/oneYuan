@@ -73,6 +73,7 @@
 	height: 587px;
 	opacity: 1;
 	background: #f9f7f7;
+	margin-bottom: 0px;
 	.title{
 		padding: 16px;
 		text{
