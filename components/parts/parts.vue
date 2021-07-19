@@ -8,36 +8,12 @@
 		 	</view>
 			<!-- 内容 -->
 			<ul>
-				<li @click="shoplist()">
-					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
-					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text> <text>￥299</text></p>
-					<p>益园养车北辰区店 
-						<text>进店 ></text>
-					</p>
-				</li>
-				<li>
-					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
-					<p>奥迪-A6L-5L-后视镜</p>
-					<p>￥<text>210</text> <text>￥299</text></p>
-					<p>益园养车北辰区店 
-						<text>进店 ></text>
-					</p>
-				</li>
-				<li>
-					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
-					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text> <text>￥299</text></p>
-					<p>益园养车北辰区店 
-						<text>进店 ></text>
-					</p>
-				</li>
-				<li>
-					<image src="../../static/shangxin1.png" mode="aspectFit"></image>
-					<p>信义 上海通用-乐风前 挡玻璃更换</p>
-					<p>￥<text>210</text> <text>￥299</text></p>
-					<p>益园养车北辰区店 
-						<text>进店 ></text>
+				<li @click="shoplist(item.id)" v-for="(item,index) in shoplistItems" :key="item.id">
+					<image :src="item.img" mode="aspectFit"></image>
+					<p>{{item.title}}</p>
+					<p>￥<text>{{item.newPrice}}</text> <text>￥{{item.oldPrice}}</text></p>
+					<p>{{item.store}} 
+						<text>进店 <image class="imgcon" src="../../static/images/arrows@3x.png" mode=""></image> </text>
 					</p>
 				</li>
 			</ul>
@@ -50,12 +26,78 @@
 		name:"parts",
 		data() {
 			return {
-				
+				shoplistItems:[
+					{
+						id:1,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:110,
+						oldPrice:299,
+						store:'益园养车总店'
+					},
+					{
+						id:2,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:299,
+						store:"益园养车总店" 
+					},
+					{
+						id:3,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:399,
+						store:"益园养车总店" 
+					},
+					{
+						id:4,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:599,
+						store:"益园养车总店"
+					},
+					{
+						id:5,	
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:599,
+						store:"益园养车总店" 
+					},
+					{
+						id:6,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:410,
+						oldPrice:699,
+						store:"益园养车总店"
+					},
+					{
+						id:7,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:799,
+						store:"益园养车总店" 
+					},
+					{
+						id:8,
+						img:'../../static/shangxin1.png',
+						title:'信义 上海通用-乐风前 挡玻璃更换',
+						newPrice:210,
+						oldPrice:899,
+						store:"益园养车总店" 
+					}
+				]
 			};
 			
 		},
 		methods:{
-			shoplist(){
+			shoplist(id){
+				console.log(id,'当前商品的id')
 				uni.navigateTo({
 					url:"/components/index/shop-details/shop-details"
 				})
@@ -67,10 +109,11 @@
 <style lang="scss">
 .box{
 	padding: 0 15px;
+	// margin-bottom: 70px;
 }
 .parts_con{
 	width: 100%;
-	height: 587px;
+	// height: 587px;
 	opacity: 1;
 	background: #f9f7f7;
 	margin-bottom: 0px;
@@ -109,12 +152,15 @@
 	ul{
 		list-style: none;
 		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		li{
-			float: left;
-			
-			width: 50%;
-			margin-bottom: 5px;
+			background-color: #FFFFFF;
+			width:48%;
+			margin-bottom: 15px;
 			box-sizing: border-box;
+			padding-bottom: 15px;
 			image{
 				// width: 168px;
 				width: 100%;
@@ -143,17 +189,25 @@
 					font-size: 12px;
 					color: #666666;
 					line-height: 20px;
-					margin-left: 10px;
+					margin-left: 5px;
 					text-decoration: line-through;
 				}
 			}
 			p:nth-child(4){
 				height: 17px;
 				font-size: 12px;
-				color: #7d7d7d;
+				color: #396a3a;
+				display: flex;
+				justify-content: space-between;
 				text{
-					color:#000000;
-					margin-left: 10px;
+					color:#396a3a;
+					.imgcon{
+						vertical-align: middle;
+						margin-left: 5px;
+						display: inline-block;
+						width: 5px;
+						height: 10px;
+					}
 				}
 			}
 		}

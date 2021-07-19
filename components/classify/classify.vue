@@ -44,12 +44,18 @@
 
 <style lang="scss">
 .classify{
-	overflow: hidden;
-	margin: 15px;
+	// overflow: hidden;
+	height: 156px;
+	opacity: 1;
+	background: #ffffff;
 	border-radius: 10px;
 	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.16); 
+	margin: 15px;
+	padding: 15px 0;
+	padding-bottom: 13px;
+	box-sizing: border-box;
     ul{
-        padding: 15px 0;
+        padding-left: 0;
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
@@ -57,11 +63,11 @@
         li{
 			// flex: 1;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
 			width: 33.33%;
             image{
-                width: 40px;
-				height:40px;
+                width: 30px;
+				height:27px;
             }
 			p{
 				margin-top: 5px;

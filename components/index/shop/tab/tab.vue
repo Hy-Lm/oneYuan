@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<view class="tab">
-			<!-- <view class="tab_list" @click="fun">
+			<view class="tt"></view>
+			<view class="tab_list" @click="fun">
 				<ul>
 					<li class="current">洗车</li>
 					<li>轮胎</li>
@@ -9,53 +10,19 @@
 					<li>维修</li>
 					<li>钣金喷漆</li>
 				</ul>
-			</view> -->
+			</view>
 			<view class="tab_con">
 				<view class="item" style="display: block;">
-					<view class="item_box" @click="service()">
-						<image class="img1" src="../../../../static/meirong1.png" mode=""></image>
+					<view class="item_box" @click="service(index)" v-for="(item,index) in item_box_items" :key="index">
+						<image class="img1" :src="item.img1" mode=""></image>
 						<view class="con">
-							<view>限时优惠 靓丽洗车</view>
+							<view>{{item.title}}</view>
 							<view>
-								<text>￥9.9</text>
-								<text>￥38</text>
+								<text>￥{{item.newPrice}}</text>
+								<text class="old">￥{{item.oldPrice}}</text>
 							</view>
 						</view>
-						<image class="img2" src="../../../../static/arrows.png" mode=""></image>
-					</view>
-
-					<view class="item_box">
-						<image class="img1" src="../../../../static/meirong1.png" mode=""></image>
-						<view class="con">
-							<view>限时优惠 靓丽洗车</view>
-							<view>
-								<text>￥9.9</text>
-								<text>￥38</text>
-							</view>
-						</view>
-						<image class="img2" src="../../../../static/arrows.png" mode=""></image>
-					</view>
-					<view class="item_box">
-						<image class="img1" src="../../../../static/meirong1.png" mode=""></image>
-						<view class="con">
-							<view>限时优惠 靓丽洗车</view>
-							<view>
-								<text>￥9.9</text>
-								<text>￥38</text>
-							</view>
-						</view>
-						<image class="img2" src="../../../../static/arrows.png" mode=""></image>
-					</view>
-					<view class="item_box">
-						<image class="img1" src="../../../../static/meirong1.png" mode=""></image>
-						<view class="con">
-							<view>限时优惠 靓丽洗车</view>
-							<view>
-								<text>￥9.9</text>
-								<text>￥38</text>
-							</view>
-						</view>
-						<image class="img2" src="../../../../static/arrows.png" mode=""></image>
+						<image class="img2" :src="item.img2" mode=""></image>
 					</view>
 				</view>
 				<view class="item">
@@ -80,7 +47,36 @@
 	export default {
 		data() {
 			return {
-
+				item_box_items:[
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					}
+				]
 			}
 		},
 		methods: {
@@ -131,6 +127,10 @@
 </script>
 
 <style lang="scss">
+	.tt{
+		height: 13px;
+		background-color:#f9f7f7;;
+	}
 	page {
 		box-sizing: border-box;
 	}
@@ -150,7 +150,7 @@
 
 	.tab_list {
 		height: 39px;
-		background: #f9f7f7;
+		background: #FFFFFF;
 	}
 
 	.tab_list li {
@@ -177,7 +177,12 @@
 	.tab_con {
 		padding: 18px 15px;
 	}
-
+	.old{
+		opacity: 1;
+		font-size: 10px;
+		color: #666666;
+		text-decoration: line-through;
+	}
 	.item {
 		display: none;
 		padding: 0 20px;
@@ -188,7 +193,10 @@
 		.item_box {
 			overflow: hidden;
 			padding: 10px 0;
-
+			border-bottom:1px solid rgba(51,51,51,.4);
+			&:last-child{
+				border-bottom: none;
+			}
 			.img1 {
 				float: left;
 				width: 57px;
@@ -209,13 +217,12 @@
 
 				view {
 					height: 20px;
-					font-size: 14px;
+					font-size: 16px;
 					color: #000000;
 
 					text:nth-child(1) {
 						color: #cd2727;
 						font-weight: bold;
-						margin-right: 18px;
 					}
 				}
 

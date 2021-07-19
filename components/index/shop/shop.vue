@@ -67,21 +67,29 @@
 	padding:0 15px;
 }
 .img{
+	// background: #f9f7f7;
+	// padding: 0 15px;
+	// box-sizing: border-box;
 	width: 100%;
 	height: 170px;
 	image{
 		width: 100%;
 		height: 100%;
-		border-radius: 10px
+		border-radius:10px 10px 0 0;
 	}
 }
 .details{
-	padding:14px 0;
+	padding-top:14px;
 	.api{
 		width: 100%;
-		height: 43px;
+		height: 25px;
+		opacity: 1;
 		font-size: 18px;
+		font-family: PingFang SC, PingFang SC-Bold;
+		font-weight: 700;
+		text-align: left;
 		color: #000000;
+		margin-bottom: 6px;
 		text{
 			height: 30px;
 			line-height: 30px;
@@ -89,7 +97,7 @@
 		}
 		image{
 			float: right;
-			bottom: -20px;
+			bottom: -10px;
 			width: 20px;
 			height: 20px;
 		}
