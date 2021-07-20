@@ -45,8 +45,8 @@
 							<swiper class="swiper" autoplay="true" interval="2000" circular="true" indicator-dots="true"
 								indicator-color="rgba(255, 255, 255, 0.95)">
 								<swiper-item v-for="(item,index) in bannerImgs" :key="index">
-									<view class="swiper-item uni-bg-red">
-										<image style="width: 100%; height: 160px;" :src="item" mode="aspectFit"></image>
+									<view class="swiper-item uni-bg-red" style="width: 100%; height: 160px;">
+										<image style="width: 100%; height: 100%;" :src="item" mode="scaleToFill"></image>
 									</view>
 								</swiper-item>
 							</swiper>
@@ -56,7 +56,7 @@
 			</view>
 			<!-- 系统提示 -->
 			<view class="hint">
-				<image src="../../static/images/trumpet@3x.png" mode="aspectFit"></image>
+				<image src="../../static/images/trumpet@3x.png" mode="scaleToFill"></image>
 				<text>系统暂为检测到您的车型，赶紧添加您的爱车吧</text>
 			</view>
 		</view>
@@ -224,7 +224,6 @@
 			padding: 0 7px;
 			text-align: center;
 			height: 166px;
-
 			/deep/ uni-swiper .uni-swiper-dots-horizontal {
 				left: auto;
 				right: 2%;
