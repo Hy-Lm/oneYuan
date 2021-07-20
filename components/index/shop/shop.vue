@@ -11,7 +11,7 @@
 					<image src="../../../static/导航.png" mode=""></image>
 				</view>
 				<view class="time">
-					<text>营业时间：08：00 -12：00</text>
+					<text>营业时间：08:00 -12:00</text>
 					<text>导航</text>
 				</view>
 				<view class="time">
@@ -29,7 +29,7 @@
 		<!-- 导航 -->
 		<tab></tab>
 		<!-- 评论 -->
-		<comment></comment>
+		<!-- <comment></comment> -->
 		<!-- 电话 -->
 		<tel :num="num" @changeTel="changeTel($event)" :mask="mask"></tel>
 	</view>
@@ -63,8 +63,12 @@
 </script>
 
 <style lang="scss">
+	// page{
+	// 	padding-bottom: 15px;
+	// }
 .box{
 	padding:0 15px;
+	
 }
 .img{
 	// background: #f9f7f7;
@@ -88,7 +92,7 @@
 		font-family: PingFang SC, PingFang SC-Bold;
 		font-weight: 700;
 		text-align: left;
-		color: #000000;
+		color: #333333;
 		margin-bottom: 6px;
 		text{
 			height: 30px;
@@ -105,7 +109,7 @@
 	.time{
 		height: 17px;
 		font-size: 12px;
-		color: #000000;
+		color: #333333;
 		text:nth-child(2){
 			float: right;
 		}
@@ -114,7 +118,7 @@
 		padding-top: 15px;
 		height: 17px;
 		font-size: 12px;
-		color: #000000;
+		color: #333333;
 		image{
 			float: right;
 			width: 11px;
@@ -125,8 +129,8 @@
 		margin-top: 15px;
 		height: 1px;
 		border: none;
-		background-color: #707070;
-		opacity: 0.5;
+		background-color: rgba(153, 153, 153, .3);
+		// opacity: 0.5;
 	}
 }
 </style>

@@ -9,7 +9,7 @@
 				<view class="right">
 					<view>益园养车（北辰区店）</view>
 					<view>
-						<text>总评分 4.6</text><text>总评价 265</text>
+						<text>总评分 4.6</text>
 					</view>
 					<view>
 						<text>天津市北辰区北辰公园南100米</text>
@@ -42,7 +42,7 @@
 				</li>
 			</ul>
 		</view>
-		<comment></comment>
+		<!-- <comment></comment> -->
 	</view>
 </template>
 
@@ -98,17 +98,17 @@
 			view:nth-child(1){
 				height: 22px;
 				opacity: 1;
-				font-size: 16px;
+				font-size: 18px;
 				text-align: left;
-				color: #000000;
+				color: #333333;
 			}
 			view:nth-child(2){
 				padding: 5px 0 4px 0;
 				height: 17px;
 				opacity: 1;
-				font-size: 12px;
+				font-size: 14px;
 				text-align: left;
-				color: #000000;
+				color: #CD2727;
 				text{
 					margin-right: 12px;
 				}
@@ -118,7 +118,7 @@
 				opacity: 1;
 				font-size: 12px;
 				text-align: left;
-				color: #000000;
+				color: #666666 ;
 				.km{
 					float: right;
 				}
@@ -129,7 +129,7 @@
 			padding: 8px 0;
 			height: 17px;
 			font-size: 12px;
-			color: #000000;
+			color: #666666 ;
 		}
 	}
 	.book{
@@ -140,28 +140,32 @@
 			border-bottom: none;
 		}
 		.book_time{
-			border-bottom: 1px solid #ccc;
-			padding: 15px 0;
+			border-bottom: 1px solid rgba(153, 153, 153, .3);
+			height: 26px;
+			padding: 6px 0;
 			.time{
 				float:left;
 				width: 90px;
-				height: 22px;
+				height: 26px;
+				line-height: 26px;
 				font-size: 16px;
-				color: #000000;
+				color: #333333;
 			}
 			.price{
 				margin-left: 60px;
-				height: 22px;
+				height: 26px;
 				font-size: 16px;
-				color: #7d7d7d;
-				opacity: 0.8;
+				line-height: 26px;
+				color: #666666;
+				// opacity: 0.8;
 			}
 			.state{
-				float: right;
-				text-align: center;
 				width: 43px;
 				height: 26px;
-				padding: 2px 10px;
+				opacity: 1;
+				float: right;
+				text-align: center;
+				// padding: 2px 10px;
 				line-height: 26px;
 				color: #FFFFFF;
 				background: #7d7d7d;

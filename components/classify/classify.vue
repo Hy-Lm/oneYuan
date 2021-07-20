@@ -72,7 +72,7 @@
 			p{
 				margin-top: 5px;
 				font-size: 16px;
-				color: #000000;
+				color: #333333;
 			}
         }
     }

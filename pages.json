@@ -91,9 +91,9 @@
             "path" : "components/index/shop/detail/detail",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "预约详情",
+                "navigationBarTitleText": "预约详情 ",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#F1F1F1"
+				"navigationBarBackgroundColor": "#FFFFFF"
             }
             
         }

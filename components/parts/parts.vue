@@ -172,13 +172,13 @@
 			p:nth-child(2){
 				height: 40px;
 				font-size: 14px;
-				color: #000000;
+				color: #333333;
 				line-height: 20px;
 			}
 			p:nth-child(3){
 				height: 25px;
 				font-size: 14px;
-				color: #ff0e00;
+				color: #CD2727;
 				line-height: 19px;
 				text:nth-child(1){
 					font-size: 18px;
@@ -196,11 +196,11 @@
 			p:nth-child(4){
 				height: 17px;
 				font-size: 12px;
-				color: #396a3a;
+				color: #666666;
 				display: flex;
 				justify-content: space-between;
 				text{
-					color:#396a3a;
+					color:#0D8600 ;
 					.imgcon{
 						vertical-align: middle;
 						margin-left: 5px;

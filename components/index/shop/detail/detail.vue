@@ -1,17 +1,15 @@
 <template>
 	<view>
-		<view class="bg">
-			<image src="../../../../static/组272.png" mode=""></image>
-			<view>预约成功</view>
-		</view>
+		<!-- <view class="bg">
+		</view> -->
 		<view class="type">
 			<view class="left">
-				<image src="../../../../static/bg.png" mode="aspectFit"></image>
+				<image src="../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png" mode="aspectFit"></image>
 			</view>
 			<view class="right">
 				<view>益园养车（北辰区店）</view>
 				<view>
-					<text>总评分 4.6</text><text>总评价 265</text>
+					<text>总评分 4.6</text>
 				</view>
 				<view>
 					<text>天津市北辰区北辰公园南100米</text>
@@ -54,7 +52,7 @@
 		},
 		methods: {
 			cancel(){
-				uni.navigateTo({
+				uni.redirectTo({
 					url:"/components/index/shop/service/service"
 				})
 			}
@@ -73,23 +71,9 @@
 	float:right;
 }
 	.bg {
-		background-color: #FFFFFF;
+		background-color:#f1f1f1;
 		width: 100%;
-		height: 96px;
-		text-align: center;
-
-		image {
-			padding: 6px 0;
-			width: 50px;
-			height: 50px;
-		}
-
-		view {
-			width: 100%;
-			height: 25px;
-			font-size: 18px;
-			color: #0d8600;
-		}
+		height: 12px;
 	}
 
 	.type {
@@ -116,23 +100,25 @@
 			text-align: left;
 			width: calc(100% - 81px);
 			height: 71px;
-
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			view:nth-child(1) {
 				height: 24px;
 				line-height: 22px;
 				opacity: 1;
 				font-size: 18px;
 				text-align: left;
-				color: #000000;
+				color: #333333;
 			}
 
 			view:nth-child(2) {
-				padding: 5px 0 4px 0;
+				// padding: 5px 0 4px 0;
 				height: 17px;
 				opacity: 1;
 				font-size: 14px;
 				text-align: left;
-				color: #000000;
+				color: #CD2727;
 
 				text {
 					margin-right: 12px;
@@ -144,7 +130,7 @@
 				opacity: 1;
 				font-size: 14px;
 				text-align: left;
-				color: #000000;
+				color: #666666;
 
 				.km {
 					float: right;
@@ -165,7 +151,7 @@
 				padding:2px 8px;
 				color: #FFFFFF;
 				font-size: 14px;
-				background: #0d8600;
+				background: #CD2727 ;
 				border-radius: 7px;
 			}
 			text:nth-child(1){
@@ -176,7 +162,7 @@
 				height: 23px;
 				line-height: 23px;
 				font-size: 14px;
-				color: #000000;
+				color: #333333;
 			}
 		}
 		.price{
@@ -185,20 +171,21 @@
 				padding: 7px 0;
 				height: 20px;
 				font-size: 14px;
-				color: #000000;
+				color: #333333;
 			}
 			.shifuk{
 				text:nth-child(2){
 					font-size: 16px;
-					color: #cd2727;
+					color: #CD2727;
 				}
 			}
 		}
 	}
 	.footer{
+		position: absolute;
+		bottom: 10px;
+		width: calc(100% - 64px);
 		margin: 0 32px;
-		margin-top: 30px;
-		font-size: 18px;
 		height: 34px;
 		line-height: 34px;
 		color:#FFFFFF;

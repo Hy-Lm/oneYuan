@@ -75,6 +75,27 @@
 						title:'限时优惠 靓丽洗车',
 						newPrice:9.9,
 						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
+					},
+					{
+						img1:require('../../../../static/4a24fe8ff305fc17c7e0eee2950db1f.png'),
+						img2:require('../../../../static/images/arrows@3x.png'),
+						title:'限时优惠 靓丽洗车',
+						newPrice:9.9,
+						oldPrice:38
 					}
 				]
 			}
@@ -151,15 +172,19 @@
 	.tab_list {
 		height: 39px;
 		background: #FFFFFF;
+		padding: 0 15px;
+		box-sizing: border-box;
 	}
-
+	.tab_list ul{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
 	.tab_list li {
-		float: left;
-		width: 20%;
 		height: 39px;
 		line-height: 39px;
-		text-align: center;
 		position: relative;
+		color: #333333;
 	}
 
 	.tab_list .current::after {
@@ -176,6 +201,7 @@
 
 	.tab_con {
 		padding: 18px 15px;
+		padding-bottom: 0;
 	}
 	.old{
 		opacity: 1;
@@ -186,14 +212,14 @@
 	.item {
 		display: none;
 		padding: 0 20px;
-		border-radius: 10px;
+		border-radius:10px 10px 0 0;
 		box-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.23);
 		overflow: hidden;
 
 		.item_box {
 			overflow: hidden;
 			padding: 10px 0;
-			border-bottom:1px solid rgba(51,51,51,.4);
+			border-bottom:1px solid rgba(153, 153, 153, .3);
 			&:last-child{
 				border-bottom: none;
 			}
@@ -218,7 +244,7 @@
 				view {
 					height: 20px;
 					font-size: 16px;
-					color: #000000;
+					color: #333333;
 
 					text:nth-child(1) {
 						color: #cd2727;
