@@ -62,7 +62,7 @@
 
 <style lang="scss">
 	page {
-		background-color: #F1F1F1;
+		background-color: #FFFFFF;
 	}
 .left{
 	float:left;
@@ -79,10 +79,11 @@
 	.type {
 		width: 100%;
 		padding: 10px 15px;
+		border-top: 10px solid #F1F1F1;
+		border-bottom: 10px solid #F1F1F1;
 		box-sizing: border-box;
 		overflow: hidden;
 		background-color: #FFFFFF;
-		margin: 10px 0;
 
 		.left {
 			float: left;
