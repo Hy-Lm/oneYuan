@@ -118,7 +118,7 @@
 		text:nth-child(2) {
 			margin-left: 10px;
 			font-size: 12px;
-			color: #0D8600 ;
+			color: #f8981d ;
 		}
 
 		view:nth-child(3) {
@@ -127,7 +127,7 @@
 			height: 25px;
 			line-height: 25px;
 			font-size: 12px;
-			color: #0D8600 ;
+			color: #f8981d ;
 
 			image {
 				width: 5px;

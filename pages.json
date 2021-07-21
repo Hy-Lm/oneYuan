@@ -5,7 +5,7 @@
 			"style": {
 				"navigationBarTitleText": "益园养车",
 				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#396A3A",
+				"navigationBarBackgroundColor": "#25b85b",
 				"navigationBarTextStyle": "white"
 			}
 		},
@@ -24,7 +24,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#396A3A",
+				"navigationBarBackgroundColor": "#25b85b",
 				"navigationBarTextStyle": "white"
 			}
 
@@ -283,7 +283,7 @@
             {
                 "navigationBarTitleText": "确定订单",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor":"#ACCB69"
+				"navigationBarBackgroundColor":"#25b85b"
             }
             
         }
@@ -314,7 +314,7 @@
 	},
 	"tabBar": {
 		"color": "#666",
-		"selectedColor": "#000000",
+		"selectedColor": "#25b85b",
 		"backgroundColor": "#fff",
 		"list": [{
 				"pagePath": "pages/index/index",

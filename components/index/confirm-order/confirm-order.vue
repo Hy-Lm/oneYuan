@@ -8,11 +8,13 @@
 							<view :class="{'active':isActive==1}" @click="chenked(1)">
 								同城配送
 							</view>
+							<view :class="{'s1':isActive==1}"></view>
 						</view>
 						<view class="nav_title">
-							<view @click="chenked(2)">
+							<view :class="{'active':isActive==2}"  @click="chenked(2)">
 								到店更换
 							</view>
+							<view :class="{'s1':isActive==2}"></view>
 						</view>
 					</view>
 					<view class="nav_item  item1 " v-if="isActive==1">
@@ -26,10 +28,10 @@
 							</li>
 						</ul>
 						<view class="foot">
-							<view class="left">
+							<view class="left" @click="selectDateS">
 								<text>配送时间</text>
 								<view>
-									<text @click="delivery_time()">立即送出</text>
+									<text >立即送出</text>
 									<image src="../../../static/arrows.png" mode=""></image>
 								</view>
 							</view>
@@ -51,19 +53,13 @@
 							</li>
 						</ol>
 						<view class="foot">
-							<view class="left">
+							<view class="left" @click="selectDateTimeS">
 								<text>到店时间</text>
-								<view>
 									<text>9:40</text>
 									<image src="../../../static/arrows.png" mode=""></image>
-								</view>
 							</view>
 							<view class="right">
-								<text>预留电话</text>
-								<view>
-									<text>19103863546</text>
-									<image src="../../../static/arrows.png" mode=""></image>
-								</view>
+								<text>预留电话</text><text>19103863546</text>
 							</view>
 						</view>
 					</view>
@@ -78,34 +74,17 @@
 						<text>益园养车</text>
 					</view>
 					<ul>
-						<li>
+						<li v-for="(item,index) in 3" :key="index">
 							<image src="../../../static/meirong1.png" mode=""></image>
 							<view class="list">
-								<p>威士高 2000 SN+ 5W-30 4L 半 合成 合成</p>
 								<view>
-									<text>￥249</text>
-									<text>x1</text>
+									<p>威士高 2000 SN+ 5W-30 4L 半 合成 合成</p>
+									<view>
+										<text>￥249</text>
+
+									</view>
 								</view>
-							</view>
-						</li>
-						<li>
-							<image src="../../../static/meirong1.png" mode=""></image>
-							<view class="list">
-								<p>威士高 2000 SN+ 5W-30 4L 半 合成 合成</p>
-								<view>
-									<text>￥249</text>
-									<text>x1</text>
-								</view>
-							</view>
-						</li>
-						<li>
-							<image src="../../../static/meirong1.png" mode=""></image>
-							<view class="list">
-								<p>威士高 2000 SN+ 5W-30 4L 半 合成 合成</p>
-								<view>
-									<text>￥249</text>
-									<text>x1</text>
-								</view>
+								<text>x1</text>
 							</view>
 						</li>
 					</ul>
@@ -137,9 +116,41 @@
 				</view>
 			</view>
 		</view>
-		<view class="select-date" ref="select_date">
+		<view class="select-date" v-if="selectDate" ref="select_date">
 			<view class="choose">
 				选择配送时间
+			</view>
+			<view class="select-day">
+				<view class="day" v-for="(item,index) in deliveryTimeList" :key="index"
+					:class="nowDay===index?'active':''" @click="nowDay = index;">{{item.day}}</view>
+			</view>
+			<view class="select-time">
+				<!-- <view v-for="(item,index) in deliveryTimeList" :key="index"> -->
+				<view v-if="nowDay===0">
+					<view @click="clickTime('尽快送达|60分钟达')" class="time"
+						:class="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay?'select':''">尽快送达|60分钟达
+						<!-- <icon v-show="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay" type="success"></icon> -->
+					</view>
+					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
+						v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i)" :key="index">
+						{{i}}
+						<!-- <icon v-show="i==selectTime&&nowDay===selectDay?'select':''" type="success"></icon> -->
+					</view>
+				</view>
+				<view v-if="nowDay!==0">
+					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
+						v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i)" :key="index">
+						{{i}}
+						<!-- <icon v-show="i==selectTime&&nowDay===selectDay?'select':''" type="success"></icon> -->
+					</view>
+				</view>
+			</view>
+			<!-- </view> -->
+		</view>
+		<!-- 选择到店时间 -->
+		<view class="select-date" v-if="selectDateTime" ref="select_date">
+			<view class="choose">
+				选择到店时间
 			</view>
 			<view class="select-day">
 				<view class="day" v-for="(item,index) in deliveryTimeList" :key="index"
@@ -175,6 +186,8 @@
 	export default {
 		data() {
 			return {
+				selectDate:false,
+				selectDateTime:false,
 				isActive: 1,
 				deliveryTime: "",
 				showDelivery: false,
@@ -191,13 +204,21 @@
 			this.getDliveryTime();
 		},
 		methods: {
+			// 选择到底时间
+			selectDateTimeS(){
+				this.selectDateTime=!this.selectDateTime
+			},
+			// 选择配送时间
+			selectDateS(){
+				this.selectDate=!this.selectDate
+			},
 			chenked(type) {
 				this.isActive = type
 			},
-			delivery_time(){
-				this.$refs.footer.$el.style.display = 'none'
-				this.$refs.select_date.$el.style.display = 'block'
-			},
+			// delivery_time() {
+			// 	this.$refs.footer.$el.style.display = 'none'
+			// 	this.$refs.select_date.$el.style.display = 'block'
+			// },
 			clickTime(text) {
 				this.selectTime = text;
 				this.deliveryTime = this.deliveryTimeList[this.nowDay].day + text;
@@ -302,9 +323,10 @@
 </script>
 
 <style lang="scss" scoped>
-	page{
+	page {
 		// position: relative;
 	}
+
 	.box {
 		background-color: #F1F1F1;
 	}
@@ -316,13 +338,13 @@
 	.confirm_order_header {
 		width: 100%;
 		height: 210px;
-		background-color: #ACCB69;
+		background-color: #25b85b;
 		padding: 22px 15px 50px;
 		box-sizing: border-box;
 		position: relative;
 
 		.nav {
-			background: #f1f1f1;
+			background: #FFFFFF;
 			border-radius: 8px;
 			box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 			margin-bottom: 15px;
@@ -339,7 +361,19 @@
 					font-size: 14px;
 					font-weight: 700;
 					text-align: center;
-					color: #000000;
+					color: #333333;
+					position: relative;
+					.s1{
+						content: '';
+						width: 35px;
+						height: 1px;
+						opacity: 1;
+						background-color:#accb69;
+						position: absolute;
+						bottom: -5px;
+						left: 50%;
+						transform: translateX(-50%);
+					}
 				}
 			}
 
@@ -358,7 +392,8 @@
 					padding: 0;
 					list-style: none;
 					padding: 0 0 10px 0;
-					border-bottom: 1px solid #707070;
+					border-bottom: 1px solid rgba(153, 153, 153, .3);
+
 					li {
 						image {
 							float: right;
@@ -371,7 +406,7 @@
 							height: 22px;
 							font-size: 16px;
 							font-weight: 700;
-							color: #000000;
+							color: #333333;
 						}
 
 						p {
@@ -379,7 +414,7 @@
 							opacity: 0.8;
 							font-size: 12px;
 							font-weight: 400;
-							color: #000000;
+							color: #333333;
 							display: inline-block;
 						}
 					}
@@ -388,8 +423,8 @@
 				ol {
 					width: 100%;
 					list-style: none;
-					padding: 0 0 10px 0;
-					border-bottom: 1px solid #707070;
+					padding: 0 0 8px 0;
+					border-bottom: 1px solid rgba(153, 153, 153, .3);
 
 					li:nth-child(1),
 					li:nth-child(3) {
@@ -399,7 +434,7 @@
 							opacity: 1;
 							font-size: 12px;
 							text-align: left;
-							color: #000000;
+							color: #333333;
 						}
 					}
 
@@ -409,7 +444,7 @@
 							height: 20px;
 							opacity: 1;
 							font-size: 14px;
-							color: #000000;
+							color: #333333;
 						}
 					}
 				}
@@ -420,12 +455,10 @@
 
 					.left,
 					.right {
-						view {
 							image {
 								width: 4px;
 								height: 8px;
 								margin-left: 10px;
-							}
 						}
 
 						text {
@@ -438,26 +471,29 @@
 					}
 				}
 			}
-			.item1{
-				.foot{
-					.left{
-						view{
-							text:nth-child(1){
+
+			.item1 {
+				.foot {
+					.left {
+						view {
+							text:nth-child(1) {
 								color: #F0923C;
 							}
 						}
 					}
-					.right{
+
+					.right {
 						height: 42px;
 						line-height: 42px;
 						font-size: 12px;
 						font-weight: 600;
-						color: #000000;
+						color: #333333;
 					}
 				}
 			}
+
 			.item2 {
-				height: 120px;
+				height: 100px;
 			}
 		}
 
@@ -466,6 +502,7 @@
 	.confirm_order_con {
 		background-color: #F1F1F1;
 		padding: 10px 15px 0;
+		margin-bottom: 100px;
 	}
 
 	// 益园养车
@@ -480,13 +517,15 @@
 
 		view {
 			width: 100%;
-			image{
+
+			image {
 				width: 17px;
 				height: 16px;
 				vertical-align: middle;
 				margin-right: 10px;
 			}
-			text{
+
+			text {
 				height: 20px;
 				font-size: 14px;
 				vertical-align: middle;
@@ -495,12 +534,19 @@
 
 		ul {
 			list-style: none;
-			padding: 0 ;
+			padding: 0;
+			margin-top: 10px;
 
 			li {
-				padding-top:20px;
+				padding-top: 9px;
+				padding-bottom: 11px;
 				display: flex;
 				align-items: center;
+				border-bottom: 1px solid rgba(153, 153, 153, .3);
+				color: #333333;
+				&:last-child {
+					border-bottom: none;
+				}
 
 				image {
 					display: inline-block;
@@ -510,34 +556,42 @@
 				}
 
 				.list {
-					display: inline-block;
+					// display: inline-block;
+					display: flex;
+					flex-direction: column;
 					width: calc(100% - 72px);
 					height: 57px;
-
-					p {
-						width: calc(100% - 70px);
-						// height: 34px;
-						opacity: 1;
-						font-size: 12px;
-						display: inline;
-						float: left;
-						margin-right: 10px;
+					&>text:nth-child(2){
+						font-size: 12px;;
+						color: #7d7d7d;
 					}
-
-					view {
-						width: 40px;
-						padding-right: 20px;
-						display: inline-block;
-
-						text {
-							display: block;
-							text-align: right;
+					&>view:nth-child(1){
+						p {
+							width: calc(100% - 70px);
+							// height: 34px;
+							opacity: 1;
+							font-size: 12px;
+							display: inline;
+							float: left;
+							margin-right: 10px;
 						}
-
-						text:nth-child(2) {
-							color: #7d7d7d;
+						
+						view {
+							width: 40px;
+							padding-right: 20px;
+							display: inline-block;
+						
+							text {
+								display: block;
+								text-align: right;
+							}
+						
+							text:nth-child(2) {
+								color: #7d7d7d;
+							}
 						}
 					}
+					
 				}
 			}
 		}
@@ -557,7 +611,7 @@
 		.left {
 			float: left;
 			font-size: 14px;
-			color: #000000;
+			color: #333333;
 		}
 
 		.right {
@@ -593,7 +647,7 @@
 			view:nth-child(1) {
 				height: 20px;
 				font-size: 14px;
-				color: #000000;
+				color: #333333;
 			}
 
 			view:nth-child(2) {
@@ -608,7 +662,7 @@
 			height: 28px;
 			margin-top: 8px;
 			line-height: 28px;
-			background: #cd2727;
+			background: #f8981d;
 			border-radius: 14px;
 			font-size: 14px;
 			color: #ffffff;
@@ -618,13 +672,14 @@
 
 	.select-date {
 		position: fixed;
-		bottom: 57px;
+		bottom: 0;
 		width: 100%;
 		height: 300px;
 		background: #f9f7f7;
 		overflow: hidden;
-		display: none;
-		.choose{
+		// display: none;
+
+		.choose {
 			width: 375px;
 			height: 50px;
 			line-height: 50px;
@@ -634,6 +689,7 @@
 			letter-spacing: 0px;
 			text-align: center;
 		}
+
 		.select-day {
 			height: 100%;
 			float: left;

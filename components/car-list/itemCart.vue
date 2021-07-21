@@ -47,12 +47,12 @@
 	.item {
 		display: flex;
 		flex-direction: column;
-	
+		justify-content: space-between;
 		&>view:nth-child(1) {
 			height: 35px;
 			font-size: 12px;
 			font-weight: 400;
-			color: #000000;
+			color: #333333;
 			line-height: 35px;
 		}
 	
@@ -62,11 +62,11 @@
 			justify-content: space-between;
 	
 			&>view {
-				width: 57px;
+				width: 32%;
 				display: flex;
 				flex-direction: column;
 				margin-bottom: 12px;
-	
+				align-items: center;
 				&>view:nth-child(1) {
 					width: 57px;
 					height: 57px;
@@ -78,11 +78,12 @@
 				}
 	
 				&>view:nth-child(2) {
+					margin-top: 5px;
 					height: 17px;
 					text-align: center;
 					font-size: 12px;
 					font-weight: 400;
-					color: #000000;
+					color: #333333;
 					line-height: 19px;
 				}
 			}

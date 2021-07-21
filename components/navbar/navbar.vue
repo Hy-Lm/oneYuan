@@ -17,24 +17,32 @@
 			</view>
 			<view class="bg"></view>
 			<!-- 添加爱车 -->
-			<view class="addcart" @click="likecar">
-				<!-- <view>我的 车辆</view>
-				<view>
+			<view class="addcart addcartS" v-if="!addcart" @click="likecar">
+				<view>我的 车辆</view>
+				<view class="addcartS-con">
 					<view>
 						<image src="../../static/更换.png" mode=""></image>
 						<text>津A9996J</text>
 					</view>
 					<view>2021款 320i 自动挡</view>
 				</view>
-				<view>
+				<view class="addcartS-icon">
 					<image src="../../static/arrows.png" mode=""></image>
-				</view> -->
-				<view class="addcart-img">
-					<image src="../../static/images/addition@3x.png" mode=""></image>
 				</view>
-				<view class="addcart-con">
-					<view>添加您的爱车</view>
-					<view>立即添加,爱车健康每一天</view>
+			</view>
+			<view class="addcart" v-if="addcart" @click="likecar">
+				<view>
+					<view class="addcart-img">
+						<image src="../../static/images/addition@3x.png" mode=""></image>
+					</view>
+					<view class="addcart-con">
+						<view>添加您的爱车</view>
+						<view>立即添加,爱车健康每一天</view>
+					</view>
+				</view>
+
+				<view class="addcart-icon">
+					<image src="../../static/images/arrows@3x.png" mode=""></image>
 				</view>
 			</view>
 			<!-- 轮播图 -->
@@ -46,7 +54,8 @@
 								indicator-color="rgba(255, 255, 255, 0.95)">
 								<swiper-item v-for="(item,index) in bannerImgs" :key="index">
 									<view class="swiper-item uni-bg-red" style="width: 100%; height: 160px;">
-										<image style="width: 100%; height: 100%;" :src="item" mode="scaleToFill"></image>
+										<image style="width: 100%; height: 100%;" :src="item" mode="scaleToFill">
+										</image>
 									</view>
 								</swiper-item>
 							</swiper>
@@ -70,7 +79,8 @@
 			return {
 				bannerImgs: ['../../static/images/banner1@3x.png', '../../static/images/banner2@3x.png',
 					'../../static/images/banner1@3x.png'
-				]
+				],
+				addcart:true
 			}
 		},
 		methods: {
@@ -92,6 +102,43 @@
 </script>
 
 <style lang="scss">
+	.addcartS{
+		display: flex;
+		justify-content: space-between;
+		&>view:nth-child(1){
+			width: 36px;
+			height: 47px;
+			opacity: 1;
+			font-size: 18px;
+			color: #333333;
+			line-height: 22px;
+		}
+		.addcartS-con{
+			display: flex;
+			flex-direction: column;
+			opacity: 1;
+			font-size: 13px;
+			color: #333333;
+			&>view:nth-child(1){
+				image{
+					width: 12px;
+					height: 12px;
+					margin-right: 10px;
+					vertical-align:middle;
+				}
+				margin-bottom: 5px;
+			}
+		}
+		.addcartS-icon{
+			width: 10px;
+			height: 19px;
+			
+			&>image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
 	page {
 		margin: 0;
 		padding: 0;
@@ -104,7 +151,7 @@
 	.navbar_content {
 		width: 100%;
 		height: 133px;
-		background-color: #396a3a;
+		background-color: #25b85b;
 		box-sizing: border-box;
 
 		// 搜索
@@ -176,20 +223,34 @@
 		// 我的爱车
 		.addcart {
 			padding-left: 15px;
+			padding-right: 25px;
 			margin-top: -100px;
 			margin-left: 15px;
 			margin-right: 15px;
 			box-sizing: border-box;
 			height: 83px;
 			opacity: 1;
-			background: #accb69;
+			background: #ececec;
 			border-radius: 7px;
 			box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.16);
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
+			&>view{
+				display: flex;
+			}
+			.addcart-icon {
+				width: 10px;
+				height: 19px;
+
+				&>image {
+					width: 100%;
+					height: 100%;
+				}
+			}
 
 			.addcart-con {
-				color: #ffffff;
+				color: #333333;
 
 				&>view:nth-child(1) {
 					height: 25px;
@@ -224,6 +285,7 @@
 			padding: 0 7px;
 			text-align: center;
 			height: 166px;
+
 			/deep/ uni-swiper .uni-swiper-dots-horizontal {
 				left: auto;
 				right: 2%;

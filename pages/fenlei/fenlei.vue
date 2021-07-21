@@ -5,17 +5,17 @@
 			<view class="fl_conter">
 				<view class="left">
 					<input type="text" placeholder="合成汽油" />
-					<image src="../../static/查找.png" mode="aspectFit"></image>
+					<image src="../../static/images/serch-icon@3x.png" mode="aspectFit"></image>
 				</view>
-				<view class="right">
+				<!-- <view class="right">
 					<image src="../../static/location.png" mode="aspectFit"></image>
 					<text>北辰区</text>
-				</view>
+				</view> -->
 			</view>
 			<!-- 背景 -->
-			<view class="bg">
+			<!-- <view class="bg">
 				<image src="../../static/banner1.png"></image>
-			</view>
+			</view> -->
 			<!-- 限时特价 -->
 			<view class="special">
 				<view>
@@ -61,11 +61,11 @@
 				interval: 2000,
 				duration: 500,
 				styleobj1: {
-					'color': '#396A3A',
+					'color': '#f8981d ',
 					'background-color': '#FFFFFF'
 				},
 				styleobj2: {
-					'color': '#000000',
+					'color': '#333333',
 					'border-bottom': ' #f1f1f1'
 				},
 				ind: 0,// 定义点击后选项卡对应的index
@@ -310,35 +310,43 @@
 </script>
 
 <style lang="scss">
+	.uni-app--showtabbar uni-page-wrapper::after{
+		display: none !important;
+	}
 	page {
 		flex: 1;
+		
 	}
 
 	.fenlei {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+		height: calc(100vh - 50px);
 	}
 
 	.box {
 		padding: 12px 15px;
-		height: 280px;
+		// height: 280px;
 		box-sizing: border-box;
-
 		.fl_conter {
 			display: flex;
 			align-items: center;
-
+			opacity: 1;
+			background: #ffffff;
+			border: 1px solid #666666;
+			border-radius: 18px;
+			margin-bottom: 18px;
 			.left {
 				flex: 4;
 				position: relative;
-
 				input {
 					width: auto;
 					height: 34px;
 					opacity: 1;
-					background: #f1f1f1;
-					border-radius: 16px;
+					font-size: 14px;
+					// background: #f1f1f1;
+					// border-radius: 16px;
 					padding-left: 43px;
 				}
 
@@ -348,19 +356,6 @@
 					top: 12px;
 					width: 11px;
 					height: 11px;
-				}
-			}
-
-			.right {
-				flex: 1;
-				text-align: right;
-				line-height: 25px;
-				vertical-align: middle;
-
-				image {
-					width: 11px;
-					height: 13px;
-					vertical-align: middle;
 				}
 			}
 		}
@@ -391,7 +386,7 @@
 				height: 32px;
 				opacity: 1;
 				font-size: 14px;
-				color: #f0923c;
+				color: #cd2727;
 				line-height: 32px;
 
 				image {
@@ -421,14 +416,14 @@
 	}
 
 	.box2 {
-		margin-top: 8px;
+		// margin-top: 8px;
+		border-top: 9px solid #F1F1F1;
 		width: 100%;
-		height: 100%;
+		// height: 100%;
 		flex: 1;
 		box-sizing: border-box;
 		// overflow-y: hidden;
 		display: flex;
-
 		.left {
 			// float: left;
 			width: 100px;
@@ -436,7 +431,9 @@
 			background-color: #f1f1f1;
 			// overflow: hidden;
 			box-sizing: border-box;
-
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			ul {
 				list-style: none;
 				padding: 0;
@@ -455,10 +452,11 @@
 					.s1 {
 						position: absolute;
 						left: 20px;
-						top: 12px;
+						top: 50%;
 						width: 2px;
 						height: 14px;
-						background-color: #396A3A;
+						transform: translateY(-50%);
+						background-color: #f8981d;
 					}
 				}
 

@@ -200,7 +200,7 @@
 				display: flex;
 				justify-content: space-between;
 				text{
-					color:#0D8600 ;
+					color:#f8981d ;
 					.imgcon{
 						vertical-align: middle;
 						margin-left: 5px;

@@ -8,6 +8,7 @@
 					</view>
 				</view>
 				<view class="MaynavBox">离我最近</view>
+				<view class="MaynavBox">折扣最低</view>
 			</view>
 			<view class="SpinnerBox" v-if="SpinnerShow">
 				<view class="SpinnerBoxText" v-for="(item,index) in MaynavBoxItem" :key="index"
@@ -28,7 +29,7 @@
 					</view>
 				</view>
 				<view class="mapDetailsBtn" @click="mapDetailsBtns">
-					<view style="width: 14px; height: 14px; margin-right: 4px;">
+					<view style="width: 18px; height: 18px; margin-right: 4px;">
 						<image src="../../static/导航.png"></image>
 					</view>
 					<view>
@@ -178,7 +179,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.Maynav {
 		width: 100vw;
 		height: 50px;
@@ -201,8 +202,10 @@
 		justify-content: center;
 		width: 50%;
 		height: 100%;
-		border-left: 1px solid #eee;
+		/* border-left: 1px solid #eee; */
 		text-align: center;
+		font-size: 14px;
+		color: #333333;
 	}
 
 	.MaynavBox:first-child {
@@ -246,25 +249,26 @@
 	.mapDetails {
 		position: fixed;
 		width: 300px;
-		height: 114px;
-		background: #fff;
+		height: 126px;
+		opacity: 1;
+		background: #ffffff;
+		border-radius: 15px;
 		bottom: 36px;
 		left: 50%;
 		margin-left: -150px;
 		z-index: 100;
-		border-radius: 15px;
 	}
 
 	.mapDetailsTop {
 		width: calc(100% - 32px);
-		height: 48px;
+		height: 59px;
 		margin: 11px auto 19px;
 		display: flex;
 	}
 
 	.mapDetailsTopImg {
-		width: 48px;
-		height: 48px;
+		width: 59px;
+		height: 59px;
 		margin-right: 14px;
 	}
 
@@ -272,6 +276,21 @@
 		width: calc(100% - 62px);
 		font-size: 12px;
 		font-family: PingFang SC, PingFang SC-Regular;
+		display: flex;
+		flex-direction: column;
+		&>view:nth-child(1){
+			font-size: 14px;
+			color: #333333;
+		}
+		&>view:nth-child(2){
+			font-size: 12;
+			color: #333333;
+			margin-bottom: 10px;
+		}
+		&>view:nth-child(3){
+			font-size: 10px;
+			color: #666666;
+		}
 	}
 
 	.box {
@@ -286,13 +305,15 @@
 
 	.mapDetailsBtn {
 		width: calc(100% - 32px);
-		height: 24px;
-		background: #f1f1f1;
+		height: 32px;
+		opacity: 1;
+		background: #f8981d;
+		border-radius: 15px;
 		margin: 0 auto;
-		border-radius: 12px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 14px;
+		font-size: 16px;
+		color: #FFFFFF;
 	}
 </style>
