@@ -78,6 +78,7 @@ page{
 				}
 				select{
 					border: none;
+					background-color: #FFFFFF;
 				}
 			}
 			padding: 7px 0;

@@ -7,7 +7,10 @@
 		<!-- 类型 -->
 		<classify></classify>
 		<!-- 配件 -->
-		<parts></parts>
+		<view class="part">
+			<parts></parts>
+		</view>
+		
 	</view>
 </template>
 
@@ -32,5 +35,8 @@
 		width: 100vw;
 		/* height: 100vh; */
 		overflow: hidden;
+	}
+	.part{
+		padding: 0 15px;
 	}
 </style>

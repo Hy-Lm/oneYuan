@@ -37,8 +37,8 @@
 				ind:0,//导航的下标
 				// 切换状态
 				styleobj1:{
-					'color':'#e86553',
-					'border-bottom':'3px solid #e86553'
+					'color':'#f8981d',
+					'border-bottom':'3px solid #f8981d'
 				},
 				styleobj2:{
 					'color':'#707070',
@@ -62,7 +62,7 @@
 				// 切换状态
 				style1:{
 					'color':'#ffffff',
-					'background':'#e86553',
+					'background':'#f8981d',
 					'border':'none'
 				},
 				style2:{

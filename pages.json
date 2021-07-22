@@ -305,6 +305,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/Vip/Vip",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "益园黑卡",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/payOrder/payOrder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "支付订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

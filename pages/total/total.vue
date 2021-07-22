@@ -96,37 +96,40 @@
 			height: 250px;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-around;
-			margin-bottom: 38px;
+			// justify-content: space-around;
+			margin-bottom: 10px;
 			align-items: left;
 			&:nth-child(even) {
 				margin-right: 0;
 			}
 
 			.total_items-btn {
-				text-align: center;
-				// width: 147px;
-				width: 100%;
-				height: 22px;
-				line-height: 22px;
+				align-self: center;
+				margin:0 auto;
+				width: 60%;
+				height: 24px;
 				opacity: 1;
 				background: #f0923c;
-				border-radius: 14px;
+				border-radius: 12px;
+				text-align: center;
+				line-height: 24px;
 				font-size: 12px;
 				color: #ffffff;
+				margin-top: 5px;
 			}
 
 			.total_items-t {
 				height: 17px;
 				opacity: 1;
 				font-size: 12px;
-				color: #ff3b30;
+				color: #CD2727;
 				line-height: 21px;
 				letter-spacing: 0px;
 			}
 
 			.total_items-title {
 				// width: 144px;
+				margin-top: 11px;
 				opacity: 1;
 				font-size: 12px;
 				font-family: PingFang SC, PingFang SC-Regular;

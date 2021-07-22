@@ -108,7 +108,7 @@
 
 <style lang="scss">
 .box{
-	padding: 0 15px;
+	// padding: 0 15px;
 	// margin-bottom: 70px;
 }
 .parts_con{

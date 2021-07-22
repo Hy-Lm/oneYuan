@@ -35,7 +35,7 @@
 				<input type="text" value="" placeholder="请选择保险生效日期" />
 			</view>
 		</view>
-		<view class="btn" v-if="!mask" @click="insuranceBtn">
+		<view class="btn"  @click="insuranceBtn">
 			立即提交
 		</view>
 		
@@ -106,12 +106,14 @@
 	}
 
 	.mask-model {
+		
 		z-index: 2;
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		padding: 0 8px;
+		padding-top: 10px;
 		box-sizing: border-box;
 		opacity: 1;
 		background: #ffffff;
@@ -175,7 +177,7 @@
 		width: 100%;
 		flex: 1;
 		opacity: 1;
-		background: #f9f7f7;
+		background: #FFFFFF;
 	}
 	.btn {
 		text-align: center;
@@ -186,7 +188,7 @@
 		width: 315px;
 		height: 37px;
 		opacity: 1;
-		background: #ea4427;
+		background: #f8981d;
 		border-radius: 19px;
 		font-size: 14px;
 		font-weight: 700;
@@ -202,7 +204,7 @@
 		background: #ffffff;
 		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
 		padding: 15px;
-		padding-top: 45px;
+		// padding-top: 45px;
 		padding-bottom: 0;
 		box-sizing: border-box;
 		.assess-list-item {
@@ -216,7 +218,7 @@
 			font-family: PingFang SC, PingFang SC-Regular;
 			font-weight: 400;
 			text-align: left;
-			color: #000000;
+			color: #333333;
 			border-bottom: 1px solid #EDEDED;
 			
 		.assess-list-item:last-child {

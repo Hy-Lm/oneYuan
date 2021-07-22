@@ -1,26 +1,32 @@
 <template>
 	<view class="select-date">
-		<view class="select-day">
-			<view class="day" v-for="(item,index) in deliveryTimeList" :key="index" :class="nowDay===index?'active':''"
-				@click="nowDay = index;">{{item.day}}</view>
+		<view class="choose">
+			选择到店时间
 		</view>
-		<view class="select-time">
-			<view v-if="nowDay===0">
-				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scroll="scroll">
-					  <!-- <view id="demo1" class="scroll-view-item_H time uni-bg-red" v-for="item in 100">A</view> -->
-					<view class="scroll-view-item_H time uni-bg-red" :class="index==selectTime&&nowDay===selectDay?'select':''"
+		<view>
+			<view class="select-day">
+				<view class="day" v-for="(item,index) in deliveryTimeList" :key="index" :class="nowDay===index?'active':''"
+					@click="nowDay = index;">{{item.day}}</view>
+			</view>
+			<view class="select-time">
+				<view v-if="nowDay===0">
+					<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scroll="scroll">
+						  <!-- <view id="demo1" class="scroll-view-item_H time uni-bg-red" v-for="item in 100">A</view> -->
+						<view class="scroll-view-item_H time uni-bg-red" :class="index==selectTime&&nowDay===selectDay?'select':''"
+							v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i,index)" :key="index">
+							{{i}}
+						</view>
+					</scroll-view>
+				</view>
+				<view v-if="nowDay!==0">
+					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
 						v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i,index)" :key="index">
 						{{i}}
 					</view>
-				</scroll-view>
-			</view>
-			<view v-if="nowDay!==0">
-				<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
-					v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i,index)" :key="index">
-					{{i}}
 				</view>
 			</view>
 		</view>
+		
 		<!-- </view> -->
 	</view>
 </template>
@@ -142,6 +148,7 @@
 </script>
 
 <style lang="scss">
+	
 	.select-date {
 		position: fixed;
 		bottom: 0;
@@ -150,8 +157,21 @@
 		width: 100%;
 		height: 296px;
 		overflow: hidden;
-		display: flex;
-
+		// display: flex;
+		.choose {
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			background: #f9f7f7;
+			// border-radius: 10px 10px 0px 0px;
+			font-size: 16px;
+			letter-spacing: 0px;
+			text-align: center;
+		}
+		&>view:nth-child(2){
+			display: flex;
+			height: 100%;
+		}
 		.select-day {
 			width: 100%;
 			height: 100%;

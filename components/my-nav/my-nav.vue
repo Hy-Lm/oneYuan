@@ -58,7 +58,7 @@
 				</view>
 			</view>
 			<!-- 黑卡 -->
-			<view class="vip" v-if="!loginInActive">
+			<view class="vip" @click="Vip" v-if="!loginInActive">
 				<view class="vip-l">
 					<view>
 						<image src="../../static/preview.png" mode=""></image>
@@ -95,6 +95,12 @@
 			};
 		},
 		methods: {
+			Vip(){
+				// 开通黑卡
+				uni.navigateTo({
+					url:'/pages/Vip/Vip'
+				})
+			},
 			//跳转到我的设置页面
 			mySet() {
 				uni.navigateTo({

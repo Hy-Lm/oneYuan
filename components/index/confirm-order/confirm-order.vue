@@ -111,7 +111,7 @@
 					<view>合计：</view>
 					<view>￥2310.00</view>
 				</view>
-				<view class="right">
+				<view class="right" @click="PayOrder">
 					提交订单
 				</view>
 			</view>
@@ -128,7 +128,7 @@
 				<!-- <view v-for="(item,index) in deliveryTimeList" :key="index"> -->
 				<view v-if="nowDay===0">
 					<view @click="clickTime('尽快送达|60分钟达')" class="time"
-						:class="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay?'select':''">尽快送达|60分钟达
+						:class="'尽快配送 17:06(28元配送费)'===selectTime&&nowDay===selectDay?'select':''">尽快配送 17:06(28元配送费)
 						<!-- <icon v-show="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay" type="success"></icon> -->
 					</view>
 					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
@@ -149,40 +149,17 @@
 		</view>
 		<!-- 选择到店时间 -->
 		<view class="select-date" v-if="selectDateTime" ref="select_date">
-			<view class="choose">
+			<!-- <view class="choose">
 				选择到店时间
-			</view>
-			<view class="select-day">
-				<view class="day" v-for="(item,index) in deliveryTimeList" :key="index"
-					:class="nowDay===index?'active':''" @click="nowDay = index;">{{item.day}}</view>
-			</view>
-			<view class="select-time">
-				<!-- <view v-for="(item,index) in deliveryTimeList" :key="index"> -->
-				<view v-if="nowDay===0">
-					<view @click="clickTime('尽快送达|60分钟达')" class="time"
-						:class="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay?'select':''">尽快送达|60分钟达
-						<!-- <icon v-show="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay" type="success"></icon> -->
-					</view>
-					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
-						v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i)" :key="index">
-						{{i}}
-						<!-- <icon v-show="i==selectTime&&nowDay===selectDay?'select':''" type="success"></icon> -->
-					</view>
-				</view>
-				<view v-if="nowDay!==0">
-					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
-						v-for="(i,index) in deliveryTimeList[nowDay].timeList" @click="clickTime(i)" :key="index">
-						{{i}}
-						<!-- <icon v-show="i==selectTime&&nowDay===selectDay?'select':''" type="success"></icon> -->
-					</view>
-				</view>
-			</view>
+			</view> -->
+			<rescueTime></rescueTime>
 			<!-- </view> -->
 		</view>
 	</view>
 </template>
 
 <script>
+	import rescueTime from '../../rescue-time/rescue-time.vue';
 	export default {
 		data() {
 			return {
@@ -196,14 +173,23 @@
 					timeList: ""
 				}],
 				nowDay: 0,
-				selectTime: '尽快送达|60分钟达',
+				selectTime: '尽快配送 17:06(28元配送费)',
 				selectDay: 0
 			}
+		},
+		components:{
+			rescueTime
 		},
 		mounted() {
 			this.getDliveryTime();
 		},
 		methods: {
+			PayOrder(){
+				// 跳转到支付页面
+				uni.navigateTo({
+					url:'/pages/payOrder/payOrder'
+				})
+			},
 			// 选择到底时间
 			selectDateTimeS(){
 				this.selectDateTime=!this.selectDateTime
@@ -214,6 +200,8 @@
 			},
 			chenked(type) {
 				this.isActive = type
+				this.selectDate=false
+				this.selectDateTime=false
 			},
 			// delivery_time() {
 			// 	this.$refs.footer.$el.style.display = 'none'

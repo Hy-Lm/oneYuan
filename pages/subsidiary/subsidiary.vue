@@ -2,19 +2,17 @@
 	<view class="Subsidiary">
 		<!-- 积分明细 -->
 		<view class='Subsidiary_Nav'>
-			<view @click="SubsidiaryNav(0)" :style="{'color': (colorIndex ==0?'#f00':'#000')}">全部</view>
-			<view @click="SubsidiaryNav(1)" :style="{'color': (colorIndex ==1?'#f00':'#000')}">收入</view>
-			<view @click="SubsidiaryNav(2)" :style="{'color': (colorIndex ==2?'#f00':'#000')}">支出</view>
+			<view v-for="(item,index) in Subsidiary_Nav" :key='index' @click="SubsidiaryNav(index)" :style="{'color': (index ==ind?'#f8981d':'#333333')}">{{item}}</view>
 		</view>
 		<!-- 占位标签 -->
-		<view style="width: 100%; height: 16px; background-color: #f1f1f1;"></view>
+		<view style="width: 100%; height: 16px; background-color: #f9f7f7;"></view>
 		<view class="SubsidiaryItem">
 			<view class="SubsidiaryBox" v-if="SubsidiaryItems.length>0" v-for="item in SubsidiaryItems">
 				<view>
 					<view>{{item.headline}}</view>
-					<view style="font-size: 12px;">{{item.time}}</view>
+					<view style="font-size: 12px; color: #666666;">{{item.time}}</view>
 				</view>
-				<view style="font-size: 18px; color:#f00;">
+				<view style="font-size: 18px; color:#f8981d;">
 					<text v-if="item.detailPage>0">+</text>{{item.detailPage}}
 				</view>
 			</view>
@@ -27,63 +25,77 @@
 		data() {
 			return {
 				colorIndex:0,
+				Subsidiary_Nav:['全部','收入','支出'],
+				ind:0,
 				dataItem:[
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-28",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-29",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-30",
 						detailPage:+5
 					},
 					{
+						active:false,
 						headline:"兑换礼品",
 						time:"2021-05-20",
 						detailPage:-20
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-28",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-29",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-30",
 						detailPage:+5
 					},
 					{
+						active:false,
 						headline:"兑换礼品",
 						time:"2021-05-20",
 						detailPage:-20
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-28",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-29",
 						detailPage:+5
 					},
 					{
+						active:true,
 						headline:"签到",
 						time:"2021-05-30",
 						detailPage:+5
 					},
 					{
+						active:false,
 						headline:"兑换礼品",
 						time:"2021-05-20",
 						detailPage:-20
@@ -95,38 +107,25 @@
 		methods: {
 			SubsidiaryNav(val){
 				// 当val 等于0 是是全部，等于1时是收入，等于2时是支出
-				this.colorIndex=val
-				console.log(this.colorIndex)
-				if(val==0){
+				this.ind=val;
+				if(val==1){
+					// 说明是收入
+					// console.log('1')
+					this.SubsidiaryItems=this.dataItem.filter((item,index)=>{
+						return item.active==true
+					})
+				}else if(val==2){
+					this.SubsidiaryItems=this.dataItem.filter((item,index)=>{
+						return item.active!=true
+					})
+				}else{
 					this.SubsidiaryItems=this.dataItem
 				}
-				if(val==1){
-					let data=[]
-					this.dataItem.forEach(item=>{
-						console.log(item)
-						if(item.detailPage>0){
-							data.push(item)
-						}
-					})
-					console.log(data)
-					this.SubsidiaryItems=data
-				}
-				if(val==2){
-					let data=[]
-					this.dataItem.forEach(item=>{
-						console.log(item)
-						if(item.detailPage<0){
-							data.push(item)
-						}
-					})
-					console.log(data)
-					this.SubsidiaryItems=data
-				}
-				
 			}
 		},
 		mounted() {
-			this.SubsidiaryNav(0)
+			this.SubsidiaryItems=this.dataItem
+			// this.SubsidiaryNav(0)
 		}
 	}
 </script>
@@ -155,7 +154,7 @@
 				padding: 0 18px 5px;
 				width: calc(100% - 36px);
 				height: 40px;
-				border-bottom: 1px solid rgba(112,112,112,1);
+				border-bottom: 1px solid rgba(153, 153, 153, .3) ;
 				display: flex;
 				justify-content:space-between;
 				align-items:center;
