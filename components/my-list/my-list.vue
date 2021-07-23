@@ -45,7 +45,7 @@
 				</li>
 				<li @click="MyRescue">
 					<image src="../../static/应急救援.png" ></image>
-					<text>道德救援</text>
+					<text>道路救援</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li @click="myAssess">

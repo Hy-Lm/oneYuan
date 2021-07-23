@@ -28,8 +28,8 @@
 							</li>
 						</ul>
 						<view class="foot">
-							<view class="left" @click="selectDateS">
-								<text>配送时间</text>
+							<view class="left" style="line-height: 42px;" @click="selectDateS">
+								<!-- <text>配送时间</text> -->
 								<view>
 									<text >立即送出</text>
 									<image src="../../../static/arrows.png" mode=""></image>
@@ -54,8 +54,8 @@
 						</ol>
 						<view class="foot">
 							<view class="left" @click="selectDateTimeS">
-								<text>到店时间</text>
-									<text>9:40</text>
+								<text style="margin-right: 5px;">到店时间</text>
+									<text> {{times}}</text>
 									<image src="../../../static/arrows.png" mode=""></image>
 							</view>
 							<view class="right">
@@ -152,7 +152,7 @@
 			<!-- <view class="choose">
 				选择到店时间
 			</view> -->
-			<rescueTime></rescueTime>
+			<rescueTime @time="time"></rescueTime>
 			<!-- </view> -->
 		</view>
 	</view>
@@ -174,7 +174,9 @@
 				}],
 				nowDay: 0,
 				selectTime: '尽快配送 17:06(28元配送费)',
-				selectDay: 0
+				selectDay: 0,
+				// 到点时间
+				times:'00:00',
 			}
 		},
 		components:{
@@ -208,9 +210,12 @@
 			// 	this.$refs.select_date.$el.style.display = 'block'
 			// },
 			clickTime(text) {
+				
 				this.selectTime = text;
 				this.deliveryTime = this.deliveryTimeList[this.nowDay].day + text;
 				this.selectDay = this.nowDay;
+				this.selectDate=false
+				console.log(this.deliveryTime)
 				//使用 this.$emit('input',data)改变父组件中v-model绑定的属性值
 				this.$emit('input', this.deliveryTimeList[this.selectDay].day + text);
 				this.$emit('select-time');
@@ -305,6 +310,12 @@
 					}
 					return timeList;
 				}
+			},
+			// 从rescue-time 传递过来的点击事件
+			time(e){
+				console.log(e)
+				this.times=e.text
+				this.selectDateTime=e.active
 			}
 		}
 	}

@@ -1,10 +1,10 @@
 <template>
 	<view>
-		<swiper class="home-swiper" vertical="true" @change="change" :current="activeIndex_click">
-			<swiper-item class="swiper-item" v-for="(item,index) in tab">
+		<!-- swiper class="home-swiper" vertical="true" @change="change" :current="activeIndex_click">
+			<swiper-item class="swiper-item" v-for="(item,index) in tab"> -->
 				<!-- 将list数据库文章列表数据传递给listItem -->
 				<listItem :list="item" />
-			</swiper-item>
+			<!-- </swiper-item> -->
 		</swiper>
 	</view>
 </template>
@@ -29,12 +29,12 @@
 			};
 		},
 		methods:{
-			change(e){
-				// 滑块改动的下标
-				const {current}=e.detail
-				this.$emit("change",current)  // 传递给fenlei.vue
-				// console.log(e.detail)
-			}
+			// change(e){
+			// 	// 滑块改动的下标
+			// 	const {current}=e.detail
+			// 	this.$emit("change",current)  // 传递给fenlei.vue
+			// 	// console.log(e.detail)
+			// }
 		},
 		components: {
 			listItem

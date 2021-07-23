@@ -54,9 +54,14 @@
 				this.selectTime = index;
 				this.deliveryTime = this.deliveryTimeList[this.nowDay].day + text;
 				this.selectDay = this.nowDay;
-				console.log(this.selectTime, this.deliveryTime, this.selectDay)
+				// console.log(this.selectTime, this.deliveryTime, this.selectDay)
 				//使用 this.$emit('input',data)改变父组件中v-model绑定的属性值
-				// this.$emit('input', this.deliveryTimeList[this.selectDay].day + text);
+				var obj={}
+				obj.active=false,
+				obj.text= text
+				obj.day=this.deliveryTimeList[this.nowDay].day
+				// console.log(obj)
+				 this.$emit('time',obj);
 				// this.$emit('select-time');
 			},
 			// 当前时间的小时
@@ -75,7 +80,7 @@
 				return timer;
 			},
 			scroll(e) {
-				console.log(e)
+				// console.log(e)
 				// this.scrollTop=this.timeindex*this.height
 				// this.old.scrollTop = e.detail.scrollTop
 			},
