@@ -380,7 +380,7 @@
 			flList(index) {
 				this.ind = index;
 				this.calcSize();
-				console.log(this.ind,index)
+				// console.log(this.ind,index)
 				// var  index = this.fl_list_items.findIndex(sitem=>sitem.index === index);
 				this.scrollTop = this.fl_list_items[index].top
 				// console.log(index)
@@ -399,11 +399,11 @@
 						return item;
 					}
 				})
-				if(scrollIndex==[]){
-					return false;
-				}else{
+				// if(scrollIndex==[]){
+				// 	return false;
+				// }else{
 					this.ind = scrollIndex[0].indexs
-				}
+				// }
 				// console.log(scrollIndex)
 				// this.ind = scrollIndex[0].indexs
 			},
@@ -411,7 +411,7 @@
 			calcSize() {
 				var h = 0;
 				this.fl_list_items.forEach((item, index) => {
-					this.current = index
+					// this.current = index
 					var view = uni.createSelectorQuery().select("#main-" + index);
 					view.fields({
 						size: true
@@ -419,7 +419,7 @@
 						item.top = h;
 						h += data.height;
 						item.bottom = h;
-						item.indexs = this.current;
+						item.indexs = index;
 					}).exec();
 				})
 				// console.log(this.fl_list_items)
