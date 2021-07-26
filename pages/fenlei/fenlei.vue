@@ -22,27 +22,22 @@
 					<image src="../../static/clock.png" mode="aspectFit"></image>
 					限时特价
 				</view>
-				<ul>
-					<li>
-						<image src="../../static/special.jpg" mode=""></image>
-					</li>
-					<li>
-						<image src="../../static/special.jpg" mode=""></image>
-					</li>
-					<li>
-						<image src="../../static/special.jpg" mode=""></image>
-					</li>
-					<li>
-						<image src="../../static/special.jpg" mode=""></image>
-					</li>
-				</ul>
+				<view class="special-lun">
+					<ul>
+						<li v-for="(item,index) in 7">
+							<image src="../../static/special.jpg" mode=""></image>
+							<view>低价洗车券</view>
+						</li>
+					</ul>
+				</view>
+				
 			</view>
 		</view>
 		<view class="box2">
 			<view class="left">
 				<ul>
-					<li v-for="(item,index) in fl_list_nav" :key="index" @click="flList(index)"
-						:style="[index===ind?styleobj1:styleobj2]">{{item}}<span :class="[index===ind?'s1':'']"></span>
+					<li v-for="(item,index) in fl_list_items" :key="index" @click="flList(index)"
+						:style="[index==ind?styleobj1:styleobj2]">{{item.title1}}<span :class="[index===ind?'s1':'']"></span>
 					</li>
 				</ul>
 			</view>
@@ -94,7 +89,7 @@
 				ind: 0, // 定义点击后选项卡对应的index
 				// 导航栏
 				current: 0,
-				fl_list_nav: ['汽车美容', '汽车保养', '轮胎更换', '钣金喷漆', '汽车维修', '品牌音响', '清洗养护', '精品内饰', '常用配件', '车载电器'],
+				// fl_list_nav: ['汽车美容', '汽车美容1','汽车美容2', '汽车美容3','汽车保养', '轮胎更换', '钣金喷漆', '汽车维修', '品牌音响', '清洗养护', '精品内饰', '常用配件', '车载电器'],
 				fl_list_items: [{
 						title1: '汽车美容',
 						title1_item: [{
@@ -139,6 +134,66 @@
 					},
 					{
 						title1: '汽车保养',
+						title1_item: [{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							}
+						]
+					},
+					{
+						title1: '汽车保养2',
+						title1_item: [{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							}
+						]
+					},
+					{
+						title1: '汽车保养3',
+						title1_item: [{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							},
+							{
+								img: '../../static/meirong1.png',
+								name: '靓丽洗车'
+							}
+						]
+					},
+					{
+						title1: '汽车保养4',
 						title1_item: [{
 								img: '../../static/meirong1.png',
 								name: '靓丽洗车'
@@ -323,10 +378,11 @@
 		},
 		methods: {
 			flList(index) {
-				this.calcSize();
 				this.ind = index;
+				this.calcSize();
+				console.log(this.ind,index)
 				// var  index = this.fl_list_items.findIndex(sitem=>sitem.index === index);
-				this.scrollTop = this.fl_list_items[this.ind].top
+				this.scrollTop = this.fl_list_items[index].top
 				// console.log(index)
 				// this.current=index
 			},
@@ -405,7 +461,7 @@
 			background: #ffffff;
 			border: 1px solid #666666;
 			border-radius: 18px;
-			margin-bottom: 18px;
+			margin-bottom: 14px;
 
 			.left {
 				flex: 4;
@@ -448,9 +504,10 @@
 			width: 100%;
 			height: 114px;
 			opacity: 1;
-			background: linear-gradient(180deg, #fff7e2, #ffffff);
-			border-radius: 6px 6px 0px 0px;
-			box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+			
+			// background: linear-gradient(180deg, #fff7e2, #ffffff);
+			// border-radius: 6px 6px 0px 0px;
+			// box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 
 			view {
 				width: 100%;
@@ -467,22 +524,34 @@
 					vertical-align: middle;
 				}
 			}
-
-			ul {
-				list-style: none;
-				padding: 0;
-				text-align: center;
-
-				li {
-					float: left;
-					width: 25%;
-
-					image {
-						width: 65px;
-						height: 65px;
+			.special-lun{
+				&::-webkit-scrollbar {
+				        display: none;
+				    }
+				overflow-y: auto;
+				height: 82px;
+				ul {
+					list-style: none;
+					padding: 0;
+					text-align: center;
+					display: flex;
+					li {
+						width: 25%;
+						&>view{
+							height: 17px;
+							opacity: 1;
+							font-size: 12px;
+							color: #333333;
+							line-height: 19px;
+						}
+						image {
+							width: 65px;
+							height: 65px;
+						}
 					}
 				}
 			}
+			
 		}
 	}
 
@@ -491,7 +560,7 @@
 		border-top: 9px solid #F1F1F1;
 		width: 100%;
 		// height: 350px;
-		height: calc(100% - 192px);
+		height: calc(100% - 191px);
 		// flex: 1;
 		// padding-bottom: 50px;
 		box-sizing: border-box;
@@ -505,35 +574,39 @@
 			background-color: #f1f1f1;
 			// overflow: hidden;
 			box-sizing: border-box;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-
+			overflow-y: auto;
+			&::-webkit-scrollbar {
+			        display: none;
+			    }
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: space-between;
+			
 			ul {
 				height: 100%;
 				list-style: none;
 				padding: 0;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
+				// display: flex;
+				// flex-direction: column;
+				// justify-content: space-between;
 
 				li {
-					padding-left: 30px;
+					// padding-left: 30px;s
 					box-sizing: border-box;
 					display: block;
 					width: 100%;
-					height: 35px;
+					height: 42px;
 					font-size: 12px;
-					text-align: left;
-					line-height: 35px;
+					text-align: center;
+					line-height: 42px;
 					position: relative;
 
 					.s1 {
 						position: absolute;
-						left: 20px;
+						left:3px;
 						top: 50%;
-						width: 2px;
-						height: 14px;
+						width: 3px;
+						height: 17px;
 						transform: translateY(-50%);
 						background-color: #f8981d;
 					}
