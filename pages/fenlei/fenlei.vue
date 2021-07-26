@@ -399,11 +399,11 @@
 						return item;
 					}
 				})
-				// if(scrollIndex==[]){
-				// 	return false;
-				// }else{
-					this.ind = scrollIndex[0].indexs
-				// }
+				if(scrollIndex[0]==0){
+					this.ind=0;
+				}else{
+					this.ind = scrollIndex[0].indexs+1
+				}
 				// console.log(scrollIndex)
 				// this.ind = scrollIndex[0].indexs
 			},

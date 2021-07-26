@@ -148,7 +148,7 @@
 		&>view:nth-child(2) {
 			opacity: 1;
 			font-size: 18px;
-			color: #0d8600;
+			color: #f8981d;
 		}
 
 		&>view:nth-child(3) {
