@@ -401,17 +401,24 @@
 				})
 				if(scrollIndex==[]){
 					return false;
+				}else if(scrollIndex[0]==0){
+					this.indexs = 0
+					this.ind = 0
+				}else if(scrollIndex[0].top==0){
+					this.indexs = 0
+					this.ind = 0
 				}else{
-					this.ind = scrollIndex[0].indexs
+					this.ind = scrollIndex[0].indexs+1
 				}
-				// console.log(scrollIndex)
+				console.log(scrollIndex)
 				// this.ind = scrollIndex[0].indexs
+				// console.log(this.ind)
 			},
 			//计算右侧栏每个tab的高度等信息
 			calcSize() {
 				var h = 0;
 				this.fl_list_items.forEach((item, index) => {
-					this.current = index
+					// this.current = index
 					var view = uni.createSelectorQuery().select("#main-" + index);
 					view.fields({
 						size: true
@@ -419,8 +426,10 @@
 						item.top = h;
 						h += data.height;
 						item.bottom = h;
-						item.indexs = this.current;
+						item.indexs = index;
+						this.indexs = index;
 					}).exec();
+					// console.log(this.ind,index)
 				})
 				// console.log(this.fl_list_items)
 			},
