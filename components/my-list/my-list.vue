@@ -134,6 +134,9 @@
 		box-sizing: border-box;
 		background-color: #FFFFFF;
 		margin-bottom: 20px;
+		&:nth-child(2){
+			margin-bottom: 5px;
+		}
 		ul{
 			width: 100%;
 			padding: 0 20px;

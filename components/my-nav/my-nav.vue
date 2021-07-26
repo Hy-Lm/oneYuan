@@ -22,7 +22,7 @@
 						<image src="../../static/bg.png" mode=""></image>
 						<text>益园养车</text>
 					</view>
-					<text>签到领积分</text>
+					<text @click="integralS">签到领积分</text>
 				</view>
 			</view>
 			<view class="bg"></view>
@@ -83,6 +83,27 @@
 				</view>
 			</view>
 		</view>
+	<!-- 签到领积分 -->
+	<view class="integral" @click="Mask" v-if="integralMask">
+		<view class="integral-info" @click="MaskS">
+			<view  @click="Mask">
+				<image src="../../static/trumpet.png" mode=""></image>
+			</view>
+			<view>
+				<view>
+					<view>＋<text>5</text>积分</view>
+				</view>
+				<view>
+					<view>
+						<image src="../../static/52aa34ff58bffd97658f3402c79dac8.png" mode=""></image>
+					</view>
+					<view>
+						今日签到成功!
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 	</view>
 </template>
 
@@ -91,10 +112,22 @@
 		name: "my-nav",
 		data() {
 			return {
-				loginInActive:false
+				loginInActive:false,
+				integralMask:false
 			};
 		},
 		methods: {
+			MaskS(){
+				this.integralMask=!this.integralMask
+			},
+			// 点击遮罩层
+			Mask(){
+				this.integralMask=!this.integralMask
+			},
+			//签到积分
+			integralS(){
+				this.integralMask=!this.integralMask
+			},
 			Vip(){
 				// 开通黑卡
 				uni.navigateTo({
@@ -136,6 +169,93 @@
 </script>
 
 <style lang="scss">
+	// 签到领积分
+	.integral{
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(175,175,175,.17);
+		.integral-info{
+			width: 244px;
+			height: 168px;
+			opacity: 1;
+			background: #ffffff;
+			border-radius: 10px;
+			box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.16); 
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translate(-50%,-50%);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 12px 13px;
+			box-sizing: border-box;
+			&>view:nth-child(1){
+				width: 12px;
+				height: 12px;
+				&>image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&>view:nth-child(2){
+				width: 100%;
+				padding: 0 17px;
+				box-sizing: border-box;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				&>view{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					&>view{
+						
+						// width: 44px;
+						height: 30px;
+						opacity: 1;
+						font-size: 16px;
+						color: #cd434d;
+						line-height: 20px;
+						letter-spacing: 1px;
+						&>text{
+							font-size: 21px;
+						}
+					}
+				}
+				&>view:nth-child(2){
+					padding-top: 30px;
+					border-top: 1px solid #ff7c00;
+					
+					&>view:nth-child(2){
+						
+						height: 22px;
+						opacity: 1;
+						font-size: 16px;
+						color: #f0923c;
+						line-height: 20px;
+						letter-spacing: 1px
+					}
+					&>view:nth-child(1){
+						width: 29px;
+						height: 30px;
+						margin-right: 10px;
+						&>image{
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+			
+		}
+	}
 	// 我的爱车
 	.addcart {
 		margin: 0 15px;
@@ -244,6 +364,7 @@
 		margin: 0;
 		padding: 0;
 		background: #f9f7f7;
+		position: relative;
 	}
 
 	// .content {
