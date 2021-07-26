@@ -380,7 +380,7 @@
 			flList(index) {
 				this.ind = index;
 				this.calcSize();
-				console.log(this.ind,index)
+				// console.log(this.ind,index)
 				// var  index = this.fl_list_items.findIndex(sitem=>sitem.index === index);
 				this.scrollTop = this.fl_list_items[index].top
 				// console.log(index)
@@ -427,6 +427,7 @@
 						h += data.height;
 						item.bottom = h;
 						item.indexs = index;
+
 						this.indexs = index;
 					}).exec();
 					// console.log(this.ind,index)
