@@ -11,7 +11,7 @@
 							<view :class="{'s1':isActive==1}"></view>
 						</view>
 						<view class="nav_title">
-							<view :class="{'active':isActive==2}"  @click="chenked(2)">
+							<view :class="{'active':isActive==2}" @click="chenked(2)">
 								到店更换
 							</view>
 							<view :class="{'s1':isActive==2}"></view>
@@ -31,7 +31,7 @@
 							<view class="left" style="line-height: 42px;" @click="selectDateS">
 								<!-- <text>配送时间</text> -->
 								<view>
-									<text >立即送出</text>
+									<text>立即送出</text>
 									<image src="../../../static/arrows.png" mode=""></image>
 								</view>
 							</view>
@@ -46,20 +46,20 @@
 								<p>益园养车</p>
 							</li>
 							<li>
-								<p>天津市北辰区北辰公园南100米</p>
+								<p>店铺电话：19103863654</p>
 							</li>
 							<li>
-								<p>店铺电话：19103863654</p>
+								<p>天津市北辰区北辰公园南100米</p>
 							</li>
 						</ol>
 						<view class="foot">
 							<view class="left" @click="selectDateTimeS">
 								<text style="margin-right: 5px;">到店时间</text>
-									<text> {{times}}</text>
-									<image src="../../../static/arrows.png" mode=""></image>
+								<text> {{times}}</text>
+								<image src="../../../static/arrows.png" mode=""></image>
 							</view>
 							<view class="right">
-								<text>预留电话</text><text>19103863546</text>
+								<text>预留电话：</text><text>19103863546</text>
 							</view>
 						</view>
 					</view>
@@ -128,7 +128,7 @@
 				<!-- <view v-for="(item,index) in deliveryTimeList" :key="index"> -->
 				<view v-if="nowDay===0">
 					<view @click="clickTime('尽快送达|60分钟达')" class="time"
-						:class="'尽快配送 17:06(28元配送费)'===selectTime&&nowDay===selectDay?'select':''">尽快配送 17:06(28元配送费)
+						:class="'尽快配送 (28元配送费)'===selectTime&&nowDay===selectDay?'select':''">尽快配送 (28元配送费)
 						<!-- <icon v-show="'尽快送达|60分钟达'===selectTime&&nowDay===selectDay" type="success"></icon> -->
 					</view>
 					<view class="time" :class="i==selectTime&&nowDay===selectDay?'select':''"
@@ -163,8 +163,8 @@
 	export default {
 		data() {
 			return {
-				selectDate:false,
-				selectDateTime:false,
+				selectDate: false,
+				selectDateTime: false,
 				isActive: 1,
 				deliveryTime: "",
 				showDelivery: false,
@@ -173,48 +173,48 @@
 					timeList: ""
 				}],
 				nowDay: 0,
-				selectTime: '尽快配送 17:06(28元配送费)',
+				selectTime: '尽快配送 (28元配送费)',
 				selectDay: 0,
 				// 到点时间
-				times:'00:00',
+				times: '00:00',
 			}
 		},
-		components:{
+		components: {
 			rescueTime
 		},
 		mounted() {
 			this.getDliveryTime();
 		},
 		methods: {
-			PayOrder(){
+			PayOrder() {
 				// 跳转到支付页面
 				uni.navigateTo({
-					url:'/pages/payOrder/payOrder'
+					url: '/pages/payOrder/payOrder'
 				})
 			},
 			// 选择到底时间
-			selectDateTimeS(){
-				this.selectDateTime=!this.selectDateTime
+			selectDateTimeS() {
+				this.selectDateTime = !this.selectDateTime
 			},
 			// 选择配送时间
-			selectDateS(){
-				this.selectDate=!this.selectDate
+			selectDateS() {
+				this.selectDate = !this.selectDate
 			},
 			chenked(type) {
 				this.isActive = type
-				this.selectDate=false
-				this.selectDateTime=false
+				this.selectDate = false
+				this.selectDateTime = false
 			},
 			// delivery_time() {
 			// 	this.$refs.footer.$el.style.display = 'none'
 			// 	this.$refs.select_date.$el.style.display = 'block'
 			// },
 			clickTime(text) {
-				
+
 				this.selectTime = text;
 				this.deliveryTime = this.deliveryTimeList[this.nowDay].day + text;
 				this.selectDay = this.nowDay;
-				this.selectDate=false
+				this.selectDate = false
 				console.log(this.deliveryTime)
 				//使用 this.$emit('input',data)改变父组件中v-model绑定的属性值
 				this.$emit('input', this.deliveryTimeList[this.selectDay].day + text);
@@ -312,10 +312,10 @@
 				}
 			},
 			// 从rescue-time 传递过来的点击事件
-			time(e){
+			time(e) {
 				console.log(e)
-				this.times=e.text
-				this.selectDateTime=e.active
+				this.times = e.text
+				this.selectDateTime = e.active
 			}
 		}
 	}
@@ -362,12 +362,13 @@
 					text-align: center;
 					color: #333333;
 					position: relative;
-					.s1{
+
+					.s1 {
 						content: '';
 						width: 35px;
 						height: 1px;
 						opacity: 1;
-						background-color:#accb69;
+						background-color: #accb69;
 						position: absolute;
 						bottom: -5px;
 						left: 50%;
@@ -397,13 +398,13 @@
 						image {
 							float: right;
 							width: 6px;
-							height: 11px;
+							height: 12px;
 							margin-top: 5px;
 						}
 
 						text {
 							height: 22px;
-							font-size: 16px;
+							font-size: 12px;
 							font-weight: 700;
 							color: #333333;
 						}
@@ -422,30 +423,40 @@
 				ol {
 					width: 100%;
 					list-style: none;
-					padding: 0 0 8px 0;
+					padding: 0;
 					border-bottom: 1px solid rgba(153, 153, 153, .3);
 
-					li:nth-child(1),
-					li:nth-child(3) {
-						p {
-							height: 22px;
-							line-height: 22px;
-							opacity: 1;
-							font-size: 12px;
-							text-align: left;
-							color: #333333;
-						}
+					li {
+						height: 22px;
+						line-height: 22px;
+						opacity: 1;
+						font-size: 12px;
+						text-align: left;
+						color: #333333;
+
 					}
 
-					li:nth-child(2) {
-						p {
-							width: 193px;
-							height: 20px;
-							opacity: 1;
-							font-size: 14px;
-							color: #333333;
-						}
-					}
+					// li:nth-child(1),
+					// li:nth-child(3) {
+					// 	p {
+					// 		height: 22px;
+					// 		line-height: 22px;
+					// 		opacity: 1;
+					// 		font-size: 12px;
+					// 		text-align: left;
+					// 		color: #333333;
+					// 	}
+					// }
+
+					// li:nth-child(2) {
+					// 	p {
+					// 		width: 193px;
+					// 		height: 20px;
+					// 		opacity: 1;
+					// 		font-size: 12px;
+					// 		color: #333333;
+					// 	}
+					// }
 				}
 
 				.foot {
@@ -454,10 +465,10 @@
 
 					.left,
 					.right {
-							image {
-								width: 4px;
-								height: 8px;
-								margin-left: 10px;
+						image {
+							width: 4px;
+							height: 8px;
+							margin-left: 10px;
 						}
 
 						text {
@@ -543,6 +554,7 @@
 				align-items: center;
 				border-bottom: 1px solid rgba(153, 153, 153, .3);
 				color: #333333;
+
 				&:last-child {
 					border-bottom: none;
 				}
@@ -560,11 +572,14 @@
 					flex-direction: column;
 					width: calc(100% - 72px);
 					height: 57px;
-					&>text:nth-child(2){
-						font-size: 12px;;
+
+					&>text:nth-child(2) {
+						font-size: 12px;
+						;
 						color: #7d7d7d;
 					}
-					&>view:nth-child(1){
+
+					&>view:nth-child(1) {
 						p {
 							width: calc(100% - 70px);
 							// height: 34px;
@@ -574,23 +589,23 @@
 							float: left;
 							margin-right: 10px;
 						}
-						
+
 						view {
 							width: 40px;
 							padding-right: 20px;
 							display: inline-block;
-						
+
 							text {
 								display: block;
 								text-align: right;
 							}
-						
+
 							text:nth-child(2) {
 								color: #7d7d7d;
 							}
 						}
 					}
-					
+
 				}
 			}
 		}

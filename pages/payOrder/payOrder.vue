@@ -89,7 +89,7 @@
 			height: 36px;
 			line-height: 36px;
 			opacity: 1;
-			background: #22d2a9;
+			background: #CD2727;
 			border-radius: 18px;
 			font-size: 16px;
 			font-weight: 700;
