@@ -37,7 +37,7 @@
 				全选
 			</view>
 			<view style="margin-left: 12px; display: flex;">
-				<view style="line-height: 40px;">合计 ¥</view><view style="font-size: 26px; color:#FF3B30">198</view>
+				<view style="line-height: 40px;">合计 ¥</view><view style="font-size: 26px; color:#FF3B30">{{total}}</view>
 				<view class="shoppingBtn">
 					去结算
 				</view>
@@ -50,7 +50,8 @@
 	export default {
 		data() {
 			return {
-				checked:false,
+				checked:false,//全选 
+				total:0,//合计金额
 				array: [{
 						titleBox: "悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅",
 						price: 198,
@@ -69,7 +70,6 @@
 						valueBox: "121", //标识
 						checked: false, //复选框
 						scrList: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg'
-
 					}
 				],
 
@@ -80,6 +80,37 @@
 				// 点击复选框将数据将数据提交
 				val.checked = !val.checked
 				this.array[index] = val
+				let array=this.array
+				let num=0
+				this.total=0
+				array.forEach(item=>{
+					if(item.checked){
+						this.total+=item.price*item.number
+						num++
+					}else{
+						num--
+					}
+				})
+				if(num==array.length){
+					this.checked=true
+				}else{
+					this.checked=false
+				}
+			},
+			checkClick(){
+				this.checked=!this.checked
+				let array=this.array
+				this.total=0
+				array.forEach(item=>{
+					if(this.checked){
+						this.total+=item.price*item.number
+					}else{
+						this.total=0
+					}
+					item.checked=this.checked
+				})
+				console.log(array)
+				this.array=array
 			}
 		}
 	}

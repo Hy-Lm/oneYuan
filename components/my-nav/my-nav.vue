@@ -86,8 +86,8 @@
 	<!-- 签到领积分 -->
 	<view class="integral" @click="Mask" v-if="integralMask">
 		<view class="integral-info" @click="MaskS">
-			<view  @click="Mask">
-				<image src="../../static/trumpet.png" mode=""></image>
+			<view  @click="Mask" style="width: 25px; height: 25px;">
+				<image src="../../static/x.svg" mode=""></image>
 			</view>
 			<view>
 				<view>

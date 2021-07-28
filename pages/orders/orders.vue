@@ -9,11 +9,12 @@
 		</view>
 		<!-- 商品列表组件渲染 -->
 		<view class="orders-items">
-			<orders-item v-for="(item,index) in orders_items[ind]" :item="item" :key="index"></orders-item>
+			<orders-item v-for="(item,index) in list" :item="item" :key="index"></orders-item>
 		</view>
 		<!-- 发现好货 -->
 		<view class="orders-good">
-			<view class="orders-good-top">
+				<parts></parts>
+			<!-- <view class="orders-good-top">
 				发现好货
 			</view>
 			<view class="orders-good-items">
@@ -27,7 +28,7 @@
 						<view><text>{{item.number}}</text>人购买</view>
 					</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
@@ -36,7 +37,7 @@
 	export default {
 		data() {
 			return {
-				ind: 0,
+				ind:0,
 				// 切换状态
 				styleobj1: {
 					'color': '#F0923C',
@@ -48,165 +49,262 @@
 				},
 				orders_top_item: ['全部', '待付款', '待发货', '待收货'],
 				// 商品列表
+				list:[],
 				orders_items: [
+					// 没有付款
+					{
+						actives:false,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:false//是否发货
+					},
+					{
+						actives:false,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:false//是否发货
+					},
+					// 付款没发货
+					{
+						actives:true,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:false//是否发货
+					},
+					{
+						actives:true,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:false//是否发货
+					},
+					// 付款发货
+					{
+						actives:true,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:true//是否发货
+					},
+					{
+						actives:true,//是否付款
+						img: '../../static/autorepair.png',//商品图片
+						title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',//商品介绍
+						call: '小号(60cm)',//规格
+						num: 1,//数量
+						zong_mony: 196,//总价
+						sale: 38,//优惠
+						shipments:true//是否发货
+					},
 					// 全部
-					[{
-
-							actives: "卖家已付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '小号(60cm)',
-							num: 1,
-							zong_mony: 196,
-							sale: 38,
-							active: false,
-							btn1: '再次购买'
-						},
-						{
-							actives: "卖家已付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '中号(120cm)',
-							num: 2,
-							zong_mony: 200,
-							sale: 40,
-							active: false,
-							btn1: '再次购买'
-						},
-						{
-							actives: "卖家已付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '大号(180cm)',
-							num: 3,
-							zong_mony: 400,
-							sale: 60,
-							active: false,
-							btn1: '再次购买'
-						}
-					],
-					// 待付款
-					[{
-							actives: "等待卖家付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '大号(180cm)',
-							num: 3,
-							zong_mony: 400,
-							sale: 60,
-							active: true,
-							btn1: '联系客服',
-							btn2: '付款'
-						},
-						{
-							actives: "等待卖家付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '中号(120cm)',
-							num: 2,
-							zong_mony: 200,
-							sale: 40,
-							active: true,
-							btn1: '联系客服',
-							btn2: '付款'
-						},
-					],
-					// 已付款
-					[{
-							actives: "买家已付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '大号(180cm)',
-							num: 3,
-							zong_mony: 400,
-							sale: 60,
-							active: true,
-							btn1: '修改地址',
-							btn2: '再次购买'
-						},
-						{
-							actives: "买家已付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '中号(120cm)',
-							num: 2,
-							zong_mony: 200,
-							sale: 40,
-							active: true,
-							btn1: '修改地址',
-							btn2: '再次购买'
-						},
-					],
-					// 待付款
-					[{
-							actives: "等待卖家付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '大号(180cm)',
-							num: 3,
-							zong_mony: 400,
-							sale: 60,
-							active: true,
-							btn1: '查看物流',
-							btn2: '再次购买'
-						},
-						{
-							actives: "等待卖家付款",
-							img: '../../static/autorepair.png',
-							title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
-							call: '中号(120cm)',
-							num: 2,
-							zong_mony: 200,
-							sale: 40,
-							active: true,
-							btn1: '查看物流',
-							btn2: '再次购买'
-						},
-					]
+					// {
+					// 		actives: "卖家已付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '小号(60cm)',
+					// 		num: 1,
+					// 		zong_mony: 196,
+					// 		sale: 38,
+					// 		active: false,
+					// 		btn1: '再次购买'
+					// 	},
+					// 	{
+					// 		actives: "卖家已付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '中号(120cm)',
+					// 		num: 2,
+					// 		zong_mony: 200,
+					// 		sale: 40,
+					// 		active: false,
+					// 		btn1: '再次购买'
+					// 	},
+					// 	{
+					// 		actives: "卖家已付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '大号(180cm)',
+					// 		num: 3,
+					// 		zong_mony: 400,
+					// 		sale: 60,
+					// 		active: false,
+					// 		btn1: '再次购买'
+					// 	},
+					
+					// // 待付款
+					// {
+					// 		actives: "等待卖家付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '大号(180cm)',
+					// 		num: 3,
+					// 		zong_mony: 400,
+					// 		sale: 60,
+					// 		active: true,
+					// 		btn1: '联系客服',
+					// 		btn2: '付款'
+					// 	},
+					// 	{
+					// 		actives: "等待卖家付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '中号(120cm)',
+					// 		num: 2,
+					// 		zong_mony: 200,
+					// 		sale: 40,
+					// 		active: true,
+					// 		btn1: '联系客服',
+					// 		btn2: '付款'
+					// 	},
+					
+					// // 已付款
+					// {
+					// 		actives: "买家已付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '大号(180cm)',
+					// 		num: 3,
+					// 		zong_mony: 400,
+					// 		sale: 60,
+					// 		active: true,
+					// 		btn1: '修改地址',
+					// 		btn2: '再次购买'
+					// 	},
+					// 	{
+					// 		actives: "买家已付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '中号(120cm)',
+					// 		num: 2,
+					// 		zong_mony: 200,
+					// 		sale: 40,
+					// 		active: true,
+					// 		btn1: '修改地址',
+					// 		btn2: '再次购买'
+					// 	},
+					
+					// // 待付款
+					// {
+					// 		actives: "等待卖家付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '大号(180cm)',
+					// 		num: 3,
+					// 		zong_mony: 400,
+					// 		sale: 60,
+					// 		active: true,
+					// 		btn1: '查看物流',
+					// 		btn2: '再次购买'
+					// 	},
+					// 	{
+					// 		actives: "等待卖家付款",
+					// 		img: '../../static/autorepair.png',
+					// 		title: '悠度/户外便携折叠椅火车靠背凳子 沙滩椅钓鱼椅写生椅',
+					// 		call: '中号(120cm)',
+					// 		num: 2,
+					// 		zong_mony: 200,
+					// 		sale: 40,
+					// 		active: true,
+					// 		btn1: '查看物流',
+					// 		btn2: '再次购买'
+					// 	},
+					
 				],
 				// 发现好货
-				orders_good_items: [{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 210,
-						number: 44718
-					},
-					{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 320,
-						number: 55718
-					},
-					{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 430,
-						number: 66718
-					},
-					{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 540,
-						number: 77718
-					},
-					{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 650,
-						number: 88718
-					},
-					{
-						img: '../../static/shangxin1.png',
-						title: '信义 上海通用-乐风 前挡玻璃更换',
-						mony: 760,
-						number: 99718
-					}
-				]
+				// orders_good_items: [{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 210,
+				// 		number: 44718
+				// 	},
+				// 	{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 320,
+				// 		number: 55718
+				// 	},
+				// 	{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 430,
+				// 		number: 66718
+				// 	},
+				// 	{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 540,
+				// 		number: 77718
+				// 	},
+				// 	{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 650,
+				// 		number: 88718
+				// 	},
+				// 	{
+				// 		img: '../../static/shangxin1.png',
+				// 		title: '信义 上海通用-乐风 前挡玻璃更换',
+				// 		mony: 760,
+				// 		number: 99718
+				// 	}
+				// ]
 			}
+		},
+		mounted() {
+			this.list=this.orders_items
 		},
 		methods: {
 			ordersItem(index) {
-				this.ind = index
+				this.ind=index
+				if(index==0){
+					this.list=this.orders_items
+					console.log(this.list)
+				}
+				if(index==1){
+					this.list=[]
+					var arr=this.orders_items
+					arr.forEach(item=>{
+						if(!item.actives){
+							this.list.push(item)
+						}
+					})
+				}
+				if(index==2){
+					this.list=[]
+					var arr=this.orders_items
+					arr.forEach(item=>{
+						if(item.actives && !item.shipments){
+							this.list.push(item)
+						}
+					})
+				}
+				if(index==3){
+					this.list=[]
+					var arr=this.orders_items
+					arr.forEach(item=>{
+						if(item.actives && item.shipments){
+							this.list.push(item)
+						}
+					})
+				}
 			}
 		}
 	}
@@ -254,7 +352,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-
 			.orders-good-item {
 				&:nth-child(even) {
 					margin-right: 0;
@@ -315,16 +412,15 @@
 	}
 
 	.orders-items {
-		margin-top: 30px;
+		margin-top: 10px;
 		// height: 192px;
 		opacity: 1;
-		background: #ffffff;
-		border-radius: 10px;
+		background: #f9f7f7;
+		// border-radius: 10px;
 		margin-bottom: 8px;
 	}
 
 	.orders {
-		border-top: 1px solid #E8E6E6;
 		width: 100%;
 		padding: 7px 15px;
 		padding-bottom: 0;

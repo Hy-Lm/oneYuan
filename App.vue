@@ -14,6 +14,9 @@
 
 <style>
 	/*每个页面公共css */
+		uni-image{
+			/* display: inherit; */
+		}
 		/* 修改checkbox的样式 */
 	    uni-checkbox .uni-checkbox-input {
 			border-radius: 50%;
