@@ -323,6 +323,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/longin/longin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "登录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

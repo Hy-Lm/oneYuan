@@ -5,9 +5,9 @@
 			<view class="loginIn" v-if="loginInActive">
 				<view class="message">
 					<view class="loginIn-con">
-						<image src="../../static/bg.png" mode=""></image>
+						<image src="../../static/my/weidenglu@3x.png" mode=""></image>
 						<view>
-							<view>登录/注册</view>
+							<view @click="longin">登录/注册</view>
 							<view>登录享受更多优惠</view>
 						</view>
 
@@ -50,7 +50,7 @@
 			<!-- 登录前  添加你的爱车 -->
 			<view class="addcart" v-if="loginInActive">
 				<view class="addcart-img">
-					<image src="../../static/images/addition@3x.png" mode=""></image>
+					<image src="../../static/my/baomachebiao@3x.png" mode=""></image>
 				</view>
 				<view class="addcart-con">
 					<view>添加您的爱车</view>
@@ -61,7 +61,7 @@
 			<view class="vip" @click="Vip" v-if="!loginInActive">
 				<view class="vip-l">
 					<view>
-						<image src="../../static/preview.png" mode=""></image>
+						<image src="../../static/my/baomachebiao@3x.png" mode=""></image>
 						<view>益园黑卡</view>
 					</view>
 					<view>开卡送38元红包</view>
@@ -112,11 +112,17 @@
 		name: "my-nav",
 		data() {
 			return {
-				loginInActive:false,
+				loginInActive:true,
 				integralMask:false
 			};
 		},
 		methods: {
+			longin(){
+				// 点击登录 跳转页面
+				uni.navigateTo({
+					url:'/pages/longin/longin'
+				})
+			},
 			MaskS(){
 				this.integralMask=!this.integralMask
 			},

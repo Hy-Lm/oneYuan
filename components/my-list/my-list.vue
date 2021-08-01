@@ -3,17 +3,17 @@
 		<view class="box">
 			<ul>
 				<li @click="MyRecord">
-					<image src="../../static/维修记录.png" ></image>
-					<text>维修记录</text>
+					<image src="../../static/my/weixiujilu@3x.png" ></image>
+					<text>维修记录 </text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li @click="MyDiscounts ">
-					<image src="../../static/优惠券.png" ></image>
+					<image src="../../static/my/youhuiquan@3x.png" ></image>
 					<text>我的优惠券</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li>
-					<image src="../../static/页面-1.png" ></image>
+					<image src="../../static/my/lianxikefu@3x.png" ></image>
 					<text>联系客服</text>
 					<view>
 						<text>人工客服：8:00-20:00</text>
@@ -21,7 +21,7 @@
 					</view>
 				</li>
 				<li @click="myTotal">
-					<image src="../../static/积分.png" ></image>
+					<image src="../../static/my/jifen@3x.png" ></image>
 					<text>积分商城</text>
 					<view>
 						<text>积分兑好礼</text>
@@ -29,7 +29,7 @@
 					</view>
 				</li>
 				<li @click="mySet">
-					<image src="../../static/设置.png" ></image>
+					<image src="../../static/my/shezhi-icon@3x.png" ></image>
 					<text>设置</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
@@ -39,22 +39,22 @@
 		<view class="box">
 			<ul>
 				<li @click="myOrders">
-					<image src="../../static/订单.png"></image>
+					<image src="../../static/my/dingdan-icon@3x.png"></image>
 					<text>我的订单</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li @click="MyRescue">
-					<image src="../../static/应急救援.png" ></image>
+					<image src="../../static/my/daolujiuyuan@3x.png" ></image>
 					<text>道路救援</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li @click="myAssess">
-					<image src="../../static/爱车估价.png" ></image>
+					<image src="../../static/my/aichegujia@3x.png" ></image>
 					<text>爱车评估</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
 				<li @click="myInsurance">
-					<image src="../../static/车险.png" ></image>
+					<image src="../../static/my/chexian-iocn@3x.png" ></image>
 					<text>车险</text>
 					<image class="arrows" src="../../static/images/arrows@3x.png" mode=""></image>
 				</li>
@@ -151,8 +151,8 @@
 				height: 40px;
 				box-sizing: border-box;
 				image{
-					width: 19px;
-					height: 18px;
+					width: 20px;
+					height: 20px;
 					vertical-align: middle;
 					// margin-right: 20px;
 				}

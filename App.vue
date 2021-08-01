@@ -21,7 +21,9 @@
 	    uni-checkbox .uni-checkbox-input {
 			border-radius: 50%;
 		}
-	
+		.uni-input-input, .uni-input-placeholder{
+			font-size: 16px; 
+		}
 		uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {
 			border: 1rpx solid #F8981D;
 		}
