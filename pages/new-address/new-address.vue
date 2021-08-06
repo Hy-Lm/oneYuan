@@ -63,7 +63,7 @@
 			},	
 			newAddAdress() {
 				// 新增收货地址
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/newAdd-address/newAdd-address'
 				})
 			},
@@ -71,7 +71,7 @@
 				var item=this.address[index];
 				// console.log(item)
 				// 编辑修货地址
-				uni.navigateTo({
+				uni.redirectTo({
 					url:"/pages/newUpdate-address/newUpdate-address?item="+JSON.stringify(item)
 				})
 			},
@@ -89,6 +89,7 @@
 		// background: #f9f7f7;
 		padding: 0 15px;
 		padding-bottom: 0;
+		box-sizing: border-box;
 		// position: relative;
 	}
 

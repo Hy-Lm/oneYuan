@@ -117,7 +117,7 @@
             {
                 "navigationBarTitleText": "享受服务",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#0D8600",
+				"navigationBarBackgroundColor": "#25b85b",
 				"navigationBarTextStyle": "white"
             }
             

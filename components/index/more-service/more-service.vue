@@ -84,7 +84,7 @@
 	.navbar_content {
 		width: 100%;
 		height: 133px;
-		background-color: #0D8600;
+		background-color: #25b85b;
 		box-sizing: border-box;
 
 		// 搜索
@@ -132,7 +132,7 @@
 			width: 100%;
 			height: 74px;
 			opacity: 1;
-			background: #f9f7f7;
+			background: #FFFFFF;
 			border-radius: 50%;
 		}
 
@@ -152,6 +152,7 @@
 				display: inline-block;
 				vertical-align: middle;
 				padding: 0 10px;
+				background-color: #FFFFFF;
 			}
 		}
 
@@ -184,7 +185,7 @@
 						text-align: center;
 						height: 17px;
 						font-size: 12px;
-						color: #000000;
+						color: #333333;
 						line-height: 19px;
 
 						&:nth-child(1) {
@@ -232,7 +233,7 @@
 						opacity: 1;
 						font-size: 16px;
 						text-align: left;
-						color: #000000;
+						color: #333333;
 					}
 
 					view:nth-child(2) {
@@ -241,7 +242,7 @@
 						opacity: 1;
 						font-size: 12px;
 						text-align: left;
-						color: #000000;
+						color: #333333;
 
 						text {
 							margin-right: 12px;
@@ -253,7 +254,7 @@
 						opacity: 1;
 						font-size: 12px;
 						text-align: left;
-						color: #000000;
+						color: #333333;
 
 						.km {
 							float: right;

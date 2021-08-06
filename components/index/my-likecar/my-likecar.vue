@@ -13,9 +13,9 @@
 			</view>
 			<view>
 				<view>
-					<radio @click="r(index)" value="r1" :checked="item.active" color="#f00"
+					<radio @click="r(index)" value="r1" :checked="item.active" color="#f8981d"
 						style="transform: scale(0.8);" />
-					<text :style="{'color': (item.active?'#f86259':'#707070')}">已设为默认车</text>
+					<text :style="{'color': (item.active?'#f8981d':'#707070')}">已设为默认车</text>
 				</view>
 				<view>
 					<!-- <view>

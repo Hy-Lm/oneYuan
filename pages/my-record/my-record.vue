@@ -78,7 +78,7 @@
 	.myRecord-bottom{
 		
 		.item{
-			margin-top: 23px;
+			margin-top: 10px;
 			opacity: 1;
 			background: #ffffff;
 			border-radius: 10px;

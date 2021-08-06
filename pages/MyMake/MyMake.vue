@@ -10,7 +10,7 @@
 		<view class="myMakList">
 			<view class="Make" v-for="item in MakeItem">
 				<view class="MakeBox">
-					<view style="font-size: 18px;">
+					<view style="font-size: 16px;">
 						{{item.trade}}
 					</view>
 					<view style="margin: 5px 0; color:#515151">
@@ -18,7 +18,7 @@
 							预约服务：
 						</view>
 						<view class="business" v-for="(items,indexs) in item.service"> 
-							<view :style="{'background': (indexs ==0?'#396A3A':'#F0923C')}">{{items}}</view>
+							<view :style="{'background': (indexs ==0?'#25b85b':'#f8981d')}">{{items}}</view>
 						</view>
 					</view>
 					<view style="color:#515151">
@@ -130,7 +130,7 @@
 		height: calc(100vh - 45px);
 		/* */
 		
-		background:  #f9f7f7;
+		// background:  #f9f7f7;
 		.myMakeNav{
 			width: calc(100% - 60px);
 			height: 50px;
@@ -157,9 +157,10 @@
 				background: #f1f1f1;;
 				display: flex;
 				justify-content:space-between;
+				// box-sizing: border-box;
 				.MakeBox{
 					view{
-						font-size: 14px;
+						font-size: 12px;
 						display: flex;
 						align-items:center;
 						.business{
@@ -168,6 +169,7 @@
 								margin-right: 10px;
 								border-radius: 8px;
 								color:#fff;
+								box-sizing: border-box;
 								// border: 1px solid #f00;
 							}
 						}

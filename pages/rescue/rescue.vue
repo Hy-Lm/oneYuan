@@ -3,7 +3,7 @@
 		<!-- 道路 -->
 		<view class="page-body">
 			<view class="page-section page-section-gap">
-				<map style="width: 100%; height: 100vh;" :latitude="latitude" :longitude="longitude">
+				<map style="width: 100%; height: 60vh;" :latitude="latitude" :longitude="longitude">
 				</map>
 			</view>
 		</view>
@@ -105,14 +105,15 @@
 		position: relative;
 		width: 100%;
 		.rescue-con {
+			// z-index: 99;
 			position: fixed;
-			bottom: 5%;
-			left: 50%;
-			transform: translate(-50%);
-			width: 90%;
-			height: 239px;
+			bottom: 0;
+			left: 0;
+			// transform: translate(-50%);
+			width: 100%;
+			height: 40vh;
 			opacity: 1;
-			background: #ffffff;
+			background: #FFFFFF;
 			border-radius: 6px;
 			padding:12px 13px;
 			box-sizing: border-box;

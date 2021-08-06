@@ -3,7 +3,7 @@
 		<!-- 我的设置 -->
 		<view class="mySet-info">
 			<view class="mySet-info-img">
-				<image src="../../static/52aa34ff58bffd97658f3402c79dac8.png" mode=""></image>
+				<image  src="../../static/52aa34ff58bffd97658f3402c79dac8.png" mode=""></image>
 			</view>
 			<view class="mySet-info-con">
 				<view class="mySet-info-con-list">
@@ -35,7 +35,7 @@
 						</view>
 					</view>
 					<view class="con-list-img con-list-imgs">
-						<image src="../../static/arrows.png" mode=""></image>
+						<image src="../../static/images/arrows@3x.png" mode=""></image>
 					</view>
 				</view>
 				<view class="mySet-info-con-list">
@@ -49,7 +49,7 @@
 							21.68MB
 						</view>
 						<view class="con-list-img con-list-imgs">
-						<image src="../../static/arrows.png" mode=""></image>
+						<image src="../../static/images/arrows@3x.png" mode=""></image>
 						</view>
 					</view>
 					
@@ -106,6 +106,7 @@
 </script>
 
 <style lang="scss">
+	
 	.con-list-con-s{
 		display: flex;
 	}
