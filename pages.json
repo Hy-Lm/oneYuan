@@ -117,7 +117,7 @@
             {
                 "navigationBarTitleText": "享受服务",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#0D8600",
+				"navigationBarBackgroundColor": "#25b85b",
 				"navigationBarTextStyle": "white"
             }
             
@@ -145,7 +145,7 @@
             "path" : "pages/new-address/new-address",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "收货地址",
+                "navigationBarTitleText": "管理收货地址",
                 "enablePullDownRefresh": false
             }
             
@@ -154,8 +154,11 @@
             "path" : "pages/newAdd-address/newAdd-address",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "新增地址",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "添加收货地址",
+                "enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView":false
+				}
             }
             
         }
@@ -163,8 +166,11 @@
             "path" : "pages/newUpdate-address/newUpdate-address",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "编辑地址",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "编辑收货地址",
+                "enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView":false
+				}
             }
             
         }

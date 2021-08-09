@@ -1,27 +1,32 @@
 <template>
 	<view class="newAdd">
+		<view class="newAdd-top">
+			<view @click="back()">
+				<image class="imagess" src="../../static/images/arrows@3x.png" mode=""></image>
+			</view>
+			<view>编辑收货地址</view>
+			<view @click="updatedz">保存</view>
+		</view>
 		<view class="newAdd-info">
 			<view>
-				<label for="name">收件人</label>
-				<input type="text" id="name" :value="updateAdress.add_user_name" placeholder="姓名" />
+				<label for="name">收件人:</label>
+				<input type="text" id="name" :value="updateAdress.add_user" placeholder="姓名" />
 			</view>
 			<view>
-				<label for="tel">电话</label>
+				<label for="tel">手机号码:</label>
 				<input type="text" id="tel" :value="updateAdress.add_user_phone" placeholder="手机号" />
 			</view>
-			<view>
-				<label for="address">地址</label>
+			<view class="imgssss">
+				<label for="address">所在地区:</label>
 				<input type="text" id="address" :value="updateAdress.add_dizhi" placeholder="请输入收货地址" />
+				<image src="../../static/rightjian.png" mode=""></image>
+			</view>
+			<view>
+				<label for="address">详细地址:</label>
+				<input type="text" id="address" :value="updateAdress.add_zixi" placeholder="请输入详细地址" />
 			</view>
 		</view>
-		<view class="newAdd-btn">
-			<view class="btn1" @click="delAddress">
-				删除地址
-			</view>
-			<view class="btn2" @click="updatedz">
-				保存地址
-			</view>
-		</view>
+		
 	</view>
 </template>
 
@@ -33,9 +38,8 @@
 			}
 		},
 		methods: {
-			// 删除地址
-			delAddress(){
-				console.log('删除地址')
+			back(){
+				// 返回
 				uni.redirectTo({
 					url:"/pages/new-address/new-address"
 				})
@@ -58,50 +62,82 @@
 </script>
 
 <style lang="scss">
+	.imagess{
+		transform: rotate(180deg);
+	}
 page {
 		flex: 1;
 		opacity: 1;
-		background: #f9f7f7;
+		// background: #f9f7f7;
 		// position: relative;
 	}
-	.newAdd-btn{
+	.newAdd{
+		margin-top: 44px;
+	}
+	.newAdd-top{
+		padding: 0 15px;
 		display: flex;
-		justify-content: space-around;
-		margin: 35px auto;
-		&>view{
-			width: 115px;
-			text-align: center;
-			height: 30px;
-			line-height: 30px;
-			opacity: 1;
-			border: 1px solid #919191;
-			border-radius: 7px;
-			font-size: 16px;
-			color: #000000;
+		justify-content: space-between;
+		box-sizing: border-box;
+		&>view:nth-child(1){
+			width: 7px;
+			height: 14px;
+			&>image{
+				width: 100%;
+				height: 100%;
+			}
 		}
 		&>view:nth-child(2){
-			background: #accb69;
+			height: 25px;
+			opacity: 1;
+			font-size: 18px;
+			font-family: PingFang SC, PingFang SC-Regular;
+			font-weight: 400;
+			text-align: left;
+			color: #333333;
+		}
+		&>view:nth-child(3){
+			height: 22px;
+			opacity: 1;
 			font-size: 16px;
-			color: #ffffff;
+			font-family: PingFang SC, PingFang SC-Regular;
+			font-weight: 400;
+			text-align: left;
+			color: #333333;
 		}
 	}
 	.newAdd-info{
-		padding: 19px 15px 0 15px;
+		margin-top: 11px;
+		padding: 0 15px 0 15px;
+		box-sizing: border-box;
+		.imgssss{
+			&>image{
+				width: 6px;
+				height: 11px;
+			}
+		}
 		view{
 			display: flex;
-			margin-bottom: 14px;
+			// margin-bottom: 14px;
+			padding: 11px 0 ;
 			border-bottom: 1px solid #E8E6E6;
+			box-sizing: border-box;
+			align-items: center;
 			label{
-				width: 50px;
-				margin-right:10px ;
+				width: 60px;
+				margin-right:15px ;
 				font-size: 14px;
+				text-align-last: justify;
 			}
 			input{
-				padding-bottom: 10px;
 				font-size: 14px;
 				flex: 1;
 				
 			}
+			
+		}
+		.uni-input-input, .uni-input-placeholder{
+			font-size: 14px;
 		}
 	}
 </style>
