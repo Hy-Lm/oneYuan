@@ -1,1 +1,0 @@
-<view><swiper class="home-swiper" vertical="true" current="{{activeIndex_click}}" data-event-opts="{{[['change',[['change',['$event']]]]]}}" bindchange="__e"><block wx:for="{{tab}}" wx:for-item="item" wx:for-index="index"><swiper-item class="swiper-item"><list-item vue-id="{{'136a84bc-1-'+index}}" list="{{item}}" bind:__l="__l"></list-item></swiper-item></block></swiper></view>

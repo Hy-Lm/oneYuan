@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "全部订单",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "orders-item": "/components/orders-item/orders-item"
-  }
-}
