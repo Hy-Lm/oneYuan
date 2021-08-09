@@ -345,20 +345,20 @@
 		"backgroundColor": "#fff",
 		"list": [{
 				"pagePath": "pages/index/index",
-				"iconPath": "static/shouye01.png",
-				"selectedIconPath": "static/shouye.png",
+				"iconPath": "static/navigation/homepage-2@3x.png",
+				"selectedIconPath": "static/navigation/homepage@3x.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/fenlei/fenlei",
-				"iconPath": "static/fenlei01.png",
-				"selectedIconPath": "static/fenlei.png",
+				"iconPath": "static/navigation/classify@3x.png",
+				"selectedIconPath": "static/navigation/fenlei-2@3x.png",
 				"text": "分类"
 			},
 			{
 				"pagePath": "pages/my/my",
-				"iconPath": "static/my01.png",
-				"selectedIconPath": "static/my.png",
+				"iconPath": "static/navigation/wode@3x.png",
+				"selectedIconPath": "static/navigation/wode-icon@3x.png",
 				"text": "我的"
 			}
 		]
