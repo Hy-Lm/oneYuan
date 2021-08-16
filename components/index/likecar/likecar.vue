@@ -3,29 +3,29 @@
 		<view class="likecar_box">
 			<view>
 				<text>姓名</text>
-				<input type="text" value="" placeholder="请输入姓名"/>
+				<input type="text" v-model="name" value="" placeholder="请输入姓名"/>
 			</view>
 			<view>
 				<text>预留电话</text>
-				<input type="text" value="" placeholder="请输入预留电话"/>
+				<input type="text" value="" v-model="tel" placeholder="请输入预留电话"/>
 			</view>
 			<view>
 				<text>车牌号</text>
-				<select name="" id="">
+				<select name="" id="" v-model="sel">
 					<option value="津">津</option>
 					<option value="京">京</option>
 					<option value="粤">粤</option>
 				</select>
-				<input type="text" value="" placeholder="请输入车牌号"/>
+				<input type="text" v-model="idcar" value="" placeholder="请输入车牌号"/>
 			</view>
 			<view>
 				<text>当前里程</text>
-				<input type="text" value="" placeholder="请输入当前里程"/>
+				<input type="text" v-model="km" value="" placeholder="请输入当前里程"/>
 				<text class="km">Km</text>
 			</view>
 			<view>
 				<text>上路时间</text>
-				<input type="text" value="" placeholder="请输入上路时间"/>
+				<input type="text" v-model="gotime" value="" placeholder="请输入上路时间"/>
 			</view>
 		</view>
 		<view class="footer" @click="likecar">
@@ -38,17 +38,68 @@
 	export default {
 		data() {
 			return {
-				
+				name:'',
+				tel:'',
+				km:'',
+				gotime:'',
+				sel:'',
+				idcar:''
 			}
 		},
 		methods: {
 			likecar(){
-				// 点击完成后 跳转到我的爱车
-				// 跳转到添加爱车页面
-				uni.redirectTo({
-					// 跳转到我的爱车
-					url:"../my-likecar/my-likecar"
-				})
+				console.log(this.tel)
+				var {name,tel,km,gotime,idcar}=this
+				uni.request({
+				    url: 'http://192.168.7.152:8081/educar/car/addCar', //仅为示例，并非真实接口地址。
+					method:"POST",
+				    data: {
+					   name,
+					   tel,
+					   idcar,
+					   km,
+					   gotime
+					  
+				    },
+					header: {
+						'content-type': 'application/x-www-form-urlencoded', 
+					},
+				    success: function(res) {
+				        if(res.data){
+							// uni.showModal({
+							//     title: '确认',
+							//     content: '这是一个模态弹窗',
+							//     success: function (res) {
+							//         if (res.confirm) {
+							//             console.log('用户点击确定');
+							//         } else if (res.cancel) {
+							//             console.log('用户点击取消');
+							//         }
+							//     }
+							// });
+				    //     	uni.showToast({
+				    //     		title:'添加成功',
+				    //     		icon:'none',
+								// duration:2000,
+								// // success() {
+								// // 	uni.redirectTo({
+								// // 		// 跳转到我的爱车
+								// // 		url:"../my-likecar/my-likecar"
+								// // 	})
+								// // }
+				    //     	})
+							uni.redirectTo({
+								// 跳转到我的爱车
+								url:"../my-likecar/my-likecar"
+							})
+				        }else{
+				        	uni.showToast({
+				        		title:'网络连接失败',
+				        		icon:'none'
+				        	})
+				        }
+				    }
+				});
 			}
 		}
 	}

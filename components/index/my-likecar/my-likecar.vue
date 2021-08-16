@@ -1,14 +1,15 @@
 <template>
 	<view class="myLikecar">
-		<view class="car_items" v-for="(item,index) in car_items" :key="index">
+		<view class="car_items" v-for="(item,index) in car_items" :key="item.id">
 			<view>
 				<view>
-					<view>{{item.wagon}}</view>
-					<view>{{item.vehicle}}</view>
-					<view>行驶里程：{{item.mileage}}km</view>
+					<view>{{item.name}}</view>
+					<!-- <view>{{item.vehicle}}</view> -->
+					<view>行驶里程：{{item.km}}km</view>
 				</view>
 				<view>
-					<image :src="item.img" mode="aspectFit"></image>
+					<!-- <image :src="item.img" mode="aspectFit"></image> -->
+					 <image src="../../../static/2.jpg" mode="aspectFit"></image>
 				</view>
 			</view>
 			<view>
@@ -22,7 +23,7 @@
 						<image src="../../../static/2.jpg"></image>
 						<text>编辑</text>
 					</view> -->
-					<view @click="delMycar(index)">
+					<view @click="delMycar(item.id)">
 						<image src="../../../static/2.jpg"></image>
 						<text>删除</text>
 					</view>
@@ -63,7 +64,26 @@
 				]
 			}
 		},
+		mounted() {
+			this.info()
+		},
 		methods: {
+			info(){
+				uni.request({
+				    url: 'http://192.168.7.152:8081/educar/car/findAll', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    header: {
+				        'custom-header': 'hello' //自定义请求头信息
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+						this.car_items=res.data
+				        // this.text = 'request success';
+				    }
+				})
+			},
 			r(index) {
 				// 全部
 				this.car_items.forEach(function(value, key) {
@@ -74,7 +94,32 @@
 
 			},
 			delMycar(index) {
-				console.log(index)
+				uni.request({
+				    url: 'http://192.168.7.152:8081/educar/car/deleteById', //仅为示例，并非真实接口地址。
+					method:"POST",
+				    data: {
+				        id: index
+				    },
+				    header: {
+				    	'content-type': 'application/x-www-form-urlencoded', 
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+						if(res.data){
+							uni.showToast({
+								title:'删除成功',
+								icon:'none'
+							})
+							this.info()
+						}else{
+							uni.showToast({
+								title:'网络连接失败',
+								icon:'none'
+							})
+						}
+				        // this.text = 'request success';
+				    }
+				})
 			},
 			MyLiker(){
 				// 跳转到添加爱车页面
