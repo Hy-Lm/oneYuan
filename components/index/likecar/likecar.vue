@@ -27,6 +27,10 @@
 				<text>上路时间</text>
 				<input type="text" v-model="gotime" value="" placeholder="请输入上路时间"/>
 			</view>
+			<view>
+				<button type="button" @click="upload">上传图片</button>
+				<image class="img" v-if="file" :src="file" mode=""></image>
+			</view>
 		</view>
 		<view class="footer" @click="likecar">
 			完成
@@ -43,12 +47,13 @@
 				km:'',
 				gotime:'',
 				sel:'',
-				idcar:''
+				idcar:'',
+				file:''
 			}
 		},
 		methods: {
 			likecar(){
-				console.log(this.tel)
+				// console.log(this.file)
 				var {name,tel,km,gotime,idcar}=this
 				uni.request({
 				    url: 'http://192.168.7.152:8081/educar/car/addCar', //仅为示例，并非真实接口地址。
@@ -59,47 +64,71 @@
 					   idcar,
 					   km,
 					   gotime
-					  
 				    },
 					header: {
 						'content-type': 'application/x-www-form-urlencoded', 
 					},
 				    success: function(res) {
-				        if(res.data){
-							// uni.showModal({
-							//     title: '确认',
-							//     content: '这是一个模态弹窗',
-							//     success: function (res) {
-							//         if (res.confirm) {
-							//             console.log('用户点击确定');
-							//         } else if (res.cancel) {
-							//             console.log('用户点击取消');
-							//         }
-							//     }
-							// });
-				    //     	uni.showToast({
-				    //     		title:'添加成功',
-				    //     		icon:'none',
-								// duration:2000,
-								// // success() {
-								// // 	uni.redirectTo({
-								// // 		// 跳转到我的爱车
-								// // 		url:"../my-likecar/my-likecar"
-								// // 	})
-								// // }
-				    //     	})
-							uni.redirectTo({
-								// 跳转到我的爱车
-								url:"../my-likecar/my-likecar"
-							})
-				        }else{
-				        	uni.showToast({
-				        		title:'网络连接失败',
-				        		icon:'none'
-				        	})
-				        }
+						console.log(res.data)
+				   //      if(res.data){
+							// uni.redirectTo({
+							// 	// 跳转到我的爱车
+							// 	url:"../my-likecar/my-likecar"
+							// })
+				   //      }else{
+				   //      	uni.showToast({
+				   //      		title:'网络连接失败',
+				   //      		icon:'none'
+				   //      	})
+				   //      }
 				    }
 				});
+			},
+			upload(){
+				var that=this
+				uni.chooseImage({
+				    count: 6, //默认9
+				    success: function (res) {
+				       
+						var img = res.tempFilePaths[0];
+						// var image = new Image();
+						// image.src = img;
+						// image.onload = function() {
+						    //文件的Base64字符串
+						    // var base64 = that.getBase64Image(image);
+						    // console.log(base64);
+							// that.file=base64
+							uni.request({
+							    url: 'http://192.168.7.152:8081/educar/car/upload', //仅为示例，并非真实接口地址。
+								method:"POST",
+							    data: {
+								   file:img
+							    },
+								header: {
+									// 'content-type': 'application/x-www-form-urlencoded', 
+									"enctype":"multipart/form-data"
+								},
+							    success: function(res) {
+									console.log(res.data)
+							    }
+							});
+						// }
+						
+				    }
+				});
+			},
+			/**
+			 * 图像转Base64
+			 */
+			 getBase64Image(img) {
+			    var canvas = document.createElement("canvas");
+			    canvas.width = img.width;
+			    canvas.height = img.height;
+			    var ctx = canvas.getContext("2d");
+			    ctx.drawImage(img, 0, 0, img.width, img.height);
+			    var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+			    var dataURL = canvas.toDataURL("image/" + ext);
+			    return dataURL;
 			}
 		}
 	}
@@ -109,6 +138,10 @@
 page{
 	background-color: #F1F1F1;
 	// overflow: hidden;
+}
+.img{
+	width: 100px;
+	height: 100px;
 }
 .likecar{
 	

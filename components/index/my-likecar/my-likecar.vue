@@ -137,6 +137,7 @@
 		flex: 1;
 		opacity: 1;
 		background: #f9f7f7;
+		overflow: hidden;
 	}
 
 	.footer {
@@ -158,6 +159,7 @@
 	.myLikecar {
 		// width: 100%;
 		margin: 0 15px;
+		box-sizing: border-box;
 	}
 
 	.car_items {

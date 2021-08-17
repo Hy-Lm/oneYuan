@@ -338,6 +338,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/images/images",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
