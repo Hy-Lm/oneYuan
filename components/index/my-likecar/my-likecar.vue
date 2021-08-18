@@ -9,14 +9,14 @@
 				</view>
 				<view>
 					<!-- <image :src="item.img" mode="aspectFit"></image> -->
-					 <image src="../../../static/2.jpg" mode="aspectFit"></image>
+					<image :src="item.img" mode="aspectFit"></image>
 				</view>
 			</view>
 			<view>
 				<view>
-					<radio @click="r(index)" value="r1" :checked="item.active" color="#f8981d"
+					<radio @click="r(index)" value="r1" :checked="item.active!=0" color="#f8981d"
 						style="transform: scale(0.8);" />
-					<text :style="{'color': (item.active?'#f8981d':'#707070')}">已设为默认车</text>
+					<text :style="{'color': (item.active!=0?'#f8981d':'#707070')}">已设为默认车</text>
 				</view>
 				<view>
 					<!-- <view>
@@ -40,48 +40,28 @@
 	export default {
 		data() {
 			return {
-				car_items: [{
-						wagon: "津 A9996J",
-						vehicle: "宝马 320i 2018款 自动挡",
-						mileage: 21000,
-						img: '../../../static/2.jpg',
-						active: true
-					},
-					{
-						wagon: "京 A9996J",
-						vehicle: "宝马 320i 2018款 自动挡",
-						mileage: 21000,
-						img: '../../../static/2.jpg',
-						active: false
-					},
-					{
-						wagon: "粤 A9996J",
-						vehicle: "宝马 320i 2018款 自动挡",
-						mileage: 21000,
-						img: '../../../static/2.jpg',
-						active: false
-					}
-				]
+				imgUrl:'http://192.168.7.152:8081/yiyuan_parent/service/service_car/src/main/resources/',
+				car_items: []
 			}
 		},
 		mounted() {
 			this.info()
 		},
 		methods: {
-			info(){
+			info() {
 				uni.request({
-				    url: 'http://192.168.7.152:8081/educar/car/findAll', //仅为示例，并非真实接口地址。
-				    data: {
-				        text: 'uni.request'
-				    },
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-				    success: (res) => {
-				        console.log(res.data);
-						this.car_items=res.data
-				        // this.text = 'request success';
-				    }
+					url: 'http://192.168.7.152:8081/educar/car/findAll', //仅为示例，并非真实接口地址。
+					data: {
+						text: 'uni.request'
+					},
+					header: {
+						'custom-header': 'hello' //自定义请求头信息
+					},
+					success: (res) => {
+						console.log(res.data);
+						this.car_items = res.data
+						// this.text = 'request success';
+					}
 				})
 			},
 			r(index) {
@@ -95,37 +75,37 @@
 			},
 			delMycar(index) {
 				uni.request({
-				    url: 'http://192.168.7.152:8081/educar/car/deleteById', //仅为示例，并非真实接口地址。
-					method:"POST",
-				    data: {
-				        id: index
-				    },
-				    header: {
-				    	'content-type': 'application/x-www-form-urlencoded', 
-				    },
-				    success: (res) => {
-				        console.log(res.data);
-						if(res.data){
+					url: 'http://192.168.7.152:8081/educar/car/deleteById', //仅为示例，并非真实接口地址。
+					method: "POST",
+					data: {
+						id: index
+					},
+					header: {
+						'content-type': 'application/x-www-form-urlencoded',
+					},
+					success: (res) => {
+						console.log(res.data);
+						if (res.data) {
 							uni.showToast({
-								title:'删除成功',
-								icon:'none'
+								title: '删除成功',
+								icon: 'none'
 							})
 							this.info()
-						}else{
+						} else {
 							uni.showToast({
-								title:'网络连接失败',
-								icon:'none'
+								title: '网络连接失败',
+								icon: 'none'
 							})
 						}
-				        // this.text = 'request success';
-				    }
+						// this.text = 'request success';
+					}
 				})
 			},
-			MyLiker(){
+			MyLiker() {
 				// 跳转到添加爱车页面
 				uni.navigateTo({
 					// 跳转到我的爱车
-					url:"../likecar/likecar"
+					url: "../likecar/likecar"
 				})
 			}
 		}
@@ -137,7 +117,7 @@
 		flex: 1;
 		opacity: 1;
 		background: #f9f7f7;
-		overflow: hidden;
+		// overflow: hidden;
 	}
 
 	.footer {
