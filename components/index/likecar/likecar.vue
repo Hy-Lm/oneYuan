@@ -77,18 +77,18 @@
 						'content-type': 'application/x-www-form-urlencoded',
 					},
 					success: function(res) {
-						console.log(res.data)
-						//      if(res.data){
-						// uni.redirectTo({
-						// 	// 跳转到我的爱车
-						// 	url:"../my-likecar/my-likecar"
-						// })
-						//      }else{
-						//      	uni.showToast({
-						//      		title:'网络连接失败',
-						//      		icon:'none'
-						//      	})
-						//      }
+						// console.log(res.data)
+						     if(res.data){
+						uni.redirectTo({
+							// 跳转到我的爱车
+							url:"../my-likecar/my-likecar"
+						})
+						     }else{
+						     	uni.showToast({
+						     		title:'网络连接失败',
+						     		icon:'none'
+						     	})
+						     }
 					}
 				});
 			},
@@ -97,7 +97,7 @@
 				uni.chooseImage({
 					count: 6, //默认9
 					success: function(res) {
-						console.log(res)
+						// console.log(res)
 						that.img = res.tempFilePaths[0];
 						uni.uploadFile({
 							url: 'http://192.168.7.152:8081/educar/car/upload', //仅为示例，非真实的接口地址
@@ -107,7 +107,7 @@
 							//     file:img
 							// },
 							success: (uploadFileRes) => {
-								console.log(uploadFileRes.data);
+								// console.log(uploadFileRes.data);
 								that.imgs=uploadFileRes.data
 							}
 						})

@@ -58,7 +58,7 @@
 						'custom-header': 'hello' //自定义请求头信息
 					},
 					success: (res) => {
-						console.log(res.data);
+						// console.log(res.data);
 						this.car_items = res.data
 						// this.text = 'request success';
 					}
