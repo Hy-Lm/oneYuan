@@ -1,37 +1,41 @@
 <template>
 	<view class="myLikecar">
-		<view class="car_items" v-for="(item,index) in car_items" :key="item.id">
-			<view>
+		<view class="car_itemsss">
+			<view class="car_items" v-for="(item,index) in car_items" :key="item.id">
 				<view>
-					<view>{{item.name}}</view>
-					<!-- <view>{{item.vehicle}}</view> -->
-					<view>行驶里程：{{item.km}}km</view>
+					<view>
+						<view>{{item.idcar}}</view>
+						<view>猜测还行</view>
+						<view>行驶里程：{{item.km}}km</view>
+					</view>
+					<view>
+						<!-- <image :src="item.img" mode="aspectFit"></image> -->
+						<image :src="item.img" mode="aspectFit"></image>
+					</view>
 				</view>
 				<view>
-					<!-- <image :src="item.img" mode="aspectFit"></image> -->
-					<image :src="item.img" mode="aspectFit"></image>
-				</view>
-			</view>
-			<view>
-				<view>
-					<radio @click="r(index)" value="r1" :checked="item.active!=0" color="#f8981d"
-						style="transform: scale(0.8);" />
-					<text :style="{'color': (item.active!=0?'#f8981d':'#707070')}">已设为默认车</text>
-				</view>
-				<view>
-					<!-- <view>
-						<image src="../../../static/2.jpg"></image>
-						<text>编辑</text>
-					</view> -->
-					<view @click="delMycar(item.id)">
-						<image src="../../../static/2.jpg"></image>
-						<text>删除</text>
+					<view>
+						<radio @click="r(item)" value="r1" :checked="item.active!=0" color="#f8981d"
+							style="transform: scale(0.8);" />
+						<text :style="{'color': (item.active!=0?'#f8981d':'#707070')}">已设为默认车</text>
+					</view>
+					<view>
+						<!-- <view>
+							<image src="../../../static/2.jpg"></image>
+							<text>编辑</text>
+						</view> -->
+						<view @click="delMycar(item.id,item.img)">
+							<image src="../../../static/2.jpg"></image>
+							<text>删除</text>
+						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="footer" @click="MyLiker">
-			添加爱车
+		<view class="car_btn">
+			<view class="footer" @click="MyLiker">
+					添加爱车
+				</view>
 		</view>
 	</view>
 </template>
@@ -40,7 +44,7 @@
 	export default {
 		data() {
 			return {
-				imgUrl:'http://192.168.7.152:8081/yiyuan_parent/service/service_car/src/main/resources/',
+				imgUrl: 'http://192.168.7.152:8081/yiyuan_parent/service/service_car/src/main/resources/',
 				car_items: []
 			}
 		},
@@ -49,6 +53,7 @@
 		},
 		methods: {
 			info() {
+				//页面渲染
 				uni.request({
 					url: 'http://192.168.7.152:8081/educar/car/findAll', //仅为示例，并非真实接口地址。
 					data: {
@@ -64,21 +69,40 @@
 					}
 				})
 			},
-			r(index) {
+			r(item) {
+				// 设置默认地址
+				// console.log(item)
 				// 全部
-				this.car_items.forEach(function(value, key) {
-					value.active = false
+				// this.car_items.forEach(function(value, key) {
+				// 	value.active = false
+				// });
+				// // 点击选中默认车
+				// this.car_items[index].active = true
+				uni.request({
+					url: 'http://192.168.7.152:8081/educar/car/active', //仅为示例，并非真实接口地址。
+					method: "POST",
+					data: {
+						id:item.id
+					},
+					header: {
+						'content-type': 'application/x-www-form-urlencoded',
+					},
+					success: function(res) {
+						console.log(res.data)
+					}
 				});
-				// 点击选中默认车
-				this.car_items[index].active = true
-
 			},
-			delMycar(index) {
+			delMycar(index,img) {
+				//点击删除 将当前信息删除
+				var  strindex=img.lastIndexOf('/')
+				var strimg=img.substr(strindex+1)
+				console.log(strimg)
 				uni.request({
 					url: 'http://192.168.7.152:8081/educar/car/deleteById', //仅为示例，并非真实接口地址。
 					method: "POST",
 					data: {
-						id: index
+						id: index,
+						imgPath:strimg
 					},
 					header: {
 						'content-type': 'application/x-www-form-urlencoded',
@@ -90,13 +114,15 @@
 								title: '删除成功',
 								icon: 'none'
 							})
-							this.info()
+							// this.info()
 						} else {
 							uni.showToast({
 								title: '网络连接失败',
 								icon: 'none'
 							})
+							// this.info()
 						}
+						this.info()
 						// this.text = 'request success';
 					}
 				})
@@ -117,33 +143,45 @@
 		flex: 1;
 		opacity: 1;
 		background: #f9f7f7;
+		height: calc(100vh - 60px);
 		// overflow: hidden;
 	}
-
-	.footer {
-		text-align: center;
+	.car_btn{
+		width: 100%;
 		position: fixed;
-		bottom: 30px;
-		left: 50%;
-		transform: translateX(-50%);
+		bottom: 0;
+		left: 0;
+		height: 60px;
+		// transform: translateX(-50%);
+		background: #FFFFFF;
+	}
+	.footer {
+		margin:15px auto;
+		text-align: center;
 		width: 315px;
-		height: 30px;
+		height:35px;
 		opacity: 1;
 		background: #f86259;
-		border-radius: 15px;
+		border-radius: 30px;
 		font-size: 16px;
 		color: #ffffff;
-		line-height: 29px;
+		line-height: 35px;
+		box-sizing: border-box;
 	}
 
 	.myLikecar {
 		// width: 100%;
 		margin: 0 15px;
 		box-sizing: border-box;
+		// display: flex;
+		// flex-direction: column;
 	}
-
+	.car_itemsss{
+		// height: calc(100% - 30px);
+		padding-bottom: 65px;
+	}
 	.car_items {
-		margin-top: 22px;
+		margin: 11px 0;
 		padding: 16px;
 		padding-right: 33px;
 		box-sizing: border-box;
@@ -203,7 +241,7 @@
 					height: 25px;
 					font-size: 18px;
 					font-weight: 700;
-					color: #000000;
+					color: #333333;
 					margin-bottom: 5px;
 				}
 

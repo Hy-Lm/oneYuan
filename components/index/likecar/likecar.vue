@@ -29,7 +29,10 @@
 			</view>
 			<view>
 				<button type="button" @click="upload">上传图片</button>
-				<image class="img" v-if="img" :src="img" mode=""></image>
+				<view class="imgView">
+					<image class="img" v-if="img" :src="img" mode=""></image>
+				</view>
+				
 			</view>
 		</view>
 		<view class="footer" @click="likecar">
@@ -124,10 +127,14 @@
 		background-color: #F1F1F1;
 		overflow: hidden;
 	}
-
+	.imgView{
+		margin-left:50%;
+		transform: translateX(-50%);
+	}
 	.img {
-		width: 100px;
+		width: 100%;
 		height: 100px;
+		
 	}
 
 	.likecar {
@@ -137,13 +144,14 @@
 		// height: 200px;
 		.likecar_box {
 			overflow: hidden;
-			box-sizing: border-box;
 			margin: 45px 15px 0 15px;
+			
 			// width: 100%;
 			background-color: #FFFFFF;
 			padding: 19px 26px;
+			padding-bottom: 10px;
 			border-radius: 10px;
-
+			box-sizing: border-box;
 			view {
 				&:nth-child(3) {
 					text {
@@ -165,7 +173,7 @@
 					line-height: 20px;
 					font-size: 14px;
 					text-align: left;
-					color: #000000;
+					color: #333333;
 					vertical-align: middle;
 				}
 
