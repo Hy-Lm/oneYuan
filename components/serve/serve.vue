@@ -11,18 +11,18 @@
 			</view>
 			<view class="types">
 				<!-- 类型 -->
-				<view class="type" v-for="(item,index) in typesItem" :key="index" @click="open">
+				<view class="type" v-for="(item,index) in typesItem" :key="item.id" @click="open">
 					<view class="left">
 						<image :src="item.img" mode="aspectFit"></image>
 					</view>
 					<view class="right">
-						<view>{{item.store}}</view>
+						<view>{{item.name}}</view>
 						<view>
 							<text>总评分</text><text>{{item.score}}</text>
 						</view>
 						<view>
-							<text>{{item.distanceCon}}</text>
-							<text class="km">{{item.distanceKm}}km</text>
+							<text>{{item.address}}</text>
+							<text class="km">{{item.space}}km</text>
 						</view>
 					</view>
 				</view>
@@ -36,31 +36,30 @@
 	export default {
 		data() {
 			return {
-				typesItem: [{
-						img: '../../static/2.jpg',
-						store: '益园养车（北辰区店）',
-						score: '4.6',
-						distanceCon: '天津市北辰区北辰公园南100米天津市北辰区北辰公园南100米',
-						distanceKm: 2.22
-					},
-					{
-						img: '../../static/2.jpg',
-						store: '益园养车（北辰区店）',
-						score: '4.6',
-						distanceCon: '天津市北辰区北辰公园南100米天津市北辰区北辰公园南100米',
-						distanceKm: 2.22
-					},
-					{
-						img: '../../static/2.jpg',
-						store: '益园养车（北辰区店）',
-						score: '4.6',
-						distanceCon: '天津市北辰区北辰公园南100米天津市北辰区北辰公园南100米',
-						distanceKm: 2.22
-					}
-				]
+				url:'http://192.168.7.152:8083/shopservice/carshop/',
+				typesItem: []
 			}
 		},
+		mounted() {
+			this.info()
+		},
 		methods: {
+			// 渲染页面
+			info(){
+				//页面渲染
+				uni.request({
+					url: this.url+'findShop', //仅为示例，并非真实接口地址。
+					
+					header: {
+						'custom-header': 'hello' //自定义请求头信息
+					},
+					success: (res) => {
+						console.log(res.data);
+						this.typesItem = res.data
+						// this.text = 'request success';
+					}
+				})
+			},
 			open() {
 				if (this.isSearch) return
 				console.log('open')
@@ -93,9 +92,9 @@
 		width: 100%;
 
 		.serve_con {
-			height: 285px;
+			// height: 285px;
 			padding: 13px 15px;
-			padding-bottom: 0;
+			// padding-bottom: 0;
 			background: #ffffff;
 			border-radius: 10px 10px 0px 0px;
 			box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.16);

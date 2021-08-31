@@ -45,6 +45,7 @@
 	export default {
 		data() {
 			return {
+				url:'http://192.168.7.152:8081/educar/car/',
 				name: '',
 				tel: '',
 				km: '',
@@ -63,10 +64,11 @@
 					tel,
 					km,
 					gotime,
-					idcar
+					idcar,
+					url,
 				} = this
 				uni.request({
-					url: 'http://192.168.7.152:8081/educar/car/addCar', //仅为示例，并非真实接口地址。
+					url: url+'addCar', //仅为示例，并非真实接口地址。
 					method: "POST",
 					data: {
 						name,
@@ -100,10 +102,11 @@
 				uni.chooseImage({
 					count: 6, //默认9
 					success: function(res) {
-						// console.log(res)
+						console.log(res)
 						that.img = res.tempFilePaths[0];
+						console.log(that.img)
 						uni.uploadFile({
-							url: 'http://192.168.7.152:8081/educar/car/upload', //仅为示例，非真实的接口地址
+							url: that.url+'upload', //仅为示例，非真实的接口地址
 							filePath: that.img,
 							name: 'uploadFile',
 							// formData: {

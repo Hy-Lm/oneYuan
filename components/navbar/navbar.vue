@@ -52,9 +52,9 @@
 						<view class="page-section-spacing">
 							<swiper class="swiper" autoplay="true" interval="2000" circular="true" indicator-dots="true"
 								indicator-color="rgba(255, 255, 255, 0.95)">
-								<swiper-item v-for="(item,index) in bannerImgs" :key="index">
+								<swiper-item v-for="(item,index) in bannerImgs" :key="item.id">
 									<view class="swiper-item uni-bg-red" style="width: 100%; height: 160px;">
-										<image style="width: 100%; height: 100%;" :src="item" mode="scaleToFill">
+										<image style="width: 100%; height: 100%;" :src="item.img" mode="scaleToFill">
 										</image>
 									</view>
 								</swiper-item>
@@ -83,7 +83,24 @@
 				addcart:true
 			}
 		},
+		mounted() {
+			this.info()
+		},
 		methods: {
+			info(){
+				//页面渲染
+				uni.request({
+					url: 'http://192.168.7.152:8082/imgservice/carimg/findImg', //仅为示例，并非真实接口地址。
+					header: {
+						'custom-header': 'hello' //自定义请求头信息
+					},
+					success: (res) => {
+						// console.log(res.data);
+						this.bannerImgs = res.data
+						// this.text = 'request success';
+					}
+				})
+			},
 			map() {
 				console.log(1)
 				uni.navigateTo({ //跳转地图页面
@@ -96,7 +113,8 @@
 					// 跳转到我的爱车
 					url: "/components/index/my-likecar/my-likecar"
 				})
-			}
+			},
+			
 		}
 	}
 </script>

@@ -44,6 +44,7 @@
 	export default {
 		data() {
 			return {
+				url:'http://192.168.7.152:8081/educar/car/',
 				imgUrl: 'http://192.168.7.152:8081/yiyuan_parent/service/service_car/src/main/resources/',
 				car_items: []
 			}
@@ -55,10 +56,8 @@
 			info() {
 				//页面渲染
 				uni.request({
-					url: 'http://192.168.7.152:8081/educar/car/findAll', //仅为示例，并非真实接口地址。
-					data: {
-						text: 'uni.request'
-					},
+					url: this.url+'findAll', //仅为示例，并非真实接口地址。
+					
 					header: {
 						'custom-header': 'hello' //自定义请求头信息
 					},
@@ -70,14 +69,6 @@
 				})
 			},
 			r(item) {
-				// 设置默认地址
-				// console.log(item)
-				// 全部
-				// this.car_items.forEach(function(value, key) {
-				// 	value.active = false
-				// });
-				// // 点击选中默认车
-				// this.car_items[index].active = true
 				uni.request({
 					url: 'http://192.168.7.152:8081/educar/car/active', //仅为示例，并非真实接口地址。
 					method: "POST",
