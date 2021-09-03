@@ -11,7 +11,7 @@
 			</view>
 			<view class="types">
 				<!-- 类型 -->
-				<view class="type" v-for="(item,index) in typesItem" :key="item.id" @click="open">
+				<view class="type" v-for="(item,index) in typesItem" :key="item.id" @click="open(item)">
 					<view class="left">
 						<image :src="item.img" mode="aspectFit"></image>
 					</view>
@@ -22,7 +22,7 @@
 						</view>
 						<view>
 							<text>{{item.address}}</text>
-							<text class="km">{{item.space}}km</text>
+							<text class="km">2.2km</text>
 						</view>
 					</view>
 				</view>
@@ -60,11 +60,13 @@
 					}
 				})
 			},
-			open() {
+			open(item) {
+				// 跳转传值
 				if (this.isSearch) return
-				console.log('open')
+				 var item = JSON.stringify(item)
 				uni.navigateTo({
-					url: "/components/index/shop/shop"
+					 // 文本对象转换成json格式
+					url: "/components/index/shop/shop?item=" + item
 				})
 			},
 			more() {

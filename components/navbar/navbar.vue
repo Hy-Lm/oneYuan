@@ -66,7 +66,7 @@
 			<!-- 系统提示 -->
 			<view class="hint">
 				<image src="../../static/images/trumpet@3x.png" mode="scaleToFill"></image>
-				<text>系统暂为检测到您的车型，赶紧添加您的爱车吧</text>
+				<text>系统暂未检测到您的车型，赶紧添加您的爱车吧</text>
 			</view>
 		</view>
 

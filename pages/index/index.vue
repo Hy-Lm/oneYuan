@@ -5,7 +5,7 @@
 		<!-- 享服务 -->
 		<serve></serve>
 		<!-- 类型 -->
-		<classify></classify>
+		<!-- <classify></classify> -->
 		<!-- 配件 -->
 		<view class="part">
 			<parts></parts>
